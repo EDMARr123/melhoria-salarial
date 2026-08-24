@@ -406,7 +406,7 @@ function montarConteudo(rca) {
         </div>
         <div class="media-pedidos-linha">
           QTD NO MÊS: ${rca.total_pedidos}<br>
-          MÉDIA DE PEDIDOS: ${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {minimumFractionDigits:2, maximumFractionDigits:2})}
+          MÉDIA DE PEDIDOS: ${Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis)}
         </div>
       </div>
     </div>
