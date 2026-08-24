@@ -342,7 +342,7 @@ function renderizarRca() {
   // depois de redesenhar.
   const ativo = document.activeElement;
   const focoAntes = (ativo && conteudo.contains(ativo) && ativo.tagName === "INPUT")
-    ? { id: ativo.id, chave: ativo.dataset.chave, inicio: ativo.selectionStart, fim: ativo.selectionEnd }
+    ? { id: ativo.id, chave: ativo.dataset.chave, inicio: ativo.selectionStart, fim: ativo.selectionEnd, valorBruto: ativo.value }
     : null;
 
   const rca = RCAS_POR_CODIGO[codigo];
@@ -363,6 +363,10 @@ function renderizarRca() {
       : (focoAntes.id ? `#${focoAntes.id}` : null);
     const novo = seletor && conteudo.querySelector(seletor);
     if (novo) {
+      // Devolve exatamente o texto que a pessoa tinha digitado (não o
+      // número já formatado/arredondado) — senão uma vírgula digitada na
+      // hora certa some antes de dar tempo de digitar a casa decimal.
+      novo.value = focoAntes.valorBruto;
       novo.focus();
       try { novo.setSelectionRange(focoAntes.inicio, focoAntes.fim); } catch (e) {}
     }
