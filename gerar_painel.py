@@ -1,12 +1,14 @@
 r"""
 Gera o painel "Melhoria Salarial" (painel.html) a partir de dados.json.
 
-Ao contrário dos outros painéis (4 Pilares, Departamentos), este é
-INTERATIVO: a taxa média de comissão sobre pedidos e os checkboxes de
-"bateu Industrializado/Thermo/Dia 15/Dia 30/Campanha" são editáveis
-direto no navegador (o Edmar decide RCA por RCA, igual fazia na
-planilha) e o Salário Atual/Potencial recalcula na hora, em JS. O estado
-fica salvo no localStorage do navegador de quem estiver usando.
+Modelo igual à planilha original: trata 1 RCA por vez — digita o código,
+puxa nome e todos os dados daquele vendedor. Metas (positivação por
+categoria e pedidos/dia) e taxa média de comissão ficam editáveis num
+painel de configuração (valem pra qualquer vendedor que você olhar,
+igual eram fixas em ITENS FOCO na planilha); os checkboxes de
+Industrializado/Thermo/Dia 15/Dia 30/Campanha ficam salvos por RCA no
+localStorage do navegador. Tudo recalcula ao vivo, sem precisar reabrir
+o Excel.
 """
 
 import json
@@ -43,148 +45,179 @@ TEMPLATE = r"""<!doctype html>
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #12160F;
-    --surface: #1B211A;
-    --surface-2: #212820;
-    --border: #303A2E;
-    --ink: #E9EEE6;
-    --ink-soft: #AEBAA9;
-    --ink-faint: #7C887A;
-    --good: #3FC17F;
-    --good-soft: #123625;
-    --bad: #E2685F;
-    --bad-soft: #3A1D1B;
-    --warn: #E0A73C;
-    --warn-soft: #3A2E12;
-    --accent: #3FC17F;
-    --accent-soft: #17301F;
+    --bg: #12160F; --surface: #1B211A; --surface-2: #212820; --border: #303A2E;
+    --ink: #E9EEE6; --ink-soft: #AEBAA9; --ink-faint: #7C887A;
+    --good: #3FC17F; --good-soft: #123625; --bad: #E2685F; --bad-soft: #3A1D1B;
+    --warn: #E0A73C; --warn-soft: #3A2E12; --accent: #3FC17F; --accent-soft: #17301F;
     --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 12px 28px -14px rgba(0,0,0,0.6);
   }
 }
 :root[data-theme="dark"] {
-  --bg: #12160F;
-  --surface: #1B211A;
-  --surface-2: #212820;
-  --border: #303A2E;
-  --ink: #E9EEE6;
-  --ink-soft: #AEBAA9;
-  --ink-faint: #7C887A;
-  --good: #3FC17F;
-  --good-soft: #123625;
-  --bad: #E2685F;
-  --bad-soft: #3A1D1B;
-  --warn: #E0A73C;
-  --warn-soft: #3A2E12;
-  --accent: #3FC17F;
-  --accent-soft: #17301F;
+  --bg: #12160F; --surface: #1B211A; --surface-2: #212820; --border: #303A2E;
+  --ink: #E9EEE6; --ink-soft: #AEBAA9; --ink-faint: #7C887A;
+  --good: #3FC17F; --good-soft: #123625; --bad: #E2685F; --bad-soft: #3A1D1B;
+  --warn: #E0A73C; --warn-soft: #3A2E12; --accent: #3FC17F; --accent-soft: #17301F;
   --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 12px 28px -14px rgba(0,0,0,0.6);
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 1400px; margin: 0 auto; padding: 24px 20px 64px; }
-header.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
-header.top h1 { font-size: 24px; margin: 0 0 4px; }
-header.top p { margin: 0; color: var(--ink-soft); font-size: 13.5px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 64px; }
+header.top h1 { font-size: 22px; margin: 0 0 4px; }
+header.top p { margin: 0 0 18px; color: var(--ink-soft); font-size: 13.5px; }
 
-.config-bar {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-  box-shadow: var(--shadow); padding: 14px 18px; display: flex; gap: 24px; align-items: center;
-  flex-wrap: wrap; margin-bottom: 18px;
-}
-.config-item { display: flex; flex-direction: column; gap: 3px; }
-.config-item label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; color: var(--ink-faint); }
-.config-item .val-row { display: flex; align-items: center; gap: 6px; }
-.config-item input[type=number] {
-  width: 90px; font-size: 15px; font-weight: 800; padding: 5px 8px; border-radius: 8px;
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 16px; }
+.panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-faint); margin: 0 0 14px; font-weight: 800; }
+
+.busca-row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.campo { display: flex; flex-direction: column; gap: 4px; }
+.campo label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; color: var(--ink-faint); }
+.campo input, .campo select {
+  font: inherit; font-size: 15px; font-weight: 700; padding: 8px 10px; border-radius: 9px;
   border: 1px solid var(--border); background: var(--surface-2); color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
-.config-item .fixo { font-size: 15px; font-weight: 800; color: var(--ink); }
-.config-note { font-size: 12px; color: var(--ink-faint); max-width: 320px; }
+#codigoInput { width: 110px; }
+#nomeAtual { font-size: 15px; font-weight: 800; color: var(--accent); align-self: center; padding-bottom: 8px; }
+.rota-atual { font-size: 12.5px; color: var(--ink-faint); align-self: center; padding-bottom: 8px; }
 
-.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-.tab {
-  appearance: none; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft);
-  font: inherit; font-size: 12.5px; font-weight: 700; padding: 6px 13px; border-radius: 999px; cursor: pointer;
-}
-.tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.tab .count { opacity: .75; margin-left: 4px; }
+.config-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px 16px; }
+.config-grid .campo input { width: 100%; }
+details.config-toggle summary { cursor: pointer; font-weight: 800; font-size: 13px; color: var(--accent); list-style: none; }
+details.config-toggle summary::-webkit-details-marker { display: none; }
+details.config-toggle summary::before { content: "⚙ "; }
+details.config-toggle[open] summary { margin-bottom: 14px; }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 14px; }
+.linha-cabecalho { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 4px; }
+.linha-cabecalho .box { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; }
+.linha-cabecalho .box .l { font-size: 10.5px; font-weight: 800; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px; }
+.linha-cabecalho .box .v { font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums; }
 
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.card-head h3 { margin: 0; font-size: 15.5px; }
-.card-head .meta { font-size: 11.5px; color: var(--ink-faint); }
-
-.checks { display: flex; flex-wrap: wrap; gap: 6px; }
-.chk {
-  display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700;
-  padding: 4px 8px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border);
-  cursor: pointer; user-select: none; color: var(--ink-soft);
-}
-.chk input { accent-color: var(--accent); }
-.chk.on { background: var(--good-soft); color: var(--good); border-color: transparent; }
-
-table.breakdown { width: 100%; border-collapse: collapse; font-size: 12px; }
-table.breakdown th { text-align: right; font-size: 10px; text-transform: uppercase; color: var(--ink-faint); font-weight: 800; padding: 4px 4px; border-bottom: 1px solid var(--border); }
+table.breakdown { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; }
+table.breakdown th { text-align: right; font-size: 10.5px; text-transform: uppercase; color: var(--ink-faint); font-weight: 800; padding: 6px 6px; border-bottom: 1px solid var(--border); }
 table.breakdown th:first-child, table.breakdown td:first-child { text-align: left; }
-table.breakdown td { text-align: right; padding: 4px 4px; font-variant-numeric: tabular-nums; font-weight: 700; }
+table.breakdown td { text-align: right; padding: 6px 6px; font-variant-numeric: tabular-nums; font-weight: 700; border-bottom: 1px solid var(--border); }
+table.breakdown tr:last-child td { border-bottom: none; }
 table.breakdown td.dif-pos { color: var(--good); }
 table.breakdown td.dif-zero { color: var(--ink-faint); font-weight: 500; }
 
-.summary { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
-.summary .box { border-radius: 10px; padding: 9px 10px; }
-.summary .box .l { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 2px; }
-.summary .box .v { font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums; }
-.summary .soma { background: var(--good-soft); color: var(--good); grid-column: 1 / -1; }
-.summary .atual { background: var(--surface-2); color: var(--ink); }
-.summary .total { background: var(--accent-soft); color: var(--accent); }
+.checks { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.chk {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700;
+  padding: 6px 11px; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--border);
+  cursor: pointer; user-select: none; color: var(--ink-soft);
+}
+.chk input { accent-color: var(--accent); width: 15px; height: 15px; }
+.chk.on { background: var(--good-soft); color: var(--good); border-color: transparent; }
 
-.foot { text-align: center; color: var(--ink-faint); font-size: 12px; margin-top: 36px; }
+.resumo-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+.resumo-box { border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+.resumo-box .l { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; }
+.resumo-box .v { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.resumo-box.soma { background: var(--good-soft); color: var(--good); }
+.resumo-box.atual { background: var(--surface-2); color: var(--ink); }
+.resumo-box.total { background: var(--accent-soft); color: var(--accent); }
+
+.btn-limpar {
+  margin-top: 12px; background: var(--bad); color: #fff; border: none; border-radius: 10px;
+  padding: 11px 20px; font: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; width: 100%;
+}
+.btn-limpar:hover { opacity: .9; }
+
+.vazio { text-align: center; padding: 60px 20px; color: var(--ink-faint); font-size: 14px; }
+.foot { text-align: center; color: var(--ink-faint); font-size: 12px; margin-top: 30px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <div>
-      <h1>Melhoria Salarial</h1>
-      <p id="subtitle"></p>
-    </div>
+    <h1>Melhoria Salarial</h1>
+    <p>Digite o código do RCA pra ver o salário atual x potencial dele — igual à planilha, 1 vendedor por vez.</p>
   </header>
 
-  <div class="config-bar">
-    <div class="config-item">
-      <label>Taxa média de comissão</label>
-      <div class="val-row"><input type="number" id="taxaInput" step="0.01" min="0"><span class="fixo">%</span></div>
+  <div class="panel">
+    <div class="busca-row">
+      <div class="campo">
+        <label>Código do RCA</label>
+        <input type="number" id="codigoInput" list="rcaList" placeholder="ex: 15">
+        <datalist id="rcaList"></datalist>
+      </div>
+      <div id="nomeAtual"></div>
+      <div class="rota-atual" id="rotaAtual"></div>
     </div>
-    <div class="config-item">
-      <label>Dias úteis no mês</label>
-      <div class="fixo" id="diasUteis"></div>
-    </div>
-    <div class="config-item">
-      <label>Meta de pedidos/dia</label>
-      <div class="fixo" id="metaPedidosDia"></div>
-    </div>
-    <p class="config-note">A taxa é usada só pra calcular o componente "Pedidos" do salário — os outros
-    tópicos (Departamentos, Industrializado, Thermo, bônus) já vêm calculados dos dados reais.
-    Marque os checkboxes de cada vendedor conforme ele for batendo a meta.</p>
   </div>
 
-  <div class="tabs" id="tabs"></div>
-  <div class="grid" id="grid"></div>
+  <div class="panel">
+    <details class="config-toggle">
+      <summary>Configurações (metas e taxa — valem pra qualquer vendedor)</summary>
+      <div class="config-grid" id="configGrid"></div>
+    </details>
+  </div>
+
+  <div id="conteudo"></div>
 
   <p class="foot">Dados extraídos de RESULTADO.xlsm (MELHORIA SALARIO) · gerado automaticamente</p>
 </div>
 
 <script>
 const DADOS = __DADOS_JSON__;
+const RCAS_POR_CODIGO = Object.fromEntries(DADOS.rcas.map(r => [r.codigo, r]));
 
 function fmtMoeda(v) {
   return "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-function chaveEstado(codigo) { return "melhoria_salarial_" + codigo; }
+// ---- Configuração global (taxa + metas por categoria + meta de pedidos/dia) ----
+function lerConfig() {
+  const padrao = {
+    taxaPct: DADOS.constantes.taxa_padrao * 100,
+    metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
+    metasCategoria: Object.assign({}, DADOS.constantes.metas_categoria_padrao),
+  };
+  try {
+    const salvo = localStorage.getItem("melhoria_salarial_config");
+    if (!salvo) return padrao;
+    const parsed = JSON.parse(salvo);
+    return {
+      taxaPct: parsed.taxaPct ?? padrao.taxaPct,
+      metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
+      metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
+    };
+  } catch (e) { return padrao; }
+}
+
+function salvarConfig(config) {
+  try { localStorage.setItem("melhoria_salarial_config", JSON.stringify(config)); } catch (e) {}
+}
+
+function montarConfigGrid() {
+  const config = lerConfig();
+  const ordem = DADOS.constantes.ordem_categorias;
+  const labels = DADOS.constantes.labels_categoria;
+
+  let html = `
+    <div class="campo"><label>Taxa média comissão (%)</label>
+      <input type="number" step="0.01" min="0" id="cfgTaxa" value="${config.taxaPct}"></div>
+    <div class="campo"><label>Meta pedidos/dia</label>
+      <input type="number" step="1" min="0" id="cfgMetaPedidos" value="${config.metaPedidosDia}"></div>
+  `;
+  ordem.forEach(chave => {
+    html += `<div class="campo"><label>Meta posit. ${labels[chave]}</label>
+      <input type="number" step="1" min="0" class="cfgMetaCategoria" data-chave="${chave}" value="${config.metasCategoria[chave]}"></div>`;
+  });
+  document.getElementById("configGrid").innerHTML = html;
+
+  document.getElementById("configGrid").addEventListener("input", (e) => {
+    const cfg = lerConfig();
+    if (e.target.id === "cfgTaxa") cfg.taxaPct = parseFloat(e.target.value) || 0;
+    else if (e.target.id === "cfgMetaPedidos") cfg.metaPedidosDia = parseFloat(e.target.value) || 0;
+    else if (e.target.classList.contains("cfgMetaCategoria")) cfg.metasCategoria[e.target.dataset.chave] = parseFloat(e.target.value) || 0;
+    salvarConfig(cfg);
+    renderizarRca();
+  });
+}
+
+// ---- Estado por RCA (checkboxes) ----
+function chaveEstado(codigo) { return "melhoria_salarial_estado_" + codigo; }
 
 function lerEstado(codigo) {
   const padrao = { industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false };
@@ -198,28 +231,32 @@ function salvarEstado(codigo, estado) {
   try { localStorage.setItem(chaveEstado(codigo), JSON.stringify(estado)); } catch (e) {}
 }
 
-function lerTaxa() {
-  try {
-    const salva = localStorage.getItem("melhoria_salarial_taxa");
-    return salva !== null ? parseFloat(salva) : DADOS.constantes.taxa_padrao * 100;
-  } catch (e) { return DADOS.constantes.taxa_padrao * 100; }
+function limparEstado(codigo) {
+  try { localStorage.removeItem(chaveEstado(codigo)); } catch (e) {}
 }
 
-function salvarTaxa(pct) {
-  try { localStorage.setItem("melhoria_salarial_taxa", String(pct)); } catch (e) {}
-}
-
-function calcular(rca, taxaPct) {
-  const taxa = taxaPct / 100;
+// ---- Cálculo ----
+function calcular(rca, config) {
+  const taxa = config.taxaPct / 100;
   const estado = lerEstado(rca.codigo);
-  const { dias_uteis, meta_pedidos_dia } = DADOS.constantes;
+  const { dias_uteis, taxas_categoria, labels_categoria, ordem_categorias } = DADOS.constantes;
+
+  const linhasCategorias = ordem_categorias.map(chave => {
+    const cat = rca.categorias[chave];
+    const metaPosit = config.metasCategoria[chave];
+    const comissaoAtual = cat.valor * taxas_categoria[chave];
+    const comissaoPotencial = cat.positivacao ? (comissaoAtual / cat.positivacao) * metaPosit : 0;
+    return { chave, label: labels_categoria[chave], atual: comissaoAtual, potencial: comissaoPotencial, ...cat, metaPosit };
+  });
+  const departamentosAtual = linhasCategorias.reduce((s, l) => s + l.atual, 0);
+  const departamentosPotencial = linhasCategorias.reduce((s, l) => s + l.potencial, 0);
 
   const pedidosAtual = taxa * rca.valor_vendido;
   const ticketMedio = rca.total_pedidos ? rca.valor_vendido / rca.total_pedidos : 0;
-  const pedidosPotencial = taxa * ticketMedio * meta_pedidos_dia * dias_uteis;
+  const pedidosPotencial = taxa * ticketMedio * config.metaPedidosDia * dias_uteis;
 
-  const linhas = [
-    { label: "Departamentos", atual: rca.departamentos.atual, potencial: rca.departamentos.potencial },
+  const linhasResumo = [
+    { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
     { label: "Industrializado", atual: estado.industrializado ? rca.industrializado_potencial : 0, potencial: rca.industrializado_potencial },
     { label: "Thermo", atual: estado.thermo ? rca.thermo_potencial : 0, potencial: rca.thermo_potencial },
     { label: "Pedidos", atual: pedidosAtual, potencial: pedidosPotencial },
@@ -228,33 +265,44 @@ function calcular(rca, taxaPct) {
     { label: "Prêmio Campanha", atual: estado.campanha ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
   ];
 
-  const soma = linhas.reduce((s, l) => s + (l.potencial - l.atual), 0);
+  const soma = linhasResumo.reduce((s, l) => s + (l.potencial - l.atual), 0);
   const salarioAtual = pedidosAtual;
   const salarioTotal = salarioAtual + soma;
 
-  return { linhas, soma, salarioAtual, salarioTotal, estado };
+  return { linhasCategorias, linhasResumo, soma, salarioAtual, salarioTotal, estado, ticketMedio };
 }
 
-function montarCard(rca, taxaPct) {
-  const r = calcular(rca, taxaPct);
+function montarConteudo(rca) {
+  const config = lerConfig();
+  const r = calcular(rca, config);
 
-  const linhasHtml = r.linhas.map(l => {
+  const linhasCatHtml = r.linhasCategorias.map(l => {
     const dif = l.potencial - l.atual;
     const classeDif = dif > 0.005 ? "dif-pos" : "dif-zero";
     return `<tr>
       <td>${l.label}</td>
+      <td>${l.peso.toLocaleString("pt-BR", {maximumFractionDigits:2})}</td>
+      <td>${fmtMoeda(l.valor)}</td>
+      <td>${l.positivacao}</td>
+      <td>${l.metaPosit}</td>
       <td>${fmtMoeda(l.atual)}</td>
       <td>${fmtMoeda(l.potencial)}</td>
       <td class="${classeDif}">${fmtMoeda(dif)}</td>
     </tr>`;
   }).join("");
 
+  const linhasResumoHtml = r.linhasResumo.map(l => {
+    const dif = l.potencial - l.atual;
+    const classeDif = dif > 0.005 ? "dif-pos" : "dif-zero";
+    return `<tr><td>${l.label}</td><td>${fmtMoeda(l.atual)}</td><td>${fmtMoeda(l.potencial)}</td><td class="${classeDif}">${fmtMoeda(dif)}</td></tr>`;
+  }).join("");
+
   const checks = [
-    ["industrializado", "Industrializado"],
-    ["thermo", "Thermo"],
-    ["dia15", "Dia 15"],
-    ["dia30", "Dia 30"],
-    ["campanha", "Campanha"],
+    ["industrializado", "Industrializado bateu"],
+    ["thermo", "Thermo bateu"],
+    ["dia15", "Positivação Dia 15 bateu"],
+    ["dia30", "Positivação Dia 30 bateu"],
+    ["campanha", "Prêmio Campanha bateu"],
   ].map(([chave, label]) => {
     const on = r.estado[chave] ? "on" : "";
     return `<label class="chk ${on}" data-chave="${chave}">
@@ -263,74 +311,97 @@ function montarCard(rca, taxaPct) {
   }).join("");
 
   return `
-  <article class="card" data-codigo="${rca.codigo}" data-supervisor="${rca.supervisor}">
-    <div class="card-head">
-      <h3>${rca.nome}</h3>
-      <span class="meta">RCA ${rca.codigo} · ${rca.supervisor}</span>
+    <div class="panel">
+      <div class="linha-cabecalho">
+        <div class="box"><div class="l">Valor Vendido</div><div class="v">${fmtMoeda(rca.valor_vendido)}</div></div>
+        <div class="box"><div class="l">Total de Pedidos</div><div class="v">${rca.total_pedidos}</div></div>
+        <div class="box"><div class="l">Ticket Médio</div><div class="v">${fmtMoeda(r.ticketMedio)}</div></div>
+        <div class="box"><div class="l">Supervisor</div><div class="v">${rca.supervisor}</div></div>
+      </div>
     </div>
-    <div class="checks">${checks}</div>
-    <table class="breakdown">
-      <thead><tr><th></th><th>Atual</th><th>Potencial</th><th>Diferença</th></tr></thead>
-      <tbody>${linhasHtml}</tbody>
-    </table>
-    <div class="summary">
-      <div class="box soma"><div class="l">Soma (upside)</div><div class="v">${fmtMoeda(r.soma)}</div></div>
-      <div class="box atual"><div class="l">Salário Atual</div><div class="v">${fmtMoeda(r.salarioAtual)}</div></div>
-      <div class="box total"><div class="l">Salário Total Potencial</div><div class="v">${fmtMoeda(r.salarioTotal)}</div></div>
+
+    <div class="panel">
+      <h2>Por categoria</h2>
+      <div style="overflow-x:auto">
+      <table class="breakdown">
+        <thead><tr><th>Categoria</th><th>Peso</th><th>Valor</th><th>Positivação</th><th>Meta Posit</th><th>Comissão Atual</th><th>Comissão Potencial</th><th>Diferença</th></tr></thead>
+        <tbody>${linhasCatHtml}</tbody>
+      </table>
+      </div>
     </div>
-  </article>`;
+
+    <div class="panel">
+      <h2>Bônus e desafios</h2>
+      <div class="checks">${checks}</div>
+    </div>
+
+    <div class="panel">
+      <h2>Resumo</h2>
+      <table class="breakdown">
+        <thead><tr><th>Tópico</th><th>Atual</th><th>Potencial</th><th>Diferença</th></tr></thead>
+        <tbody>${linhasResumoHtml}</tbody>
+      </table>
+      <div class="resumo-grid">
+        <div class="resumo-box soma"><span class="l">Somar (upside)</span><span class="v">${fmtMoeda(r.soma)}</span></div>
+        <div class="resumo-box atual"><span class="l">Salário Atual</span><span class="v">${fmtMoeda(r.salarioAtual)}</span></div>
+        <div class="resumo-box total"><span class="l">Salário Total Potencial</span><span class="v">${fmtMoeda(r.salarioTotal)}</span></div>
+      </div>
+      <button class="btn-limpar" id="btnLimpar">Limpar marcações deste vendedor</button>
+    </div>
+  `;
 }
 
-function montarTabs() {
-  const supervisores = [...new Set(DADOS.rcas.map(r => r.supervisor))].sort();
-  const contagem = s => DADOS.rcas.filter(r => r.supervisor === s).length;
-  const tabsEl = document.getElementById("tabs");
-  tabsEl.innerHTML =
-    `<button class="tab active" data-sup="__todos__">Todos <span class="count">${DADOS.rcas.length}</span></button>` +
-    supervisores.map(s => `<button class="tab" data-sup="${s}">${s} <span class="count">${contagem(s)}</span></button>`).join("");
-  tabsEl.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab");
-    if (!btn) return;
-    tabsEl.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    btn.classList.add("active");
-    const sup = btn.dataset.sup;
-    document.querySelectorAll(".card").forEach(c => {
-      c.style.display = (sup === "__todos__" || c.dataset.supervisor === sup) ? "" : "none";
-    });
+function renderizarRca() {
+  const codigo = parseInt(document.getElementById("codigoInput").value);
+  const conteudo = document.getElementById("conteudo");
+  const nomeAtual = document.getElementById("nomeAtual");
+  const rotaAtual = document.getElementById("rotaAtual");
+
+  const rca = RCAS_POR_CODIGO[codigo];
+  if (!rca) {
+    nomeAtual.textContent = "";
+    rotaAtual.textContent = "";
+    conteudo.innerHTML = codigo ? `<div class="vazio">RCA ${codigo} não encontrado.</div>` : `<div class="vazio">Digite um código de RCA acima pra começar.</div>`;
+    return;
+  }
+
+  nomeAtual.textContent = rca.nome;
+  rotaAtual.textContent = `RCA ${rca.codigo} · ${rca.rota}`;
+  conteudo.innerHTML = montarConteudo(rca);
+
+  conteudo.addEventListener("change", (e) => {
+    const input = e.target.closest("input[type=checkbox]");
+    if (!input) return;
+    const chave = input.dataset.chave;
+    const estado = lerEstado(rca.codigo);
+    estado[chave] = input.checked;
+    salvarEstado(rca.codigo, estado);
+    renderizarRca();
   });
+
+  const btnLimpar = document.getElementById("btnLimpar");
+  if (btnLimpar) {
+    btnLimpar.addEventListener("click", () => {
+      limparEstado(rca.codigo);
+      renderizarRca();
+    });
+  }
 }
 
-function renderizar() {
-  const taxaPct = lerTaxa();
-  document.getElementById("taxaInput").value = taxaPct.toFixed(2);
-  document.getElementById("diasUteis").textContent = DADOS.constantes.dias_uteis;
-  document.getElementById("metaPedidosDia").textContent = DADOS.constantes.meta_pedidos_dia;
-  document.getElementById("subtitle").textContent =
-    `${DADOS.rcas.length} RCAs — simulação de salário atual x potencial`;
-
-  const ordenados = DADOS.rcas.slice().sort((a, b) => a.nome.localeCompare(b.nome));
-  document.getElementById("grid").innerHTML = ordenados.map(r => montarCard(r, taxaPct)).join("");
+function montarDatalist() {
+  const opts = DADOS.rcas
+    .slice()
+    .sort((a, b) => a.nome.localeCompare(b.nome))
+    .map(r => `<option value="${r.codigo}">${r.nome} — RCA ${r.codigo}</option>`)
+    .join("");
+  document.getElementById("rcaList").innerHTML = opts;
 }
 
-document.getElementById("taxaInput").addEventListener("input", (e) => {
-  const v = parseFloat(e.target.value);
-  if (!isNaN(v)) { salvarTaxa(v); renderizar(); }
-});
+document.getElementById("codigoInput").addEventListener("input", renderizarRca);
 
-document.getElementById("grid").addEventListener("change", (e) => {
-  const input = e.target.closest("input[type=checkbox]");
-  if (!input) return;
-  const card = e.target.closest(".card");
-  const codigo = card.dataset.codigo;
-  const chave = input.dataset.chave;
-  const estado = lerEstado(codigo);
-  estado[chave] = input.checked;
-  salvarEstado(codigo, estado);
-  renderizar();
-});
-
-montarTabs();
-renderizar();
+montarDatalist();
+montarConfigGrid();
+renderizarRca();
 </script>
 </body>
 </html>

@@ -4,9 +4,11 @@ Extrai os dados do painel "Melhoria Salarial" a partir de RESULTADO.xlsm
 consumir.
 
 A planilha original (abas ITENS FOCO / RESUMO) só calcula 1 RCA por vez —
-o código digitado em ITENS FOCO!C8 decide quem aparece. Este script
-reproduz a MESMA lógica de fórmulas da planilha, mas rodando pra TODOS os
-RCAs de uma vez, lendo direto das abas de origem:
+o código digitado em ITENS FOCO!C8 decide quem aparece. O painel gerado
+reproduz esse MESMO jeito de trabalhar (digita o código, vê só aquele
+vendedor), então este script exporta os dados BRUTOS de TODOS os RCAs
+(pra não precisar reabrir o Excel a cada troca de vendedor) e deixa toda
+a matemática (comissão, metas, checkboxes) pro JavaScript do painel:
 
 - '315' (ROTINA315): 1 linha por RCA — nome (col B), total de pedidos
   (col G), valor vendido (col J).
@@ -14,24 +16,24 @@ RCAs de uma vez, lendo direto das abas de origem:
   1 linha por RCA — peso (col K), valor realizado (col L), positivação
   (col D).
 
-Por categoria, meta de positivação (I na ITENS FOCO) e taxa de comissão
-(G na ITENS FOCO) são fixas pra empresa toda (confirmado lendo a fórmula
-de cada bloco, 21/08):
-  bacon=3% calabresa=3% frescais=3% paes=3% lactios=3% batata=3%
-  bovino=1,5% suino=3%
-  metas: bacon=5 calabresa=22 frescais=15 paes=17 lactios=23 batata=15
-         bovino=10 suino=6
+Taxa de comissão por categoria é fixa pra empresa toda (confirmado lendo
+a fórmula de cada bloco, 21/08): bacon=3% calabresa=3% frescais=3%
+paes=3% lactios=3% batata=3% bovino=1,5% suino=3% — exportada em
+constantes.taxas_categoria.
+
+Meta de positivação por categoria (I na ITENS FOCO), meta de pedidos/dia
+(P17) e a taxa média de comissão sobre pedidos (O11) eram fixas na
+planilha, mas viram CONFIGURAÇÃO EDITÁVEL no painel (o Edmar ajusta e
+recalcula na hora pra qualquer vendedor) — aqui só exportamos os valores
+atuais como ponto de partida, em constantes.metas_categoria_padrao /
+meta_pedidos_dia / taxa_padrao.
 
 Industrializado/Thermo/Positivação Dia 15/Dia 30/Prêmio Campanha usam
 CHECKBOX MANUAL na planilha original (M17/M20/S11/S14/V11) — não tem
 fórmula, é o Edmar revisando RCA por RCA. Aqui a gente só extrai o valor
 "potencial" (o teto de cada bônus, se bater a meta); o "bateu ou não" fica
 editável no próprio painel (checkbox no navegador, guardado no
-localStorage — ver gerar_painel.py).
-
-A taxa média de comissão sobre pedidos (ITENS FOCO!O11, hoje 0,0178) e o
-Salário Atual/Total que dependem dela também ficam editáveis no painel —
-aqui só exportamos valor_vendido e total_pedidos pra recalcular ao vivo.
+localStorage por RCA — ver gerar_painel.py).
 """
 
 import json
@@ -119,25 +121,13 @@ def extrair():
         total_pedidos = _num(row[6])   # G
         valor_vendido = _num(row[9])   # J
 
+        # Só os dados brutos por categoria (peso/valor/positivação) — a
+        # comissão atual/potencial é calculada no navegador, porque a meta
+        # de positivação e a meta de pedidos agora são editáveis ali.
         categorias_dados = {}
-        soma_atual = soma_potencial = 0.0
-        for chave, label, _aba, taxa, meta_posit in CATEGORIAS:
+        for chave, _label, _aba, _taxa, _meta_posit in CATEGORIAS:
             info = cache_categorias[chave].get(codigo, {"peso": 0, "valor": 0, "positivacao": 0})
-            comissao_atual = info["valor"] * taxa
-            comissao_potencial = (
-                (comissao_atual / info["positivacao"]) * meta_posit if info["positivacao"] else 0
-            )
-            categorias_dados[chave] = {
-                "label": label,
-                "peso": info["peso"],
-                "valor": info["valor"],
-                "positivacao": info["positivacao"],
-                "meta_positivacao": meta_posit,
-                "comissao_atual": comissao_atual,
-                "comissao_potencial": comissao_potencial,
-            }
-            soma_atual += comissao_atual
-            soma_potencial += comissao_potencial
+            categorias_dados[chave] = info
 
         # Industrializado/Thermo: mesma base de cálculo da planilha —
         # 25% do valor vendido é a meta industrializado, 3% é a meta
@@ -155,13 +145,25 @@ def extrair():
             "valor_vendido": valor_vendido,
             "total_pedidos": total_pedidos,
             "categorias": categorias_dados,
-            "departamentos": {"atual": soma_atual, "potencial": soma_potencial},
             "industrializado_potencial": industrializado_potencial,
             "thermo_potencial": thermo_potencial,
             "premio_fixo": PREMIO_FIXO,
         })
 
-    return rcas, {"dias_uteis": dias_uteis, "meta_pedidos_dia": meta_pedidos_dia, "taxa_padrao": taxa_padrao}
+    metas_categoria_padrao = {chave: meta_posit for chave, _, _aba, _taxa, meta_posit in CATEGORIAS}
+    taxas_categoria = {chave: taxa for chave, _, _aba, taxa, _meta_posit in CATEGORIAS}
+    labels_categoria = {chave: label for chave, label, _aba, _taxa, _meta_posit in CATEGORIAS}
+
+    constantes = {
+        "dias_uteis": dias_uteis,
+        "meta_pedidos_dia": meta_pedidos_dia,
+        "taxa_padrao": taxa_padrao,
+        "metas_categoria_padrao": metas_categoria_padrao,
+        "taxas_categoria": taxas_categoria,
+        "labels_categoria": labels_categoria,
+        "ordem_categorias": [chave for chave, *_ in CATEGORIAS],
+    }
+    return rcas, constantes
 
 
 def main():
