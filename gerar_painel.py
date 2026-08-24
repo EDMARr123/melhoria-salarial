@@ -76,6 +76,7 @@ header.top p { margin: 0 0 18px; color: var(--ink-soft); font-size: 13.5px; }
   border: 1px solid var(--border); background: var(--surface-2); color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
+.campo input:disabled { color: var(--accent); border-style: dashed; opacity: 1; }
 #codigoInput { width: 110px; }
 #nomeAtual { font-size: 15px; font-weight: 800; color: var(--accent); align-self: center; padding-bottom: 8px; }
 .rota-atual { font-size: 12.5px; color: var(--ink-faint); align-self: center; padding-bottom: 8px; }
@@ -290,10 +291,14 @@ function montarConteudo(rca) {
           <input type="number" step="0.01" min="0" id="cfgTaxaInline" value="${config.taxaPct}">
         </div>
         <div class="campo">
+          <label>Média de pedidos/dia</label>
+          <input type="text" disabled value="${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {maximumFractionDigits:2})}">
+        </div>
+        <div class="campo">
           <label>Meta de pedidos/dia</label>
           <input type="number" step="1" min="0" id="cfgMetaPedidosInline" value="${config.metaPedidosDia}">
         </div>
-        <div class="rota-atual">Qtd atual de pedidos: <b>${rca.total_pedidos}</b> · Média/dia útil: <b>${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {maximumFractionDigits:2})}</b></div>
+        <div class="rota-atual">Qtd atual de pedidos no mês: <b>${rca.total_pedidos}</b></div>
       </div>
     </div>
 
