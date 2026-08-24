@@ -79,6 +79,10 @@ table.breakdown td { text-align: right; padding: 6px 6px; font-variant-numeric: 
 table.breakdown tr:last-child td { border-bottom: none; }
 table.breakdown td.dif-pos { color: var(--good); }
 table.breakdown td.dif-zero { color: var(--ink-faint); font-weight: 500; }
+table.breakdown input.meta-posit-input {
+  width: 56px; font: inherit; font-size: 12.5px; font-weight: 800; text-align: center;
+  padding: 4px 4px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); color: var(--accent);
+}
 
 .checks { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
 .chk {
@@ -171,26 +175,14 @@ function salvarConfig(config) {
 
 function montarConfigGrid() {
   const config = lerConfig();
-  const ordem = DADOS.constantes.ordem_categorias;
-  const labels = DADOS.constantes.labels_categoria;
-
-  let html = `
+  document.getElementById("configGrid").innerHTML = `
     <div class="campo"><label>Taxa média comissão (%)</label>
       <input type="number" step="0.01" min="0" id="cfgTaxa" value="${config.taxaPct}"></div>
-    <div class="campo"><label>Meta pedidos/dia</label>
-      <input type="number" step="1" min="0" id="cfgMetaPedidos" value="${config.metaPedidosDia}"></div>
   `;
-  ordem.forEach(chave => {
-    html += `<div class="campo"><label>Meta posit. ${labels[chave]}</label>
-      <input type="number" step="1" min="0" class="cfgMetaCategoria" data-chave="${chave}" value="${config.metasCategoria[chave]}"></div>`;
-  });
-  document.getElementById("configGrid").innerHTML = html;
-
   document.getElementById("configGrid").addEventListener("input", (e) => {
+    if (e.target.id !== "cfgTaxa") return;
     const cfg = lerConfig();
-    if (e.target.id === "cfgTaxa") cfg.taxaPct = parseFloat(e.target.value) || 0;
-    else if (e.target.id === "cfgMetaPedidos") cfg.metaPedidosDia = parseFloat(e.target.value) || 0;
-    else if (e.target.classList.contains("cfgMetaCategoria")) cfg.metasCategoria[e.target.dataset.chave] = parseFloat(e.target.value) || 0;
+    cfg.taxaPct = parseFloat(e.target.value) || 0;
     salvarConfig(cfg);
     renderizarRca();
   });
@@ -264,7 +256,7 @@ function montarConteudo(rca) {
       <td>${l.peso.toLocaleString("pt-BR", {maximumFractionDigits:2})}</td>
       <td>${fmtMoeda(l.valor)}</td>
       <td>${l.positivacao}</td>
-      <td>${l.metaPosit}</td>
+      <td><input type="number" step="1" min="0" class="meta-posit-input" data-chave="${l.chave}" value="${l.metaPosit}"></td>
       <td>${fmtMoeda(l.atual)}</td>
       <td>${fmtMoeda(l.potencial)}</td>
       <td class="${classeDif}">${fmtMoeda(dif)}</td>
@@ -297,6 +289,16 @@ function montarConteudo(rca) {
         <div class="box"><div class="l">Total de Pedidos</div><div class="v">${rca.total_pedidos}</div></div>
         <div class="box"><div class="l">Ticket Médio</div><div class="v">${fmtMoeda(r.ticketMedio)}</div></div>
         <div class="box"><div class="l">Supervisor</div><div class="v">${rca.supervisor}</div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="busca-row">
+        <div class="campo">
+          <label>Meta de pedidos/dia</label>
+          <input type="number" step="1" min="0" id="cfgMetaPedidosInline" value="${config.metaPedidosDia}">
+        </div>
+        <div class="rota-atual">Qtd atual de pedidos: <b>${rca.total_pedidos}</b> · Média/dia útil: <b>${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {maximumFractionDigits:2})}</b></div>
       </div>
     </div>
 
@@ -337,6 +339,15 @@ function renderizarRca() {
   const nomeAtual = document.getElementById("nomeAtual");
   const rotaAtual = document.getElementById("rotaAtual");
 
+  // Campos de meta são editados ao vivo (digitando) — como o innerHTML
+  // inteiro é reconstruído a cada tecla, sem isto o campo perderia o foco
+  // e o cursor a cada dígito. Guarda quem estava focado e devolve o foco
+  // depois de redesenhar.
+  const ativo = document.activeElement;
+  const focoAntes = (ativo && conteudo.contains(ativo) && ativo.tagName === "INPUT")
+    ? { id: ativo.id, chave: ativo.dataset.chave, inicio: ativo.selectionStart, fim: ativo.selectionEnd }
+    : null;
+
   const rca = RCAS_POR_CODIGO[codigo];
   if (!rca) {
     nomeAtual.textContent = "";
@@ -349,24 +360,54 @@ function renderizarRca() {
   rotaAtual.textContent = `RCA ${rca.codigo} · ${rca.rota}`;
   conteudo.innerHTML = montarConteudo(rca);
 
-  conteudo.addEventListener("change", (e) => {
-    const input = e.target.closest("input[type=checkbox]");
-    if (!input) return;
-    const chave = input.dataset.chave;
-    const estado = lerEstado(rca.codigo);
-    estado[chave] = input.checked;
-    salvarEstado(rca.codigo, estado);
-    renderizarRca();
-  });
-
-  const btnLimpar = document.getElementById("btnLimpar");
-  if (btnLimpar) {
-    btnLimpar.addEventListener("click", () => {
-      limparEstado(rca.codigo);
-      renderizarRca();
-    });
+  if (focoAntes) {
+    const seletor = focoAntes.chave
+      ? `[data-chave="${focoAntes.chave}"]`
+      : (focoAntes.id ? `#${focoAntes.id}` : null);
+    const novo = seletor && conteudo.querySelector(seletor);
+    if (novo) {
+      novo.focus();
+      try { novo.setSelectionRange(focoAntes.inicio, focoAntes.fim); } catch (e) {}
+    }
   }
 }
+
+// Delegação anexada 1 vez só (o #conteudo em si nunca é recriado, só o
+// innerHTML dele — anexar listener dentro de renderizarRca() empilharia
+// um novo listener duplicado a cada troca de RCA/checkbox).
+document.getElementById("conteudo").addEventListener("change", (e) => {
+  const chk = e.target.closest("input[type=checkbox][data-chave]");
+  if (chk) {
+    const codigo = parseInt(document.getElementById("codigoInput").value);
+    const chave = chk.dataset.chave;
+    const estado = lerEstado(codigo);
+    estado[chave] = chk.checked;
+    salvarEstado(codigo, estado);
+    renderizarRca();
+    return;
+  }
+});
+
+document.getElementById("conteudo").addEventListener("input", (e) => {
+  if (e.target.classList.contains("meta-posit-input")) {
+    const cfg = lerConfig();
+    cfg.metasCategoria[e.target.dataset.chave] = parseFloat(e.target.value) || 0;
+    salvarConfig(cfg);
+    renderizarRca();
+  } else if (e.target.id === "cfgMetaPedidosInline") {
+    const cfg = lerConfig();
+    cfg.metaPedidosDia = parseFloat(e.target.value) || 0;
+    salvarConfig(cfg);
+    renderizarRca();
+  }
+});
+
+document.getElementById("conteudo").addEventListener("click", (e) => {
+  if (!e.target.closest("#btnLimpar")) return;
+  const codigo = parseInt(document.getElementById("codigoInput").value);
+  limparEstado(codigo);
+  renderizarRca();
+});
 
 function montarDatalist() {
   const opts = DADOS.rcas
