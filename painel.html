@@ -60,13 +60,6 @@ header.top p { margin: 0 0 18px; color: var(--ink-soft); font-size: 13.5px; }
 #nomeAtual { font-size: 15px; font-weight: 800; color: var(--accent); align-self: center; padding-bottom: 8px; }
 .rota-atual { font-size: 12.5px; color: var(--ink-faint); align-self: center; padding-bottom: 8px; }
 
-.config-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px 16px; }
-.config-grid .campo input { width: 100%; }
-details.config-toggle summary { cursor: pointer; font-weight: 800; font-size: 13px; color: var(--accent); list-style: none; }
-details.config-toggle summary::-webkit-details-marker { display: none; }
-details.config-toggle summary::before { content: "⚙ "; }
-details.config-toggle[open] summary { margin-bottom: 14px; }
-
 .linha-cabecalho { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 4px; }
 .linha-cabecalho .box { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; }
 .linha-cabecalho .box .l { font-size: 10.5px; font-weight: 800; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px; }
@@ -130,13 +123,6 @@ table.breakdown input.meta-posit-input {
     </div>
   </div>
 
-  <div class="panel">
-    <details class="config-toggle">
-      <summary>Configurações (metas e taxa — valem pra qualquer vendedor)</summary>
-      <div class="config-grid" id="configGrid"></div>
-    </details>
-  </div>
-
   <div id="conteudo"></div>
 
   <p class="foot">Dados extraídos de RESULTADO.xlsm (MELHORIA SALARIO) · gerado automaticamente</p>
@@ -171,21 +157,6 @@ function lerConfig() {
 
 function salvarConfig(config) {
   try { localStorage.setItem("melhoria_salarial_config", JSON.stringify(config)); } catch (e) {}
-}
-
-function montarConfigGrid() {
-  const config = lerConfig();
-  document.getElementById("configGrid").innerHTML = `
-    <div class="campo"><label>Taxa média comissão (%)</label>
-      <input type="number" step="0.01" min="0" id="cfgTaxa" value="${config.taxaPct}"></div>
-  `;
-  document.getElementById("configGrid").addEventListener("input", (e) => {
-    if (e.target.id !== "cfgTaxa") return;
-    const cfg = lerConfig();
-    cfg.taxaPct = parseFloat(e.target.value) || 0;
-    salvarConfig(cfg);
-    renderizarRca();
-  });
 }
 
 // ---- Estado por RCA (checkboxes) ----
@@ -295,6 +266,10 @@ function montarConteudo(rca) {
     <div class="panel">
       <div class="busca-row">
         <div class="campo">
+          <label>Taxa média comissão (%)</label>
+          <input type="number" step="0.01" min="0" id="cfgTaxaInline" value="${config.taxaPct}">
+        </div>
+        <div class="campo">
           <label>Meta de pedidos/dia</label>
           <input type="number" step="1" min="0" id="cfgMetaPedidosInline" value="${config.metaPedidosDia}">
         </div>
@@ -399,6 +374,11 @@ document.getElementById("conteudo").addEventListener("input", (e) => {
     cfg.metaPedidosDia = parseFloat(e.target.value) || 0;
     salvarConfig(cfg);
     renderizarRca();
+  } else if (e.target.id === "cfgTaxaInline") {
+    const cfg = lerConfig();
+    cfg.taxaPct = parseFloat(e.target.value) || 0;
+    salvarConfig(cfg);
+    renderizarRca();
   }
 });
 
@@ -421,7 +401,6 @@ function montarDatalist() {
 document.getElementById("codigoInput").addEventListener("input", renderizarRca);
 
 montarDatalist();
-montarConfigGrid();
 renderizarRca();
 </script>
 </body>
