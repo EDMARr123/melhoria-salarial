@@ -302,7 +302,7 @@ function montarConteudo(rca) {
     </div>
 
     <div class="panel">
-      <div class="busca-row">
+      <div class="busca-row" style="align-items:flex-start">
         <div class="campo">
           <label>Taxa média comissão (%)</label>
           <input type="text" inputmode="decimal" id="cfgTaxaInline" value="${fmtInput(config.taxaPct)}">
