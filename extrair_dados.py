@@ -57,9 +57,14 @@ CATEGORIAS = [
     ("batata", "Batata", "BATATA", 0.03, 15),
     ("bovino", "Bovino", "BOVINO", 0.015, 10),
     ("suino", "Suíno", "SUINO", 0.03, 6),
+    ("thermo_cat", "Thermo", "THERMO", 0.03, 6),
+    ("vegetais", "Vegetais", "VEGETAIS", 0.03, 6),
 ]
 
 PREMIO_FIXO = 150  # teto de Dia 15 / Dia 30 / Campanha (mesmo valor pra todo mundo, confirmado em ITENS FOCO)
+
+RECOMPRA_LIMITE = 0.20  # ITENS FOCO!Y10 = SE(X10<20%, 150, 0)
+RECOMPRA_PREMIO = 150
 
 
 def _num(v):
@@ -82,6 +87,37 @@ def _ler_categoria(wb, nome_aba):
             "positivacao": _num(row[3]),  # D
         }
     return out
+
+
+def _ler_recompra(wb):
+    """Recompra é automática (não tem checkbox de 'bateu' na planilha) —
+    calculada a partir da aba '8110' (1 linha por cliente atendido por
+    RCA). % = quantos clientes fizeram só 1 pedido (QTPED=1, coluna Q) /
+    total de clientes do RCA. Ganha R$150 se essa % ficar abaixo de 20%
+    (ITENS FOCO!X10/Y10) — quanto menor, melhor (menos cliente "de
+    passagem", mais gente recomprando)."""
+    if "8110" not in wb.sheetnames:
+        return {}
+    ws = wb["8110"]
+    total_por_rca = {}
+    um_pedido_por_rca = {}
+    primeiro = True
+    for row in ws.iter_rows(values_only=True):
+        if primeiro:
+            primeiro = False
+            continue  # cabeçalho
+        codigo = row[0]
+        if codigo is None:
+            continue
+        codigo = int(codigo)
+        qtped = row[16] if len(row) > 16 else None  # Q
+        total_por_rca[codigo] = total_por_rca.get(codigo, 0) + 1
+        if qtped == 1:
+            um_pedido_por_rca[codigo] = um_pedido_por_rca.get(codigo, 0) + 1
+    return {
+        codigo: (um_pedido_por_rca.get(codigo, 0) / total) if total else 0
+        for codigo, total in total_por_rca.items()
+    }
 
 
 def _ler_supervisores():
@@ -122,6 +158,7 @@ def extrair():
     cache_categorias = {chave: _ler_categoria(wb, aba) for chave, _, aba, _, _ in CATEGORIAS}
     supervisores = _ler_supervisores()
     industrializado_pilares = _ler_industrializado_pilares()
+    recompra_por_rca = _ler_recompra(wb)
 
     ws315 = wb["315"]
     rcas = []
@@ -168,6 +205,7 @@ def extrair():
             "premio_fixo": PREMIO_FIXO,
             "industrializado_participacao_pct": industrializado_pilares.get(codigo, {}).get("participacao_pct", 0),
             "industrializado_margem_pct": industrializado_pilares.get(codigo, {}).get("margem_pct", 0),
+            "recompra_pct": recompra_por_rca.get(codigo, 0),
         })
 
     metas_categoria_padrao = {chave: meta_posit for chave, _, _aba, _taxa, meta_posit in CATEGORIAS}
@@ -182,6 +220,8 @@ def extrair():
         "taxas_categoria": taxas_categoria,
         "labels_categoria": labels_categoria,
         "ordem_categorias": [chave for chave, *_ in CATEGORIAS],
+        "recompra_limite": RECOMPRA_LIMITE,
+        "recompra_premio": RECOMPRA_PREMIO,
     }
     return rcas, constantes
 

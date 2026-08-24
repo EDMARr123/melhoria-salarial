@@ -331,13 +331,19 @@ function calcular(rca, config) {
   const ticketMedio = rca.total_pedidos ? rca.valor_vendido / rca.total_pedidos : 0;
   const pedidosPotencial = taxa * ticketMedio * config.metaPedidosDia * dias_uteis;
 
+  // Recompra não tem checkbox — é automática, calculada de verdade a
+  // partir dos clientes atendidos (aba 8110): ganha o prêmio se a % de
+  // clientes que só compraram 1 vez ficar abaixo do limite.
+  const recompraBonus = rca.recompra_pct < DADOS.constantes.recompra_limite ? DADOS.constantes.recompra_premio : 0;
+
   const linhasResumo = [
     { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
-    { label: "Industrializado", atual: estado.industrializado ? rca.industrializado_potencial : 0, potencial: rca.industrializado_potencial },
-    { label: "Thermo", atual: estado.thermo ? rca.thermo_potencial : 0, potencial: rca.thermo_potencial },
+    { label: "Bônus Industrializado", atual: estado.industrializado ? rca.industrializado_potencial : 0, potencial: rca.industrializado_potencial },
+    { label: "Bônus Thermo", atual: estado.thermo ? rca.thermo_potencial : 0, potencial: rca.thermo_potencial },
     { label: "Pedidos", atual: pedidosAtual, potencial: pedidosPotencial },
     { label: "Bônus Dia 15", atual: estado.dia15 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
     { label: "Bônus Dia 30", atual: estado.dia30 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
+    { label: "Recompra", atual: 0, potencial: recompraBonus },
     { label: "Prêmio Campanha", atual: estado.campanha ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
   ];
 
@@ -410,7 +416,8 @@ function montarConteudo(rca) {
         </div>
         <div class="media-pedidos-linha">
           QTD NO MÊS: ${rca.total_pedidos}<br>
-          MÉDIA DE PEDIDOS: ${Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis)}
+          MÉDIA DE PEDIDOS: ${Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis)}<br>
+          RECOMPRA: ${fmtPct(rca.recompra_pct)}
         </div>
         <div class="media-pedidos-linha" style="margin-left:auto;text-align:right">
           PARTICIPAÇÃO INDUSTRIALIZADO: ${fmtPct(rca.industrializado_participacao_pct)}<br>

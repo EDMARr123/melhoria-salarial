@@ -47,13 +47,24 @@
           "peso": 22,
           "valor": 417.78,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 4798.2,
+          "valor": 70519.59,
+          "positivacao": 20
+        },
+        "vegetais": {
+          "peso": 4798.2,
+          "valor": 70519.59,
+          "positivacao": 20
         }
       },
       "industrializado_potencial": 4066.860975,
       "thermo_potencial": 976.0466339999999,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.25827301194968716,
-      "industrializado_margem_pct": 0.10663773220471706
+      "industrializado_margem_pct": 0.10663773220471706,
+      "recompra_pct": 0.25925925925925924
     },
     {
       "codigo": 23,
@@ -102,13 +113,24 @@
           "peso": 306.604,
           "valor": 6374.3,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 1135.44,
+          "valor": 16462.87,
+          "positivacao": 7
+        },
+        "vegetais": {
+          "peso": 1135.44,
+          "valor": 16462.87,
+          "positivacao": 7
         }
       },
       "industrializado_potencial": 2846.0444500000003,
       "thermo_potencial": 683.050668,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.1317370355307602,
-      "industrializado_margem_pct": 0.17517303103951484
+      "industrializado_margem_pct": 0.17517303103951484,
+      "recompra_pct": 0.3220338983050847
     },
     {
       "codigo": 164,
@@ -157,13 +179,24 @@
           "peso": 98.089,
           "valor": 1492.27,
           "positivacao": 4
+        },
+        "thermo_cat": {
+          "peso": 943.8,
+          "valor": 15303.66,
+          "positivacao": 36
+        },
+        "vegetais": {
+          "peso": 943.8,
+          "valor": 15303.66,
+          "positivacao": 36
         }
       },
       "industrializado_potencial": 1213.387825,
       "thermo_potencial": 291.213078,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.18452035140190573,
-      "industrializado_margem_pct": 0.21737992944901116
+      "industrializado_margem_pct": 0.21737992944901116,
+      "recompra_pct": 0.21782178217821782
     },
     {
       "codigo": 383,
@@ -212,13 +245,24 @@
           "peso": 103.685,
           "valor": 2428.67,
           "positivacao": 4
+        },
+        "thermo_cat": {
+          "peso": 447.904,
+          "valor": 8531.41,
+          "positivacao": 32
+        },
+        "vegetais": {
+          "peso": 447.904,
+          "valor": 8531.41,
+          "positivacao": 32
         }
       },
       "industrializado_potencial": 1115.32415,
       "thermo_potencial": 267.677796,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.11305762793307081,
-      "industrializado_margem_pct": 0.274802810794432
+      "industrializado_margem_pct": 0.274802810794432,
+      "recompra_pct": 0.24468085106382978
     },
     {
       "codigo": 45,
@@ -267,13 +311,24 @@
           "peso": 197.124,
           "valor": 2701.73,
           "positivacao": 4
+        },
+        "thermo_cat": {
+          "peso": 822.88,
+          "valor": 13284.54,
+          "positivacao": 20
+        },
+        "vegetais": {
+          "peso": 822.88,
+          "valor": 13284.54,
+          "positivacao": 20
         }
       },
       "industrializado_potencial": 982.9491499999999,
       "thermo_potencial": 235.907796,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.15832621199395627,
-      "industrializado_margem_pct": 0.2305941826526006
+      "industrializado_margem_pct": 0.2305941826526006,
+      "recompra_pct": 0.37373737373737376
     },
     {
       "codigo": 47,
@@ -322,13 +377,24 @@
           "peso": 80,
           "valor": 1986.35,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 1486.856,
+          "valor": 26801.46,
+          "positivacao": 50
+        },
+        "vegetais": {
+          "peso": 1486.856,
+          "valor": 26801.46,
+          "positivacao": 50
         }
       },
       "industrializado_potencial": 960.652425,
       "thermo_potencial": 230.556582,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.21571198422185875,
-      "industrializado_margem_pct": 0.25108071716078806
+      "industrializado_margem_pct": 0.25108071716078806,
+      "recompra_pct": 0.1834862385321101
     },
     {
       "codigo": 405,
@@ -377,13 +443,24 @@
           "peso": 162.489,
           "valor": 3048.74,
           "positivacao": 5
+        },
+        "thermo_cat": {
+          "peso": 1779.36,
+          "valor": 23498.92,
+          "positivacao": 23
+        },
+        "vegetais": {
+          "peso": 1779.36,
+          "valor": 23498.92,
+          "positivacao": 23
         }
       },
       "industrializado_potencial": 945.5708999999999,
       "thermo_potencial": 226.93701599999997,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.161378213449816,
-      "industrializado_margem_pct": 0.18355649465251647
+      "industrializado_margem_pct": 0.18355649465251647,
+      "recompra_pct": 0.40869565217391307
     },
     {
       "codigo": 85,
@@ -432,13 +509,24 @@
           "peso": 152.893,
           "valor": 2502.31,
           "positivacao": 5
+        },
+        "thermo_cat": {
+          "peso": 786.072,
+          "valor": 13898.11,
+          "positivacao": 51
+        },
+        "vegetais": {
+          "peso": 786.072,
+          "valor": 13898.11,
+          "positivacao": 51
         }
       },
       "industrializado_potencial": 930.3529,
       "thermo_potencial": 223.28469599999997,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.2412506875968767,
-      "industrializado_margem_pct": 0.24354580805791565
+      "industrializado_margem_pct": 0.24354580805791565,
+      "recompra_pct": 0.1717171717171717
     },
     {
       "codigo": 439,
@@ -487,13 +575,24 @@
           "peso": 442.115,
           "valor": 7306.39,
           "positivacao": 7
+        },
+        "thermo_cat": {
+          "peso": 1760.088,
+          "valor": 32907.04,
+          "positivacao": 29
+        },
+        "vegetais": {
+          "peso": 1760.088,
+          "valor": 32907.04,
+          "positivacao": 29
         }
       },
       "industrializado_potencial": 789.0876,
       "thermo_potencial": 189.381024,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.2077894603891598,
-      "industrializado_margem_pct": 0.23244480230934605
+      "industrializado_margem_pct": 0.23244480230934605,
+      "recompra_pct": 0.24468085106382978
     },
     {
       "codigo": 738,
@@ -542,13 +641,24 @@
           "peso": 81.478,
           "valor": 1083.82,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 872.712,
+          "valor": 13757.61,
+          "positivacao": 40
+        },
+        "vegetais": {
+          "peso": 872.712,
+          "valor": 13757.61,
+          "positivacao": 40
         }
       },
       "industrializado_potencial": 766.2486500000001,
       "thermo_potencial": 183.899676,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.2121874746820989,
-      "industrializado_margem_pct": 0.21631728075146872
+      "industrializado_margem_pct": 0.21631728075146872,
+      "recompra_pct": 0.21839080459770116
     },
     {
       "codigo": 81,
@@ -597,13 +707,24 @@
           "peso": 27.68,
           "valor": 862.05,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 1083.368,
+          "valor": 18608.43,
+          "positivacao": 37
+        },
+        "vegetais": {
+          "peso": 1083.368,
+          "valor": 18608.43,
+          "positivacao": 37
         }
       },
       "industrializado_potencial": 736.365625,
       "thermo_potencial": 176.72775,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.28111717908804396,
-      "industrializado_margem_pct": 0.2308522769587227
+      "industrializado_margem_pct": 0.2308522769587227,
+      "recompra_pct": 0.2871287128712871
     },
     {
       "codigo": 428,
@@ -652,13 +773,24 @@
           "peso": 56.05,
           "valor": 919.21,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 639.864,
+          "valor": 11739.14,
+          "positivacao": 37
+        },
+        "vegetais": {
+          "peso": 639.864,
+          "valor": 11739.14,
+          "positivacao": 37
         }
       },
       "industrializado_potencial": 726.67235,
       "thermo_potencial": 174.401364,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.24861115677617596,
-      "industrializado_margem_pct": 0.22478491968165965
+      "industrializado_margem_pct": 0.22478491968165965,
+      "recompra_pct": 0.3473684210526316
     },
     {
       "codigo": 657,
@@ -707,13 +839,24 @@
           "peso": 223.697,
           "valor": 3948.12,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 465.048,
+          "valor": 7609.91,
+          "positivacao": 19
+        },
+        "vegetais": {
+          "peso": 465.048,
+          "valor": 7609.91,
+          "positivacao": 19
         }
       },
       "industrializado_potencial": 709.8517750000001,
       "thermo_potencial": 170.36442600000004,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.2064628535990894,
-      "industrializado_margem_pct": 0.24486590078471474
+      "industrializado_margem_pct": 0.24486590078471474,
+      "recompra_pct": 0.2222222222222222
     },
     {
       "codigo": 729,
@@ -762,13 +905,24 @@
           "peso": 31.63,
           "valor": 479.22,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 192.096,
+          "valor": 3537.53,
+          "positivacao": 12
+        },
+        "vegetais": {
+          "peso": 192.096,
+          "valor": 3537.53,
+          "positivacao": 12
         }
       },
       "industrializado_potencial": 708.221125,
       "thermo_potencial": 169.97307,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.09857334296230576,
-      "industrializado_margem_pct": 0.2079283193936018
+      "industrializado_margem_pct": 0.2079283193936018,
+      "recompra_pct": 0.28378378378378377
     },
     {
       "codigo": 42,
@@ -817,13 +971,24 @@
           "peso": 329.071,
           "valor": 8844.58,
           "positivacao": 7
+        },
+        "thermo_cat": {
+          "peso": 475.008,
+          "valor": 8200.7,
+          "positivacao": 11
+        },
+        "vegetais": {
+          "peso": 475.008,
+          "valor": 8200.7,
+          "positivacao": 11
         }
       },
       "industrializado_potencial": 696.3300250000001,
       "thermo_potencial": 167.11920600000002,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.09070201405374946,
-      "industrializado_margem_pct": 0.19855945789723584
+      "industrializado_margem_pct": 0.19855945789723584,
+      "recompra_pct": 0.22972972972972974
     },
     {
       "codigo": 644,
@@ -872,13 +1037,24 @@
           "peso": 23.369,
           "valor": 329.5,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 413.592,
+          "valor": 5878.99,
+          "positivacao": 25
+        },
+        "vegetais": {
+          "peso": 413.592,
+          "valor": 5878.99,
+          "positivacao": 25
         }
       },
       "industrializado_potencial": 689.319475,
       "thermo_potencial": 165.43667399999998,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.16702614994265866,
-      "industrializado_margem_pct": 0.22284002166853864
+      "industrializado_margem_pct": 0.22284002166853864,
+      "recompra_pct": 0.35802469135802467
     },
     {
       "codigo": 12,
@@ -927,13 +1103,24 @@
           "peso": 0,
           "valor": 0,
           "positivacao": 0
+        },
+        "thermo_cat": {
+          "peso": 309.072,
+          "valor": 5702.38,
+          "positivacao": 33
+        },
+        "vegetais": {
+          "peso": 309.072,
+          "valor": 5702.38,
+          "positivacao": 33
         }
       },
       "industrializado_potencial": 687.654625,
       "thermo_potencial": 165.03710999999998,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.22222219684466363,
-      "industrializado_margem_pct": 0.23949322589745095
+      "industrializado_margem_pct": 0.23949322589745095,
+      "recompra_pct": 0.37755102040816324
     },
     {
       "codigo": 347,
@@ -982,13 +1169,24 @@
           "peso": 45.348,
           "valor": 643.94,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 1015,
+          "valor": 19591.49,
+          "positivacao": 28
+        },
+        "vegetais": {
+          "peso": 1015,
+          "valor": 19591.49,
+          "positivacao": 28
         }
       },
       "industrializado_potencial": 655.3255,
       "thermo_potencial": 157.27812,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.18569466273233945,
-      "industrializado_margem_pct": 0.22832665816810047
+      "industrializado_margem_pct": 0.22832665816810047,
+      "recompra_pct": 0.23684210526315788
     },
     {
       "codigo": 15,
@@ -1037,13 +1235,24 @@
           "peso": 12,
           "valor": 249,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 537.624,
+          "valor": 8402.18,
+          "positivacao": 41
+        },
+        "vegetais": {
+          "peso": 537.624,
+          "valor": 8402.18,
+          "positivacao": 41
         }
       },
       "industrializado_potencial": 636.677125,
       "thermo_potencial": 152.80251,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.36365709586069256,
-      "industrializado_margem_pct": 0.22919097290038773
+      "industrializado_margem_pct": 0.22919097290038773,
+      "recompra_pct": 0.22115384615384615
     },
     {
       "codigo": 467,
@@ -1092,13 +1301,24 @@
           "peso": 80.252,
           "valor": 2201.67,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 352.2,
+          "valor": 4914.82,
+          "positivacao": 15
+        },
+        "vegetais": {
+          "peso": 352.2,
+          "valor": 4914.82,
+          "positivacao": 15
         }
       },
       "industrializado_potencial": 600.242575,
       "thermo_potencial": 144.058218,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.12939349150793694,
-      "industrializado_margem_pct": 0.26129854267116065
+      "industrializado_margem_pct": 0.26129854267116065,
+      "recompra_pct": 0.34210526315789475
     },
     {
       "codigo": 687,
@@ -1147,13 +1367,24 @@
           "peso": 410.186,
           "valor": 12720.26,
           "positivacao": 13
+        },
+        "thermo_cat": {
+          "peso": 80.832,
+          "valor": 1669.12,
+          "positivacao": 5
+        },
+        "vegetais": {
+          "peso": 80.832,
+          "valor": 1669.12,
+          "positivacao": 5
         }
       },
       "industrializado_potencial": 590.572025,
       "thermo_potencial": 141.73728599999998,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.0909688367209301,
-      "industrializado_margem_pct": 0.2174184179696833
+      "industrializado_margem_pct": 0.2174184179696833,
+      "recompra_pct": 0.2911392405063291
     },
     {
       "codigo": 698,
@@ -1202,13 +1433,24 @@
           "peso": 179.821,
           "valor": 3313.14,
           "positivacao": 4
+        },
+        "thermo_cat": {
+          "peso": 302.496,
+          "valor": 5193.7,
+          "positivacao": 20
+        },
+        "vegetais": {
+          "peso": 302.496,
+          "valor": 5193.7,
+          "positivacao": 20
         }
       },
       "industrializado_potencial": 586.192625,
       "thermo_potencial": 140.68623,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.10432442920623633,
-      "industrializado_margem_pct": 0.22774494675028253
+      "industrializado_margem_pct": 0.22774494675028253,
+      "recompra_pct": 0.22727272727272727
     },
     {
       "codigo": 192,
@@ -1257,13 +1499,24 @@
           "peso": 39.167,
           "valor": 710.98,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 592.248,
+          "valor": 9039.43,
+          "positivacao": 27
+        },
+        "vegetais": {
+          "peso": 592.248,
+          "valor": 9039.43,
+          "positivacao": 27
         }
       },
       "industrializado_potencial": 584.001525,
       "thermo_potencial": 140.160366,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.26606926233021394,
-      "industrializado_margem_pct": 0.23528669288427767
+      "industrializado_margem_pct": 0.23528669288427767,
+      "recompra_pct": 0.24675324675324675
     },
     {
       "codigo": 334,
@@ -1312,13 +1565,24 @@
           "peso": 101.126,
           "valor": 1908.75,
           "positivacao": 5
+        },
+        "thermo_cat": {
+          "peso": 1651.896,
+          "valor": 34709.93,
+          "positivacao": 16
+        },
+        "vegetais": {
+          "peso": 1651.896,
+          "valor": 34709.93,
+          "positivacao": 16
         }
       },
       "industrializado_potencial": 581.29405,
       "thermo_potencial": 139.510572,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.05045604118453504,
-      "industrializado_margem_pct": 0.19447167704393503
+      "industrializado_margem_pct": 0.19447167704393503,
+      "recompra_pct": 0.25806451612903225
     },
     {
       "codigo": 83,
@@ -1367,13 +1631,24 @@
           "peso": 138.902,
           "valor": 2176.62,
           "positivacao": 6
+        },
+        "thermo_cat": {
+          "peso": 541.44,
+          "valor": 8762.7,
+          "positivacao": 47
+        },
+        "vegetais": {
+          "peso": 541.44,
+          "valor": 8762.7,
+          "positivacao": 47
         }
       },
       "industrializado_potencial": 580.6299250000001,
       "thermo_potencial": 139.351182,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.11624576589783858,
-      "industrializado_margem_pct": 0.23373703050564007
+      "industrializado_margem_pct": 0.23373703050564007,
+      "recompra_pct": 0.23529411764705882
     },
     {
       "codigo": 357,
@@ -1422,13 +1697,24 @@
           "peso": 85.606,
           "valor": 1535.05,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 1057.56,
+          "valor": 20066.99,
+          "positivacao": 54
+        },
+        "vegetais": {
+          "peso": 1057.56,
+          "valor": 20066.99,
+          "positivacao": 54
         }
       },
       "industrializado_potencial": 543.3246,
       "thermo_potencial": 130.397904,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.2165701931264298,
-      "industrializado_margem_pct": 0.2290545499872855
+      "industrializado_margem_pct": 0.2290545499872855,
+      "recompra_pct": 0.2
     },
     {
       "codigo": 722,
@@ -1477,13 +1763,24 @@
           "peso": 46.97,
           "valor": 999.01,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 336.36,
+          "valor": 5723.71,
+          "positivacao": 25
+        },
+        "vegetais": {
+          "peso": 336.36,
+          "valor": 5723.71,
+          "positivacao": 25
         }
       },
       "industrializado_potencial": 540.93695,
       "thermo_potencial": 129.82486799999998,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.15687114892946089,
-      "industrializado_margem_pct": 0.24481601424827737
+      "industrializado_margem_pct": 0.24481601424827737,
+      "recompra_pct": 0.07526881720430108
     },
     {
       "codigo": 622,
@@ -1532,13 +1829,24 @@
           "peso": 418.611,
           "valor": 7134.73,
           "positivacao": 7
+        },
+        "thermo_cat": {
+          "peso": 461.904,
+          "valor": 8743.15,
+          "positivacao": 20
+        },
+        "vegetais": {
+          "peso": 461.904,
+          "valor": 8743.15,
+          "positivacao": 20
         }
       },
       "industrializado_potencial": 539.39775,
       "thermo_potencial": 129.45546000000002,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.17193506594213565,
-      "industrializado_margem_pct": 0.22285832856612942
+      "industrializado_margem_pct": 0.22285832856612942,
+      "recompra_pct": 0.17391304347826086
     },
     {
       "codigo": 398,
@@ -1587,13 +1895,24 @@
           "peso": 100.91,
           "valor": 3425.85,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 139.144,
+          "valor": 2510.69,
+          "positivacao": 12
+        },
+        "vegetais": {
+          "peso": 139.144,
+          "valor": 2510.69,
+          "positivacao": 12
         }
       },
       "industrializado_potencial": 528.343375,
       "thermo_potencial": 126.80241000000001,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.0938418571800991,
-      "industrializado_margem_pct": 0.18775149256540563
+      "industrializado_margem_pct": 0.18775149256540563,
+      "recompra_pct": 0.5142857142857142
     },
     {
       "codigo": 471,
@@ -1642,13 +1961,24 @@
           "peso": 261.371,
           "valor": 5646.82,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 302.424,
+          "valor": 5986.09,
+          "positivacao": 20
+        },
+        "vegetais": {
+          "peso": 302.424,
+          "valor": 5986.09,
+          "positivacao": 20
         }
       },
       "industrializado_potencial": 519.23275,
       "thermo_potencial": 124.61586,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.12774057389967336,
-      "industrializado_margem_pct": 0.26166954946938487
+      "industrializado_margem_pct": 0.26166954946938487,
+      "recompra_pct": 0.30303030303030304
     },
     {
       "codigo": 735,
@@ -1697,13 +2027,24 @@
           "peso": 66.219,
           "valor": 1029.74,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 481.6,
+          "valor": 8599.3,
+          "positivacao": 35
+        },
+        "vegetais": {
+          "peso": 481.6,
+          "valor": 8599.3,
+          "positivacao": 35
         }
       },
       "industrializado_potencial": 502.302325,
       "thermo_potencial": 120.55255799999999,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.19761107293267358,
-      "industrializado_margem_pct": 0.21900570265893035
+      "industrializado_margem_pct": 0.21900570265893035,
+      "recompra_pct": 0.26595744680851063
     },
     {
       "codigo": 679,
@@ -1752,13 +2093,24 @@
           "peso": 151.289,
           "valor": 2937.07,
           "positivacao": 8
+        },
+        "thermo_cat": {
+          "peso": 1053.48,
+          "valor": 21683.09,
+          "positivacao": 23
+        },
+        "vegetais": {
+          "peso": 1053.48,
+          "valor": 21683.09,
+          "positivacao": 23
         }
       },
       "industrializado_potencial": 501.501975,
       "thermo_potencial": 120.360474,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.08295433540529963,
-      "industrializado_margem_pct": 0.23714885816931858
+      "industrializado_margem_pct": 0.23714885816931858,
+      "recompra_pct": 0.140625
     },
     {
       "codigo": 723,
@@ -1807,13 +2159,24 @@
           "peso": 12,
           "valor": 256.1,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 298.776,
+          "valor": 5384.45,
+          "positivacao": 24
+        },
+        "vegetais": {
+          "peso": 298.776,
+          "valor": 5384.45,
+          "positivacao": 24
         }
       },
       "industrializado_potencial": 498.23177499999997,
       "thermo_potencial": 119.575626,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.23303760518623942,
-      "industrializado_margem_pct": 0.25853786711325166
+      "industrializado_margem_pct": 0.25853786711325166,
+      "recompra_pct": 0.30303030303030304
     },
     {
       "codigo": 16,
@@ -1862,13 +2225,24 @@
           "peso": 39.959,
           "valor": 534.08,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 271.216,
+          "valor": 4348.37,
+          "positivacao": 25
+        },
+        "vegetais": {
+          "peso": 271.216,
+          "valor": 4348.37,
+          "positivacao": 25
         }
       },
       "industrializado_potencial": 492.78057500000006,
       "thermo_potencial": 118.267338,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.23328115816345021,
-      "industrializado_margem_pct": 0.2518347709253019
+      "industrializado_margem_pct": 0.2518347709253019,
+      "recompra_pct": 0.25
     },
     {
       "codigo": 473,
@@ -1917,13 +2291,24 @@
           "peso": 436.34,
           "valor": 12311.34,
           "positivacao": 8
+        },
+        "thermo_cat": {
+          "peso": 376.952,
+          "valor": 6883.81,
+          "positivacao": 18
+        },
+        "vegetais": {
+          "peso": 376.952,
+          "valor": 6883.81,
+          "positivacao": 18
         }
       },
       "industrializado_potencial": 492.2293,
       "thermo_potencial": 118.135032,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.11965763825027208,
-      "industrializado_margem_pct": 0.22270776639326503
+      "industrializado_margem_pct": 0.22270776639326503,
+      "recompra_pct": 0.27380952380952384
     },
     {
       "codigo": 650,
@@ -1972,13 +2357,24 @@
           "peso": 243.542,
           "valor": 4367.77,
           "positivacao": 6
+        },
+        "thermo_cat": {
+          "peso": 482.856,
+          "valor": 9069.03,
+          "positivacao": 34
+        },
+        "vegetais": {
+          "peso": 482.856,
+          "valor": 9069.03,
+          "positivacao": 34
         }
       },
       "industrializado_potencial": 489.74495,
       "thermo_potencial": 117.53878800000001,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.19142211317886063,
-      "industrializado_margem_pct": 0.26016625008656363
+      "industrializado_margem_pct": 0.26016625008656363,
+      "recompra_pct": 0.38636363636363635
     },
     {
       "codigo": 561,
@@ -2027,13 +2423,24 @@
           "peso": 28,
           "valor": 665,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 756.68,
+          "valor": 13380.07,
+          "positivacao": 37
+        },
+        "vegetais": {
+          "peso": 756.68,
+          "valor": 13380.07,
+          "positivacao": 37
         }
       },
       "industrializado_potencial": 481.16487500000005,
       "thermo_potencial": 115.47957000000001,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.21863689914067858,
-      "industrializado_margem_pct": 0.22119486619217288
+      "industrializado_margem_pct": 0.22119486619217288,
+      "recompra_pct": 0.2987012987012987
     },
     {
       "codigo": 649,
@@ -2082,13 +2489,24 @@
           "peso": 15,
           "valor": 262.5,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 757.248,
+          "valor": 14295.55,
+          "positivacao": 35
+        },
+        "vegetais": {
+          "peso": 757.248,
+          "valor": 14295.55,
+          "positivacao": 35
         }
       },
       "industrializado_potencial": 471.623975,
       "thermo_potencial": 113.189754,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.18446776464174816,
-      "industrializado_margem_pct": 0.24045847253007416
+      "industrializado_margem_pct": 0.24045847253007416,
+      "recompra_pct": 0.27848101265822783
     },
     {
       "codigo": 377,
@@ -2137,13 +2555,24 @@
           "peso": 156.38,
           "valor": 2387.05,
           "positivacao": 7
+        },
+        "thermo_cat": {
+          "peso": 516.312,
+          "valor": 9195.11,
+          "positivacao": 48
+        },
+        "vegetais": {
+          "peso": 516.312,
+          "valor": 9195.11,
+          "positivacao": 48
         }
       },
       "industrializado_potencial": 437.278325,
       "thermo_potencial": 104.94679799999999,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.2572238265853926,
-      "industrializado_margem_pct": 0.22451597910942947
+      "industrializado_margem_pct": 0.22451597910942947,
+      "recompra_pct": 0.2608695652173913
     },
     {
       "codigo": 751,
@@ -2192,13 +2621,24 @@
           "peso": 338.765,
           "valor": 7183.62,
           "positivacao": 10
+        },
+        "thermo_cat": {
+          "peso": 974.584,
+          "valor": 16309.39,
+          "positivacao": 21
+        },
+        "vegetais": {
+          "peso": 974.584,
+          "valor": 16309.39,
+          "positivacao": 21
         }
       },
       "industrializado_potencial": 399.25325,
       "thermo_potencial": 95.82078,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.13555075338707637,
-      "industrializado_margem_pct": 0.21114925836435627
+      "industrializado_margem_pct": 0.21114925836435627,
+      "recompra_pct": 0.12727272727272726
     },
     {
       "codigo": 660,
@@ -2247,13 +2687,24 @@
           "peso": 47.98,
           "valor": 792.7,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 394.776,
+          "valor": 7446.64,
+          "positivacao": 25
+        },
+        "vegetais": {
+          "peso": 394.776,
+          "valor": 7446.64,
+          "positivacao": 25
         }
       },
       "industrializado_potencial": 360.30300000000005,
       "thermo_potencial": 86.47272000000001,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.20041972707828665,
-      "industrializado_margem_pct": 0.22475463490909223
+      "industrializado_margem_pct": 0.22475463490909223,
+      "recompra_pct": 0.16923076923076924
     },
     {
       "codigo": 352,
@@ -2302,13 +2753,24 @@
           "peso": 193.435,
           "valor": 3848.88,
           "positivacao": 6
+        },
+        "thermo_cat": {
+          "peso": 147.88,
+          "valor": 3043.4,
+          "positivacao": 8
+        },
+        "vegetais": {
+          "peso": 147.88,
+          "valor": 3043.4,
+          "positivacao": 8
         }
       },
       "industrializado_potencial": 278.8155,
       "thermo_potencial": 66.91572,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
-      "industrializado_margem_pct": 0
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0.3469387755102041
     },
     {
       "codigo": 781,
@@ -2357,13 +2819,24 @@
           "peso": 84.965,
           "valor": 2393.05,
           "positivacao": 3
+        },
+        "thermo_cat": {
+          "peso": 182.496,
+          "valor": 3514.65,
+          "positivacao": 16
+        },
+        "vegetais": {
+          "peso": 182.496,
+          "valor": 3514.65,
+          "positivacao": 16
         }
       },
       "industrializado_potencial": 253.581725,
       "thermo_potencial": 60.859614,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
-      "industrializado_margem_pct": 0
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0.1794871794871795
     },
     {
       "codigo": 381,
@@ -2412,13 +2885,24 @@
           "peso": 150.59,
           "valor": 3593.24,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 46,
+          "valor": 929.87,
+          "positivacao": 2
+        },
+        "vegetais": {
+          "peso": 46,
+          "valor": 929.87,
+          "positivacao": 2
         }
       },
       "industrializado_potencial": 196.471875,
       "thermo_potencial": 47.15325,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.048266682801379995,
-      "industrializado_margem_pct": 0.24043792232406017
+      "industrializado_margem_pct": 0.24043792232406017,
+      "recompra_pct": 0.41379310344827586
     },
     {
       "codigo": 791,
@@ -2467,13 +2951,24 @@
           "peso": 33.826,
           "valor": 761.76,
           "positivacao": 2
+        },
+        "thermo_cat": {
+          "peso": 53.424,
+          "valor": 905.98,
+          "positivacao": 9
+        },
+        "vegetais": {
+          "peso": 53.424,
+          "valor": 905.98,
+          "positivacao": 9
         }
       },
       "industrializado_potencial": 162.9115,
       "thermo_potencial": 39.09876,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.1782065020352231,
-      "industrializado_margem_pct": 0.2300871167601522
+      "industrializado_margem_pct": 0.2300871167601522,
+      "recompra_pct": 0.3829787234042553
     },
     {
       "codigo": 793,
@@ -2522,13 +3017,24 @@
           "peso": 26,
           "valor": 685.74,
           "positivacao": 1
+        },
+        "thermo_cat": {
+          "peso": 9,
+          "valor": 172.38,
+          "positivacao": 2
+        },
+        "vegetais": {
+          "peso": 9,
+          "valor": 172.38,
+          "positivacao": 2
         }
       },
       "industrializado_potencial": 53.232425000000006,
       "thermo_potencial": 12.775782,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0.08241216320206567,
-      "industrializado_margem_pct": 0.23256855570168322
+      "industrializado_margem_pct": 0.23256855570168322,
+      "recompra_pct": 0.8695652173913043
     },
     {
       "codigo": 1000,
@@ -2577,13 +3083,24 @@
           "peso": 0,
           "valor": 0,
           "positivacao": 0
+        },
+        "thermo_cat": {
+          "peso": 33,
+          "valor": 509.26,
+          "positivacao": 1
+        },
+        "vegetais": {
+          "peso": 33,
+          "valor": 509.26,
+          "positivacao": 1
         }
       },
       "industrializado_potencial": 1.27315,
       "thermo_potencial": 0.305556,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
-      "industrializado_margem_pct": 0
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0.0
     }
   ],
   "constantes": {
@@ -2598,7 +3115,9 @@
       "lactios": 23,
       "batata": 15,
       "bovino": 10,
-      "suino": 6
+      "suino": 6,
+      "thermo_cat": 6,
+      "vegetais": 6
     },
     "taxas_categoria": {
       "bacon": 0.03,
@@ -2608,7 +3127,9 @@
       "lactios": 0.03,
       "batata": 0.03,
       "bovino": 0.015,
-      "suino": 0.03
+      "suino": 0.03,
+      "thermo_cat": 0.03,
+      "vegetais": 0.03
     },
     "labels_categoria": {
       "bacon": "Bacon",
@@ -2618,7 +3139,9 @@
       "lactios": "Lácteos",
       "batata": "Batata",
       "bovino": "Bovino",
-      "suino": "Suíno"
+      "suino": "Suíno",
+      "thermo_cat": "Thermo",
+      "vegetais": "Vegetais"
     },
     "ordem_categorias": [
       "bacon",
@@ -2628,7 +3151,11 @@
       "lactios",
       "batata",
       "bovino",
-      "suino"
-    ]
+      "suino",
+      "thermo_cat",
+      "vegetais"
+    ],
+    "recompra_limite": 0.2,
+    "recompra_premio": 150
   }
 }
