@@ -94,6 +94,23 @@ def _ler_supervisores():
     return {int(r["codigo"]): r["supervisor"] for r in dados}
 
 
+def _ler_industrializado_pilares():
+    """Cross-referencia com o painel 4 Pilares pra pegar a participação % e
+    a margem % REAL de industrializado de cada RCA (a planilha de melhoria
+    salarial só tem a META de industrializado, não o realizado)."""
+    if not os.path.exists(CAMINHO_PAINEL_PILARES):
+        return {}
+    with open(CAMINHO_PAINEL_PILARES, "r", encoding="utf-8") as f:
+        dados = json.load(f)
+    return {
+        int(r["codigo"]): {
+            "participacao_pct": r["industrializado"]["participacao_pct"],
+            "margem_pct": r["industrializado"]["margem_pct"],
+        }
+        for r in dados
+    }
+
+
 def extrair():
     wb = openpyxl.load_workbook(CAMINHO_RESULTADO, data_only=True)
     ws_geral = wb["ITENS FOCO"]
@@ -104,6 +121,7 @@ def extrair():
 
     cache_categorias = {chave: _ler_categoria(wb, aba) for chave, _, aba, _, _ in CATEGORIAS}
     supervisores = _ler_supervisores()
+    industrializado_pilares = _ler_industrializado_pilares()
 
     ws315 = wb["315"]
     rcas = []
@@ -148,6 +166,8 @@ def extrair():
             "industrializado_potencial": industrializado_potencial,
             "thermo_potencial": thermo_potencial,
             "premio_fixo": PREMIO_FIXO,
+            "industrializado_participacao_pct": industrializado_pilares.get(codigo, {}).get("participacao_pct", 0),
+            "industrializado_margem_pct": industrializado_pilares.get(codigo, {}).get("margem_pct", 0),
         })
 
     metas_categoria_padrao = {chave: meta_posit for chave, _, _aba, _taxa, meta_posit in CATEGORIAS}

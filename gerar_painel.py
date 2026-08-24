@@ -209,6 +209,10 @@ function fmtMoeda(v) {
   return "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+function fmtPct(v) {
+  return (v * 100).toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%";
+}
+
 function normalizarNomeFoto(nome) {
   return nome.replace(/\s*-\s*$/, "").trim().toUpperCase();
 }
@@ -407,6 +411,10 @@ function montarConteudo(rca) {
         <div class="media-pedidos-linha">
           QTD NO MÊS: ${rca.total_pedidos}<br>
           MÉDIA DE PEDIDOS: ${Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis)}
+        </div>
+        <div class="media-pedidos-linha">
+          PARTICIPAÇÃO INDUSTRIALIZADO: ${fmtPct(rca.industrializado_participacao_pct)}<br>
+          MARGEM INDUSTRIALIZADO: ${fmtPct(rca.industrializado_margem_pct)}
         </div>
       </div>
     </div>

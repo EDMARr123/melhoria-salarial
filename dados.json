@@ -51,7 +51,9 @@
       },
       "industrializado_potencial": 4066.860975,
       "thermo_potencial": 976.0466339999999,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.25827301194968716,
+      "industrializado_margem_pct": 0.10663773220471706
     },
     {
       "codigo": 23,
@@ -104,7 +106,9 @@
       },
       "industrializado_potencial": 2846.0444500000003,
       "thermo_potencial": 683.050668,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.1317370355307602,
+      "industrializado_margem_pct": 0.17517303103951484
     },
     {
       "codigo": 164,
@@ -157,7 +161,9 @@
       },
       "industrializado_potencial": 1213.387825,
       "thermo_potencial": 291.213078,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.18452035140190573,
+      "industrializado_margem_pct": 0.21737992944901116
     },
     {
       "codigo": 383,
@@ -210,7 +216,9 @@
       },
       "industrializado_potencial": 1115.32415,
       "thermo_potencial": 267.677796,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.11305762793307081,
+      "industrializado_margem_pct": 0.274802810794432
     },
     {
       "codigo": 45,
@@ -263,7 +271,9 @@
       },
       "industrializado_potencial": 982.9491499999999,
       "thermo_potencial": 235.907796,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.15832621199395627,
+      "industrializado_margem_pct": 0.2305941826526006
     },
     {
       "codigo": 47,
@@ -316,7 +326,9 @@
       },
       "industrializado_potencial": 960.652425,
       "thermo_potencial": 230.556582,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.21571198422185875,
+      "industrializado_margem_pct": 0.25108071716078806
     },
     {
       "codigo": 405,
@@ -369,7 +381,9 @@
       },
       "industrializado_potencial": 945.5708999999999,
       "thermo_potencial": 226.93701599999997,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.161378213449816,
+      "industrializado_margem_pct": 0.18355649465251647
     },
     {
       "codigo": 85,
@@ -422,7 +436,9 @@
       },
       "industrializado_potencial": 930.3529,
       "thermo_potencial": 223.28469599999997,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2412506875968767,
+      "industrializado_margem_pct": 0.24354580805791565
     },
     {
       "codigo": 439,
@@ -475,7 +491,9 @@
       },
       "industrializado_potencial": 789.0876,
       "thermo_potencial": 189.381024,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2077894603891598,
+      "industrializado_margem_pct": 0.23244480230934605
     },
     {
       "codigo": 738,
@@ -528,7 +546,9 @@
       },
       "industrializado_potencial": 766.2486500000001,
       "thermo_potencial": 183.899676,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2121874746820989,
+      "industrializado_margem_pct": 0.21631728075146872
     },
     {
       "codigo": 81,
@@ -581,7 +601,9 @@
       },
       "industrializado_potencial": 736.365625,
       "thermo_potencial": 176.72775,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.28111717908804396,
+      "industrializado_margem_pct": 0.2308522769587227
     },
     {
       "codigo": 428,
@@ -634,7 +656,9 @@
       },
       "industrializado_potencial": 726.67235,
       "thermo_potencial": 174.401364,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.24861115677617596,
+      "industrializado_margem_pct": 0.22478491968165965
     },
     {
       "codigo": 657,
@@ -687,7 +711,9 @@
       },
       "industrializado_potencial": 709.8517750000001,
       "thermo_potencial": 170.36442600000004,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2064628535990894,
+      "industrializado_margem_pct": 0.24486590078471474
     },
     {
       "codigo": 729,
@@ -740,7 +766,9 @@
       },
       "industrializado_potencial": 708.221125,
       "thermo_potencial": 169.97307,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.09857334296230576,
+      "industrializado_margem_pct": 0.2079283193936018
     },
     {
       "codigo": 42,
@@ -793,7 +821,9 @@
       },
       "industrializado_potencial": 696.3300250000001,
       "thermo_potencial": 167.11920600000002,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.09070201405374946,
+      "industrializado_margem_pct": 0.19855945789723584
     },
     {
       "codigo": 644,
@@ -846,7 +876,9 @@
       },
       "industrializado_potencial": 689.319475,
       "thermo_potencial": 165.43667399999998,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.16702614994265866,
+      "industrializado_margem_pct": 0.22284002166853864
     },
     {
       "codigo": 12,
@@ -899,7 +931,9 @@
       },
       "industrializado_potencial": 687.654625,
       "thermo_potencial": 165.03710999999998,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.22222219684466363,
+      "industrializado_margem_pct": 0.23949322589745095
     },
     {
       "codigo": 347,
@@ -952,7 +986,9 @@
       },
       "industrializado_potencial": 655.3255,
       "thermo_potencial": 157.27812,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.18569466273233945,
+      "industrializado_margem_pct": 0.22832665816810047
     },
     {
       "codigo": 15,
@@ -1005,7 +1041,9 @@
       },
       "industrializado_potencial": 636.677125,
       "thermo_potencial": 152.80251,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.36365709586069256,
+      "industrializado_margem_pct": 0.22919097290038773
     },
     {
       "codigo": 467,
@@ -1058,7 +1096,9 @@
       },
       "industrializado_potencial": 600.242575,
       "thermo_potencial": 144.058218,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.12939349150793694,
+      "industrializado_margem_pct": 0.26129854267116065
     },
     {
       "codigo": 687,
@@ -1111,7 +1151,9 @@
       },
       "industrializado_potencial": 590.572025,
       "thermo_potencial": 141.73728599999998,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.0909688367209301,
+      "industrializado_margem_pct": 0.2174184179696833
     },
     {
       "codigo": 698,
@@ -1164,7 +1206,9 @@
       },
       "industrializado_potencial": 586.192625,
       "thermo_potencial": 140.68623,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.10432442920623633,
+      "industrializado_margem_pct": 0.22774494675028253
     },
     {
       "codigo": 192,
@@ -1217,7 +1261,9 @@
       },
       "industrializado_potencial": 584.001525,
       "thermo_potencial": 140.160366,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.26606926233021394,
+      "industrializado_margem_pct": 0.23528669288427767
     },
     {
       "codigo": 334,
@@ -1270,7 +1316,9 @@
       },
       "industrializado_potencial": 581.29405,
       "thermo_potencial": 139.510572,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.05045604118453504,
+      "industrializado_margem_pct": 0.19447167704393503
     },
     {
       "codigo": 83,
@@ -1323,7 +1371,9 @@
       },
       "industrializado_potencial": 580.6299250000001,
       "thermo_potencial": 139.351182,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.11624576589783858,
+      "industrializado_margem_pct": 0.23373703050564007
     },
     {
       "codigo": 357,
@@ -1376,7 +1426,9 @@
       },
       "industrializado_potencial": 543.3246,
       "thermo_potencial": 130.397904,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2165701931264298,
+      "industrializado_margem_pct": 0.2290545499872855
     },
     {
       "codigo": 722,
@@ -1429,7 +1481,9 @@
       },
       "industrializado_potencial": 540.93695,
       "thermo_potencial": 129.82486799999998,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.15687114892946089,
+      "industrializado_margem_pct": 0.24481601424827737
     },
     {
       "codigo": 622,
@@ -1482,7 +1536,9 @@
       },
       "industrializado_potencial": 539.39775,
       "thermo_potencial": 129.45546000000002,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.17193506594213565,
+      "industrializado_margem_pct": 0.22285832856612942
     },
     {
       "codigo": 398,
@@ -1535,7 +1591,9 @@
       },
       "industrializado_potencial": 528.343375,
       "thermo_potencial": 126.80241000000001,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.0938418571800991,
+      "industrializado_margem_pct": 0.18775149256540563
     },
     {
       "codigo": 471,
@@ -1588,7 +1646,9 @@
       },
       "industrializado_potencial": 519.23275,
       "thermo_potencial": 124.61586,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.12774057389967336,
+      "industrializado_margem_pct": 0.26166954946938487
     },
     {
       "codigo": 735,
@@ -1641,7 +1701,9 @@
       },
       "industrializado_potencial": 502.302325,
       "thermo_potencial": 120.55255799999999,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.19761107293267358,
+      "industrializado_margem_pct": 0.21900570265893035
     },
     {
       "codigo": 679,
@@ -1694,7 +1756,9 @@
       },
       "industrializado_potencial": 501.501975,
       "thermo_potencial": 120.360474,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.08295433540529963,
+      "industrializado_margem_pct": 0.23714885816931858
     },
     {
       "codigo": 723,
@@ -1747,7 +1811,9 @@
       },
       "industrializado_potencial": 498.23177499999997,
       "thermo_potencial": 119.575626,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.23303760518623942,
+      "industrializado_margem_pct": 0.25853786711325166
     },
     {
       "codigo": 16,
@@ -1800,7 +1866,9 @@
       },
       "industrializado_potencial": 492.78057500000006,
       "thermo_potencial": 118.267338,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.23328115816345021,
+      "industrializado_margem_pct": 0.2518347709253019
     },
     {
       "codigo": 473,
@@ -1853,7 +1921,9 @@
       },
       "industrializado_potencial": 492.2293,
       "thermo_potencial": 118.135032,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.11965763825027208,
+      "industrializado_margem_pct": 0.22270776639326503
     },
     {
       "codigo": 650,
@@ -1906,7 +1976,9 @@
       },
       "industrializado_potencial": 489.74495,
       "thermo_potencial": 117.53878800000001,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.19142211317886063,
+      "industrializado_margem_pct": 0.26016625008656363
     },
     {
       "codigo": 561,
@@ -1959,7 +2031,9 @@
       },
       "industrializado_potencial": 481.16487500000005,
       "thermo_potencial": 115.47957000000001,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.21863689914067858,
+      "industrializado_margem_pct": 0.22119486619217288
     },
     {
       "codigo": 649,
@@ -2012,7 +2086,9 @@
       },
       "industrializado_potencial": 471.623975,
       "thermo_potencial": 113.189754,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.18446776464174816,
+      "industrializado_margem_pct": 0.24045847253007416
     },
     {
       "codigo": 377,
@@ -2065,7 +2141,9 @@
       },
       "industrializado_potencial": 437.278325,
       "thermo_potencial": 104.94679799999999,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2572238265853926,
+      "industrializado_margem_pct": 0.22451597910942947
     },
     {
       "codigo": 751,
@@ -2118,7 +2196,9 @@
       },
       "industrializado_potencial": 399.25325,
       "thermo_potencial": 95.82078,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.13555075338707637,
+      "industrializado_margem_pct": 0.21114925836435627
     },
     {
       "codigo": 660,
@@ -2171,7 +2251,9 @@
       },
       "industrializado_potencial": 360.30300000000005,
       "thermo_potencial": 86.47272000000001,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.20041972707828665,
+      "industrializado_margem_pct": 0.22475463490909223
     },
     {
       "codigo": 352,
@@ -2224,7 +2306,9 @@
       },
       "industrializado_potencial": 278.8155,
       "thermo_potencial": 66.91572,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0
     },
     {
       "codigo": 781,
@@ -2277,7 +2361,9 @@
       },
       "industrializado_potencial": 253.581725,
       "thermo_potencial": 60.859614,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0
     },
     {
       "codigo": 381,
@@ -2330,7 +2416,9 @@
       },
       "industrializado_potencial": 196.471875,
       "thermo_potencial": 47.15325,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.048266682801379995,
+      "industrializado_margem_pct": 0.24043792232406017
     },
     {
       "codigo": 791,
@@ -2383,7 +2471,9 @@
       },
       "industrializado_potencial": 162.9115,
       "thermo_potencial": 39.09876,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.1782065020352231,
+      "industrializado_margem_pct": 0.2300871167601522
     },
     {
       "codigo": 793,
@@ -2436,7 +2526,9 @@
       },
       "industrializado_potencial": 53.232425000000006,
       "thermo_potencial": 12.775782,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.08241216320206567,
+      "industrializado_margem_pct": 0.23256855570168322
     },
     {
       "codigo": 1000,
@@ -2489,7 +2581,9 @@
       },
       "industrializado_potencial": 1.27315,
       "thermo_potencial": 0.305556,
-      "premio_fixo": 150
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0
     }
   ],
   "constantes": {
