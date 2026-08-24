@@ -78,10 +78,10 @@ header.top p { margin: 0 0 18px; color: var(--ink-soft); font-size: 13.5px; }
 }
 .campo input:disabled { color: var(--accent); border-style: dashed; opacity: 1; }
 .media-pedidos-linha {
-  margin-top: 14px; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em;
+  margin-left: auto; align-self: center; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em;
   color: var(--accent);
 }
-.media-pedidos-linha .separador { color: var(--ink-faint); margin: 0 8px; }
+.media-pedidos-linha .separador { color: var(--ink-faint); margin: 0 6px; }
 #codigoInput { width: 110px; }
 #nomeAtual { font-size: 15px; font-weight: 800; color: var(--accent); align-self: center; padding-bottom: 8px; }
 .rota-atual { font-size: 12.5px; color: var(--ink-faint); align-self: center; padding-bottom: 8px; }
@@ -298,11 +298,11 @@ function montarConteudo(rca) {
           <label>Meta de pedidos/dia</label>
           <input type="number" step="1" min="0" id="cfgMetaPedidosInline" value="${config.metaPedidosDia}">
         </div>
-      </div>
-      <div class="media-pedidos-linha">
-        MÉDIA DE PEDIDOS/DIA: ${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {maximumFractionDigits:2})}
-        <span class="separador">·</span>
-        QTD ATUAL DE PEDIDOS NO MÊS: ${rca.total_pedidos}
+        <div class="media-pedidos-linha">
+          MÉDIA DE PEDIDOS/DIA: ${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {maximumFractionDigits:2})}
+          <span class="separador">·</span>
+          QTD ATUAL DE PEDIDOS NO MÊS: ${rca.total_pedidos}
+        </div>
       </div>
     </div>
 
