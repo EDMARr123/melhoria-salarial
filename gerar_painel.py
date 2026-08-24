@@ -11,12 +11,57 @@ localStorage do navegador. Tudo recalcula ao vivo, sem precisar reabrir
 o Excel.
 """
 
+import base64
 import json
 import os
 
 PASTA_BASE = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_DADOS = os.path.join(PASTA_BASE, "dados.json")
 CAMINHO_SAIDA = os.path.join(PASTA_BASE, "painel.html")
+
+# Reaproveita as mesmas fotos já cadastradas no painel_pilares — mesmos
+# vendedores/supervisores, não faz sentido duplicar os arquivos aqui.
+PASTA_FOTOS_SUPERVISORES = os.path.join(PASTA_BASE, "..", "painel_pilares", "fotos_supervisores")
+PASTA_FOTOS_RCAS = os.path.join(PASTA_BASE, "..", "painel_pilares", "fotos_rcas")
+
+
+def _fotos_supervisores_json():
+    fotos = {}
+    if os.path.isdir(PASTA_FOTOS_SUPERVISORES):
+        for nome_arquivo in os.listdir(PASTA_FOTOS_SUPERVISORES):
+            nome, ext = os.path.splitext(nome_arquivo)
+            if ext.lower() not in (".jpg", ".jpeg", ".png"):
+                continue
+            tipo_mime = "image/png" if ext.lower() == ".png" else "image/jpeg"
+            with open(os.path.join(PASTA_FOTOS_SUPERVISORES, nome_arquivo), "rb") as f:
+                b64 = base64.b64encode(f.read()).decode("ascii")
+            fotos[nome.upper()] = f"data:{tipo_mime};base64,{b64}"
+    return json.dumps(fotos, ensure_ascii=False)
+
+
+def _fotos_rcas_json():
+    """fotos_rcas/{SUPERVISOR}/{NOME_RCA}.jpg — chave = nome do RCA em
+    maiúsculas (mesmo texto usado em dados.json), não precisa bater com o
+    código."""
+    fotos = {}
+    if os.path.isdir(PASTA_FOTOS_RCAS):
+        for nome_pasta_supervisor in os.listdir(PASTA_FOTOS_RCAS):
+            pasta_supervisor = os.path.join(PASTA_FOTOS_RCAS, nome_pasta_supervisor)
+            if not os.path.isdir(pasta_supervisor):
+                continue
+            for nome_arquivo in os.listdir(pasta_supervisor):
+                nome, ext = os.path.splitext(nome_arquivo)
+                if ext.lower() not in (".jpg", ".jpeg", ".png"):
+                    continue
+                tipo_mime = "image/png" if ext.lower() == ".png" else "image/jpeg"
+                with open(os.path.join(pasta_supervisor, nome_arquivo), "rb") as f:
+                    b64 = base64.b64encode(f.read()).decode("ascii")
+                fotos[nome.upper().strip()] = f"data:{tipo_mime};base64,{b64}"
+    return json.dumps(fotos, ensure_ascii=False)
+
+
+_FOTOS_SUPERVISORES_JSON = _fotos_supervisores_json()
+_FOTOS_RCAS_JSON = _fotos_rcas_json()
 
 TEMPLATE = r"""<!doctype html>
 <html lang="pt-BR">
@@ -143,6 +188,7 @@ table.breakdown input.meta-posit-input {
         <input type="number" id="codigoInput" list="rcaList" placeholder="ex: 15">
         <datalist id="rcaList"></datalist>
       </div>
+      <div id="avatarAtual" style="display:flex;align-self:center"></div>
       <div id="nomeAtual"></div>
       <div class="rota-atual" id="rotaAtual"></div>
     </div>
@@ -155,10 +201,34 @@ table.breakdown input.meta-posit-input {
 
 <script>
 const DADOS = __DADOS_JSON__;
+const FOTOS_SUPERVISORES = __FOTOS_SUPERVISORES_JSON__;
+const FOTOS_RCAS = __FOTOS_RCAS_JSON__;
 const RCAS_POR_CODIGO = Object.fromEntries(DADOS.rcas.map(r => [r.codigo, r]));
 
 function fmtMoeda(v) {
   return "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function normalizarNomeFoto(nome) {
+  return nome.replace(/\s*-\s*$/, "").trim().toUpperCase();
+}
+
+function iniciais(nome) {
+  return nome.split(/\s+/).filter(Boolean).slice(0, 2).map(p => p[0]).join("").toUpperCase();
+}
+
+// Cor de avatar determinística a partir do nome, pra quando não tem foto cadastrada.
+const PALETA_AVATAR = ["#0E7C86", "#7A5CC7", "#C0672B", "#3D6FB4", "#1D9A5D", "#B4740A", "#B4406B"];
+function corAvatar(nome) {
+  let h = 0;
+  for (const c of nome) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return PALETA_AVATAR[h % PALETA_AVATAR.length];
+}
+
+function avatarHtml(nome, foto, tamanho) {
+  return foto
+    ? `<img src="${foto}" alt="${nome}" style="width:${tamanho}px;height:${tamanho}px;object-fit:cover;border-radius:50%;flex:none;">`
+    : `<div style="width:${tamanho}px;height:${tamanho}px;border-radius:50%;flex:none;background:${corAvatar(nome)};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:${Math.round(tamanho * 0.36)}px;">${iniciais(nome)}</div>`;
 }
 
 // Campos numéricos editáveis são type="text" (não type="number") — assim
@@ -317,7 +387,10 @@ function montarConteudo(rca) {
       <div class="linha-cabecalho">
         <div class="box"><div class="l">Valor Vendido</div><div class="v">${fmtMoeda(rca.valor_vendido)}</div></div>
         <div class="box"><div class="l">Ticket Médio</div><div class="v">${fmtMoeda(r.ticketMedio)}</div></div>
-        <div class="box"><div class="l">Supervisor</div><div class="v">${rca.supervisor}</div></div>
+        <div class="box" style="display:flex;align-items:center;gap:10px">
+          ${avatarHtml(rca.supervisor, FOTOS_SUPERVISORES[rca.supervisor], 36)}
+          <div><div class="l">Supervisor</div><div class="v">${rca.supervisor}</div></div>
+        </div>
       </div>
     </div>
 
@@ -372,6 +445,7 @@ function montarConteudo(rca) {
 function renderizarRca() {
   const codigo = parseInt(document.getElementById("codigoInput").value);
   const conteudo = document.getElementById("conteudo");
+  const avatarAtual = document.getElementById("avatarAtual");
   const nomeAtual = document.getElementById("nomeAtual");
   const rotaAtual = document.getElementById("rotaAtual");
 
@@ -386,12 +460,14 @@ function renderizarRca() {
 
   const rca = RCAS_POR_CODIGO[codigo];
   if (!rca) {
+    avatarAtual.innerHTML = "";
     nomeAtual.textContent = "";
     rotaAtual.textContent = "";
     conteudo.innerHTML = codigo ? `<div class="vazio">RCA ${codigo} não encontrado.</div>` : `<div class="vazio">Digite um código de RCA acima pra começar.</div>`;
     return;
   }
 
+  avatarAtual.innerHTML = avatarHtml(rca.nome, FOTOS_RCAS[normalizarNomeFoto(rca.nome)], 40);
   nomeAtual.textContent = rca.nome;
   rotaAtual.textContent = `RCA ${rca.codigo} · ${rca.rota}`;
   conteudo.innerHTML = montarConteudo(rca);
@@ -479,6 +555,8 @@ def main():
         dados = json.load(f)
 
     html = TEMPLATE.replace("__DADOS_JSON__", json.dumps(dados, ensure_ascii=False))
+    html = html.replace("__FOTOS_SUPERVISORES_JSON__", _FOTOS_SUPERVISORES_JSON)
+    html = html.replace("__FOTOS_RCAS_JSON__", _FOTOS_RCAS_JSON)
     with open(CAMINHO_SAIDA, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Painel gerado em: {CAMINHO_SAIDA}")
