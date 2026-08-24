@@ -142,6 +142,19 @@ function fmtMoeda(v) {
   return "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+// Campos numéricos editáveis são type="text" (não type="number") — assim
+// dá pra devolver o cursor no lugar certo depois de cada tecla, coisa que
+// o Chrome não deixa fazer em input number (setSelectionRange trava nele
+// e faz o cursor voltar pro começo, invertendo os dígitos digitados).
+// Por isso aceita vírgula OU ponto na entrada, e mostra sempre com vírgula.
+function parseNum(str) {
+  const v = parseFloat(String(str).replace(",", "."));
+  return isNaN(v) ? 0 : v;
+}
+function fmtInput(v) {
+  return String(v).replace(".", ",");
+}
+
 // ---- Configuração global (taxa + metas por categoria + meta de pedidos/dia) ----
 function lerConfig() {
   const padrao = {
@@ -233,7 +246,7 @@ function montarConteudo(rca) {
       <td>${l.peso.toLocaleString("pt-BR", {maximumFractionDigits:2})}</td>
       <td>${fmtMoeda(l.valor)}</td>
       <td>${l.positivacao}</td>
-      <td><input type="number" step="1" min="0" class="meta-posit-input" data-chave="${l.chave}" value="${l.metaPosit}"></td>
+      <td><input type="text" inputmode="numeric" class="meta-posit-input" data-chave="${l.chave}" value="${fmtInput(l.metaPosit)}"></td>
       <td>${fmtMoeda(l.atual)}</td>
       <td>${fmtMoeda(l.potencial)}</td>
       <td class="${classeDif}">${fmtMoeda(dif)}</td>
@@ -272,11 +285,11 @@ function montarConteudo(rca) {
       <div class="busca-row">
         <div class="campo">
           <label>Taxa média comissão (%)</label>
-          <input type="number" step="0.01" min="0" id="cfgTaxaInline" value="${config.taxaPct}">
+          <input type="text" inputmode="decimal" id="cfgTaxaInline" value="${fmtInput(config.taxaPct)}">
         </div>
         <div class="campo">
           <label>Meta de pedidos/dia</label>
-          <input type="number" step="1" min="0" id="cfgMetaPedidosInline" value="${config.metaPedidosDia}">
+          <input type="text" inputmode="numeric" id="cfgMetaPedidosInline" value="${fmtInput(config.metaPedidosDia)}">
         </div>
         <div class="media-pedidos-linha">
           MÉDIA DE PEDIDOS/DIA: ${(rca.total_pedidos / DADOS.constantes.dias_uteis).toLocaleString("pt-BR", {maximumFractionDigits:2})}
@@ -375,17 +388,17 @@ document.getElementById("conteudo").addEventListener("change", (e) => {
 document.getElementById("conteudo").addEventListener("input", (e) => {
   if (e.target.classList.contains("meta-posit-input")) {
     const cfg = lerConfig();
-    cfg.metasCategoria[e.target.dataset.chave] = parseFloat(e.target.value) || 0;
+    cfg.metasCategoria[e.target.dataset.chave] = parseNum(e.target.value);
     salvarConfig(cfg);
     renderizarRca();
   } else if (e.target.id === "cfgMetaPedidosInline") {
     const cfg = lerConfig();
-    cfg.metaPedidosDia = parseFloat(e.target.value) || 0;
+    cfg.metaPedidosDia = parseNum(e.target.value);
     salvarConfig(cfg);
     renderizarRca();
   } else if (e.target.id === "cfgTaxaInline") {
     const cfg = lerConfig();
-    cfg.taxaPct = parseFloat(e.target.value) || 0;
+    cfg.taxaPct = parseNum(e.target.value);
     salvarConfig(cfg);
     renderizarRca();
   }
