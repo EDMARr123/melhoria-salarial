@@ -275,15 +275,25 @@ function salvarConfig(config) {
 // vendedor" precisa zerar só a meta DELE, sem mexer nos outros.
 function chaveEstado(codigo) { return "melhoria_salarial_estado_" + codigo; }
 
-function estadoPadrao() {
+function estadoPadrao(codigo) {
+  // Meta Posit por padrão vem do Painel Departamentos (mesma meta de
+  // positivação que o supervisor já usa lá) — só cai no valor genérico da
+  // planilha de comissão se o RCA/categoria não existir por lá (ex: Vegetais,
+  // categoria nova que ainda não tem bloco em Departamentos).
+  const rca = RCAS_POR_CODIGO[codigo];
+  const metasDep = (rca && rca.meta_posit_departamento) || {};
+  const metasCategoria = {};
+  DADOS.constantes.ordem_categorias.forEach(chave => {
+    metasCategoria[chave] = metasDep[chave] !== undefined ? metasDep[chave] : DADOS.constantes.metas_categoria_padrao[chave];
+  });
   return {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
-    metasCategoria: Object.assign({}, DADOS.constantes.metas_categoria_padrao),
+    metasCategoria,
   };
 }
 
 function lerEstado(codigo) {
-  const padrao = estadoPadrao();
+  const padrao = estadoPadrao(codigo);
   try {
     const salvo = localStorage.getItem(chaveEstado(codigo));
     if (!salvo) return padrao;

@@ -43,6 +43,22 @@ import openpyxl
 
 CAMINHO_RESULTADO = r"C:\Users\edmar\Desktop\MELHORIA SALARIO\RESULTADO.xlsm"
 CAMINHO_PAINEL_PILARES = r"c:\AutomacaoMaxGestao\painel_pilares\dados.json"
+CAMINHO_PAINEL_DEPARTAMENTOS = r"c:\AutomacaoMaxGestao\painel_departamentos\dados.json"
+
+# Categoria daqui -> categoria equivalente no Painel Departamentos (mesmo
+# produto, nome de chave diferente em cada planilha). "vegetais" não tem
+# equivalente lá ainda (categoria nova, sem bloco de meta em Departamentos).
+CATEGORIA_PARA_DEPARTAMENTOS = {
+    "bacon": "bacon",
+    "calabresa": "calabresa",
+    "frescais": "frescais",
+    "paes": "paes",
+    "lactios": "lacteos",
+    "batata": "batata",
+    "bovino": "bovino",
+    "suino": "suino",
+    "thermo_cat": "thermo",
+}
 
 PASTA_BASE = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_SAIDA = os.path.join(PASTA_BASE, "dados.json")
@@ -147,6 +163,27 @@ def _ler_industrializado_pilares():
     }
 
 
+def _ler_metas_departamento():
+    """Cross-referencia com o Painel Departamentos pra pegar a META de
+    positivação de cada categoria — a mesma que o supervisor já acompanha
+    lá (bloco do supervisor define 1 meta por categoria pra todos os RCAs
+    dele). Chave de retorno já traduzida pro nome de categoria usado aqui
+    (ver CATEGORIA_PARA_DEPARTAMENTOS)."""
+    if not os.path.exists(CAMINHO_PAINEL_DEPARTAMENTOS):
+        return {}
+    with open(CAMINHO_PAINEL_DEPARTAMENTOS, "r", encoding="utf-8") as f:
+        dados = json.load(f)
+    out = {}
+    for r in dados:
+        metas = {}
+        for chave_aqui, chave_dep in CATEGORIA_PARA_DEPARTAMENTOS.items():
+            info = r["categorias"].get(chave_dep)
+            if info:
+                metas[chave_aqui] = info["meta"]
+        out[int(r["codigo"])] = metas
+    return out
+
+
 def extrair():
     wb = openpyxl.load_workbook(CAMINHO_RESULTADO, data_only=True)
     ws_geral = wb["ITENS FOCO"]
@@ -159,6 +196,7 @@ def extrair():
     supervisores = _ler_supervisores()
     industrializado_pilares = _ler_industrializado_pilares()
     recompra_por_rca = _ler_recompra(wb)
+    metas_departamento = _ler_metas_departamento()
 
     ws315 = wb["315"]
     rcas = []
@@ -206,6 +244,7 @@ def extrair():
             "industrializado_participacao_pct": industrializado_pilares.get(codigo, {}).get("participacao_pct", 0),
             "industrializado_margem_pct": industrializado_pilares.get(codigo, {}).get("margem_pct", 0),
             "recompra_pct": recompra_por_rca.get(codigo, 0),
+            "meta_posit_departamento": metas_departamento.get(codigo, {}),
         })
 
     metas_categoria_padrao = {chave: meta_posit for chave, _, _aba, _taxa, meta_posit in CATEGORIAS}

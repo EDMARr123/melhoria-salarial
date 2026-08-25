@@ -62,9 +62,20 @@
       "industrializado_potencial": 4066.860975,
       "thermo_potencial": 976.0466339999999,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.25827301194968716,
-      "industrializado_margem_pct": 0.10663773220471706,
-      "recompra_pct": 0.25925925925925924
+      "industrializado_participacao_pct": 0.2517986987810975,
+      "industrializado_margem_pct": 0.10784539593427292,
+      "recompra_pct": 0.25925925925925924,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 23,
@@ -128,9 +139,20 @@
       "industrializado_potencial": 2846.0444500000003,
       "thermo_potencial": 683.050668,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.1317370355307602,
-      "industrializado_margem_pct": 0.17517303103951484,
-      "recompra_pct": 0.3220338983050847
+      "industrializado_participacao_pct": 0.13237267828777002,
+      "industrializado_margem_pct": 0.17390404431417467,
+      "recompra_pct": 0.3220338983050847,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 164,
@@ -194,9 +216,20 @@
       "industrializado_potencial": 1213.387825,
       "thermo_potencial": 291.213078,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.18452035140190573,
-      "industrializado_margem_pct": 0.21737992944901116,
-      "recompra_pct": 0.21782178217821782
+      "industrializado_participacao_pct": 0.19165036889500175,
+      "industrializado_margem_pct": 0.2168411505988921,
+      "recompra_pct": 0.21782178217821782,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 383,
@@ -260,9 +293,20 @@
       "industrializado_potencial": 1115.32415,
       "thermo_potencial": 267.677796,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.11305762793307081,
-      "industrializado_margem_pct": 0.274802810794432,
-      "recompra_pct": 0.24468085106382978
+      "industrializado_participacao_pct": 0.12525580116565546,
+      "industrializado_margem_pct": 0.27483240871933945,
+      "recompra_pct": 0.24468085106382978,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 45,
@@ -326,9 +370,20 @@
       "industrializado_potencial": 982.9491499999999,
       "thermo_potencial": 235.907796,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.15832621199395627,
-      "industrializado_margem_pct": 0.2305941826526006,
-      "recompra_pct": 0.37373737373737376
+      "industrializado_participacao_pct": 0.16067498923356058,
+      "industrializado_margem_pct": 0.23087634479685526,
+      "recompra_pct": 0.37373737373737376,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 47,
@@ -392,9 +447,20 @@
       "industrializado_potencial": 960.652425,
       "thermo_potencial": 230.556582,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.21571198422185875,
-      "industrializado_margem_pct": 0.25108071716078806,
-      "recompra_pct": 0.1834862385321101
+      "industrializado_participacao_pct": 0.22140569674354038,
+      "industrializado_margem_pct": 0.251937574951009,
+      "recompra_pct": 0.1834862385321101,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 405,
@@ -458,9 +524,20 @@
       "industrializado_potencial": 945.5708999999999,
       "thermo_potencial": 226.93701599999997,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.161378213449816,
-      "industrializado_margem_pct": 0.18355649465251647,
-      "recompra_pct": 0.40869565217391307
+      "industrializado_participacao_pct": 0.20342056463651395,
+      "industrializado_margem_pct": 0.17425056869052533,
+      "recompra_pct": 0.40869565217391307,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 85,
@@ -524,9 +601,20 @@
       "industrializado_potencial": 930.3529,
       "thermo_potencial": 223.28469599999997,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2412506875968767,
-      "industrializado_margem_pct": 0.24354580805791565,
-      "recompra_pct": 0.1717171717171717
+      "industrializado_participacao_pct": 0.24352580050531775,
+      "industrializado_margem_pct": 0.24275870367181018,
+      "recompra_pct": 0.1717171717171717,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 439,
@@ -590,9 +678,20 @@
       "industrializado_potencial": 789.0876,
       "thermo_potencial": 189.381024,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2077894603891598,
-      "industrializado_margem_pct": 0.23244480230934605,
-      "recompra_pct": 0.24468085106382978
+      "industrializado_participacao_pct": 0.21000496996229426,
+      "industrializado_margem_pct": 0.22998357742590397,
+      "recompra_pct": 0.24468085106382978,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 738,
@@ -656,9 +755,20 @@
       "industrializado_potencial": 766.2486500000001,
       "thermo_potencial": 183.899676,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2121874746820989,
-      "industrializado_margem_pct": 0.21631728075146872,
-      "recompra_pct": 0.21839080459770116
+      "industrializado_participacao_pct": 0.2113043368185239,
+      "industrializado_margem_pct": 0.21695828195037842,
+      "recompra_pct": 0.21839080459770116,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 81,
@@ -722,9 +832,20 @@
       "industrializado_potencial": 736.365625,
       "thermo_potencial": 176.72775,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.28111717908804396,
-      "industrializado_margem_pct": 0.2308522769587227,
-      "recompra_pct": 0.2871287128712871
+      "industrializado_participacao_pct": 0.27311839160030066,
+      "industrializado_margem_pct": 0.23073293679436951,
+      "recompra_pct": 0.2871287128712871,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 428,
@@ -788,9 +909,20 @@
       "industrializado_potencial": 726.67235,
       "thermo_potencial": 174.401364,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.24861115677617596,
-      "industrializado_margem_pct": 0.22478491968165965,
-      "recompra_pct": 0.3473684210526316
+      "industrializado_participacao_pct": 0.263167720922703,
+      "industrializado_margem_pct": 0.22122220485172925,
+      "recompra_pct": 0.3473684210526316,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 657,
@@ -854,9 +986,20 @@
       "industrializado_potencial": 709.8517750000001,
       "thermo_potencial": 170.36442600000004,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2064628535990894,
-      "industrializado_margem_pct": 0.24486590078471474,
-      "recompra_pct": 0.2222222222222222
+      "industrializado_participacao_pct": 0.2130038276129495,
+      "industrializado_margem_pct": 0.24307106538607656,
+      "recompra_pct": 0.2222222222222222,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 729,
@@ -920,9 +1063,20 @@
       "industrializado_potencial": 708.221125,
       "thermo_potencial": 169.97307,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.09857334296230576,
-      "industrializado_margem_pct": 0.2079283193936018,
-      "recompra_pct": 0.28378378378378377
+      "industrializado_participacao_pct": 0.09980448259310601,
+      "industrializado_margem_pct": 0.20712058514625262,
+      "recompra_pct": 0.28378378378378377,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 42,
@@ -986,9 +1140,20 @@
       "industrializado_potencial": 696.3300250000001,
       "thermo_potencial": 167.11920600000002,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.09070201405374946,
-      "industrializado_margem_pct": 0.19855945789723584,
-      "recompra_pct": 0.22972972972972974
+      "industrializado_participacao_pct": 0.09188783744133716,
+      "industrializado_margem_pct": 0.19863740346029427,
+      "recompra_pct": 0.22972972972972974,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 644,
@@ -1052,9 +1217,10 @@
       "industrializado_potencial": 689.319475,
       "thermo_potencial": 165.43667399999998,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.16702614994265866,
-      "industrializado_margem_pct": 0.22284002166853864,
-      "recompra_pct": 0.35802469135802467
+      "industrializado_participacao_pct": 0.1706076992503432,
+      "industrializado_margem_pct": 0.22400114926364986,
+      "recompra_pct": 0.35802469135802467,
+      "meta_posit_departamento": {}
     },
     {
       "codigo": 12,
@@ -1118,9 +1284,20 @@
       "industrializado_potencial": 687.654625,
       "thermo_potencial": 165.03710999999998,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.22222219684466363,
-      "industrializado_margem_pct": 0.23949322589745095,
-      "recompra_pct": 0.37755102040816324
+      "industrializado_participacao_pct": 0.2333036962080921,
+      "industrializado_margem_pct": 0.24207771618089052,
+      "recompra_pct": 0.37755102040816324,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 347,
@@ -1184,9 +1361,20 @@
       "industrializado_potencial": 655.3255,
       "thermo_potencial": 157.27812,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.18569466273233945,
-      "industrializado_margem_pct": 0.22832665816810047,
-      "recompra_pct": 0.23684210526315788
+      "industrializado_participacao_pct": 0.18998709077124915,
+      "industrializado_margem_pct": 0.2277312920202567,
+      "recompra_pct": 0.23684210526315788,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 15,
@@ -1250,9 +1438,20 @@
       "industrializado_potencial": 636.677125,
       "thermo_potencial": 152.80251,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.36365709586069256,
-      "industrializado_margem_pct": 0.22919097290038773,
-      "recompra_pct": 0.22115384615384615
+      "industrializado_participacao_pct": 0.3735753160628964,
+      "industrializado_margem_pct": 0.22894499683819938,
+      "recompra_pct": 0.22115384615384615,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 467,
@@ -1316,9 +1515,20 @@
       "industrializado_potencial": 600.242575,
       "thermo_potencial": 144.058218,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.12939349150793694,
-      "industrializado_margem_pct": 0.26129854267116065,
-      "recompra_pct": 0.34210526315789475
+      "industrializado_participacao_pct": 0.1589250647961008,
+      "industrializado_margem_pct": 0.25939832992114376,
+      "recompra_pct": 0.34210526315789475,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 687,
@@ -1382,9 +1592,20 @@
       "industrializado_potencial": 590.572025,
       "thermo_potencial": 141.73728599999998,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.0909688367209301,
-      "industrializado_margem_pct": 0.2174184179696833,
-      "recompra_pct": 0.2911392405063291
+      "industrializado_participacao_pct": 0.09294439777911222,
+      "industrializado_margem_pct": 0.21862413017491997,
+      "recompra_pct": 0.2911392405063291,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 698,
@@ -1448,9 +1669,20 @@
       "industrializado_potencial": 586.192625,
       "thermo_potencial": 140.68623,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.10432442920623633,
-      "industrializado_margem_pct": 0.22774494675028253,
-      "recompra_pct": 0.22727272727272727
+      "industrializado_participacao_pct": 0.10591727835544973,
+      "industrializado_margem_pct": 0.22660119404364953,
+      "recompra_pct": 0.22727272727272727,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 192,
@@ -1514,9 +1746,20 @@
       "industrializado_potencial": 584.001525,
       "thermo_potencial": 140.160366,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.26606926233021394,
-      "industrializado_margem_pct": 0.23528669288427767,
-      "recompra_pct": 0.24675324675324675
+      "industrializado_participacao_pct": 0.2647216522214218,
+      "industrializado_margem_pct": 0.2361758166144772,
+      "recompra_pct": 0.24675324675324675,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 334,
@@ -1580,9 +1823,20 @@
       "industrializado_potencial": 581.29405,
       "thermo_potencial": 139.510572,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.05045604118453504,
-      "industrializado_margem_pct": 0.19447167704393503,
-      "recompra_pct": 0.25806451612903225
+      "industrializado_participacao_pct": 0.05081133973043592,
+      "industrializado_margem_pct": 0.19432503776627713,
+      "recompra_pct": 0.25806451612903225,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 83,
@@ -1646,9 +1900,20 @@
       "industrializado_potencial": 580.6299250000001,
       "thermo_potencial": 139.351182,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.11624576589783858,
-      "industrializado_margem_pct": 0.23373703050564007,
-      "recompra_pct": 0.23529411764705882
+      "industrializado_participacao_pct": 0.11922180995261952,
+      "industrializado_margem_pct": 0.2358164490819743,
+      "recompra_pct": 0.23529411764705882,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 357,
@@ -1712,9 +1977,20 @@
       "industrializado_potencial": 543.3246,
       "thermo_potencial": 130.397904,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2165701931264298,
-      "industrializado_margem_pct": 0.2290545499872855,
-      "recompra_pct": 0.2
+      "industrializado_participacao_pct": 0.2198059566341551,
+      "industrializado_margem_pct": 0.2289197750573141,
+      "recompra_pct": 0.2,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 722,
@@ -1778,9 +2054,20 @@
       "industrializado_potencial": 540.93695,
       "thermo_potencial": 129.82486799999998,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.15687114892946089,
-      "industrializado_margem_pct": 0.24481601424827737,
-      "recompra_pct": 0.07526881720430108
+      "industrializado_participacao_pct": 0.15326415847200386,
+      "industrializado_margem_pct": 0.24338966844809662,
+      "recompra_pct": 0.07526881720430108,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 622,
@@ -1844,9 +2131,20 @@
       "industrializado_potencial": 539.39775,
       "thermo_potencial": 129.45546000000002,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.17193506594213565,
-      "industrializado_margem_pct": 0.22285832856612942,
-      "recompra_pct": 0.17391304347826086
+      "industrializado_participacao_pct": 0.16446657033882098,
+      "industrializado_margem_pct": 0.22253498005917918,
+      "recompra_pct": 0.17391304347826086,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 398,
@@ -1910,9 +2208,20 @@
       "industrializado_potencial": 528.343375,
       "thermo_potencial": 126.80241000000001,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.0938418571800991,
+      "industrializado_participacao_pct": 0.08720213158246133,
       "industrializado_margem_pct": 0.18775149256540563,
-      "recompra_pct": 0.5142857142857142
+      "recompra_pct": 0.5142857142857142,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 471,
@@ -1976,9 +2285,20 @@
       "industrializado_potencial": 519.23275,
       "thermo_potencial": 124.61586,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.12774057389967336,
-      "industrializado_margem_pct": 0.26166954946938487,
-      "recompra_pct": 0.30303030303030304
+      "industrializado_participacao_pct": 0.1274452742836833,
+      "industrializado_margem_pct": 0.26094081827631704,
+      "recompra_pct": 0.30303030303030304,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 735,
@@ -2042,9 +2362,20 @@
       "industrializado_potencial": 502.302325,
       "thermo_potencial": 120.55255799999999,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.19761107293267358,
-      "industrializado_margem_pct": 0.21900570265893035,
-      "recompra_pct": 0.26595744680851063
+      "industrializado_participacao_pct": 0.19762028277320784,
+      "industrializado_margem_pct": 0.21869527512220152,
+      "recompra_pct": 0.26595744680851063,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 679,
@@ -2108,9 +2439,20 @@
       "industrializado_potencial": 501.501975,
       "thermo_potencial": 120.360474,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.08295433540529963,
-      "industrializado_margem_pct": 0.23714885816931858,
-      "recompra_pct": 0.140625
+      "industrializado_participacao_pct": 0.09035319656573533,
+      "industrializado_margem_pct": 0.23493293964951703,
+      "recompra_pct": 0.140625,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 723,
@@ -2174,9 +2516,20 @@
       "industrializado_potencial": 498.23177499999997,
       "thermo_potencial": 119.575626,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.23303760518623942,
-      "industrializado_margem_pct": 0.25853786711325166,
-      "recompra_pct": 0.30303030303030304
+      "industrializado_participacao_pct": 0.25172481519576995,
+      "industrializado_margem_pct": 0.2610484669932536,
+      "recompra_pct": 0.30303030303030304,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 16,
@@ -2240,9 +2593,20 @@
       "industrializado_potencial": 492.78057500000006,
       "thermo_potencial": 118.267338,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.23328115816345021,
-      "industrializado_margem_pct": 0.2518347709253019,
-      "recompra_pct": 0.25
+      "industrializado_participacao_pct": 0.2295084953011411,
+      "industrializado_margem_pct": 0.25133361456631925,
+      "recompra_pct": 0.25,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 473,
@@ -2306,9 +2670,20 @@
       "industrializado_potencial": 492.2293,
       "thermo_potencial": 118.135032,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.11965763825027208,
-      "industrializado_margem_pct": 0.22270776639326503,
-      "recompra_pct": 0.27380952380952384
+      "industrializado_participacao_pct": 0.12319332624109205,
+      "industrializado_margem_pct": 0.22250835003646974,
+      "recompra_pct": 0.27380952380952384,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 650,
@@ -2372,9 +2747,20 @@
       "industrializado_potencial": 489.74495,
       "thermo_potencial": 117.53878800000001,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.19142211317886063,
-      "industrializado_margem_pct": 0.26016625008656363,
-      "recompra_pct": 0.38636363636363635
+      "industrializado_participacao_pct": 0.1960486038526474,
+      "industrializado_margem_pct": 0.2604799716673861,
+      "recompra_pct": 0.38636363636363635,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 561,
@@ -2438,9 +2824,20 @@
       "industrializado_potencial": 481.16487500000005,
       "thermo_potencial": 115.47957000000001,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.21863689914067858,
-      "industrializado_margem_pct": 0.22119486619217288,
-      "recompra_pct": 0.2987012987012987
+      "industrializado_participacao_pct": 0.23070133132173773,
+      "industrializado_margem_pct": 0.2216260192729089,
+      "recompra_pct": 0.2987012987012987,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 649,
@@ -2504,9 +2901,20 @@
       "industrializado_potencial": 471.623975,
       "thermo_potencial": 113.189754,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.18446776464174816,
-      "industrializado_margem_pct": 0.24045847253007416,
-      "recompra_pct": 0.27848101265822783
+      "industrializado_participacao_pct": 0.1857268310782996,
+      "industrializado_margem_pct": 0.2417298530098227,
+      "recompra_pct": 0.27848101265822783,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 377,
@@ -2570,9 +2978,20 @@
       "industrializado_potencial": 437.278325,
       "thermo_potencial": 104.94679799999999,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2572238265853926,
-      "industrializado_margem_pct": 0.22451597910942947,
-      "recompra_pct": 0.2608695652173913
+      "industrializado_participacao_pct": 0.25444521771750633,
+      "industrializado_margem_pct": 0.22413336209350335,
+      "recompra_pct": 0.2608695652173913,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 751,
@@ -2636,9 +3055,20 @@
       "industrializado_potencial": 399.25325,
       "thermo_potencial": 95.82078,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.13555075338707637,
-      "industrializado_margem_pct": 0.21114925836435627,
-      "recompra_pct": 0.12727272727272726
+      "industrializado_participacao_pct": 0.14620116252019202,
+      "industrializado_margem_pct": 0.2114006173397421,
+      "recompra_pct": 0.12727272727272726,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 660,
@@ -2702,9 +3132,20 @@
       "industrializado_potencial": 360.30300000000005,
       "thermo_potencial": 86.47272000000001,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.20041972707828665,
-      "industrializado_margem_pct": 0.22475463490909223,
-      "recompra_pct": 0.16923076923076924
+      "industrializado_participacao_pct": 0.21795585861054123,
+      "industrializado_margem_pct": 0.21888536276013085,
+      "recompra_pct": 0.16923076923076924,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 352,
@@ -2770,7 +3211,18 @@
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.3469387755102041
+      "recompra_pct": 0.3469387755102041,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 781,
@@ -2836,7 +3288,18 @@
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.1794871794871795
+      "recompra_pct": 0.1794871794871795,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 381,
@@ -2900,9 +3363,10 @@
       "industrializado_potencial": 196.471875,
       "thermo_potencial": 47.15325,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.048266682801379995,
-      "industrializado_margem_pct": 0.24043792232406017,
-      "recompra_pct": 0.41379310344827586
+      "industrializado_participacao_pct": 0.05237087929376513,
+      "industrializado_margem_pct": 0.2249177136532766,
+      "recompra_pct": 0.41379310344827586,
+      "meta_posit_departamento": {}
     },
     {
       "codigo": 791,
@@ -2966,9 +3430,20 @@
       "industrializado_potencial": 162.9115,
       "thermo_potencial": 39.09876,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.1782065020352231,
-      "industrializado_margem_pct": 0.2300871167601522,
-      "recompra_pct": 0.3829787234042553
+      "industrializado_participacao_pct": 0.17533043508223983,
+      "industrializado_margem_pct": 0.2305914763820881,
+      "recompra_pct": 0.3829787234042553,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
     },
     {
       "codigo": 793,
@@ -3032,9 +3507,10 @@
       "industrializado_potencial": 53.232425000000006,
       "thermo_potencial": 12.775782,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.08241216320206567,
-      "industrializado_margem_pct": 0.23256855570168322,
-      "recompra_pct": 0.8695652173913043
+      "industrializado_participacao_pct": 0.09430446501805294,
+      "industrializado_margem_pct": 0.22804851015088712,
+      "recompra_pct": 0.8695652173913043,
+      "meta_posit_departamento": {}
     },
     {
       "codigo": 1000,
@@ -3100,7 +3576,8 @@
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.0
+      "recompra_pct": 0.0,
+      "meta_posit_departamento": {}
     }
   ],
   "constantes": {
