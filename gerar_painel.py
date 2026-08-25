@@ -142,10 +142,11 @@ table.breakdown td { text-align: right; padding: 6px 6px; font-variant-numeric: 
 table.breakdown tr:last-child td { border-bottom: none; }
 table.breakdown td.dif-pos { color: var(--good); }
 table.breakdown td.dif-zero { color: var(--ink-faint); font-weight: 500; }
-table.breakdown input.meta-posit-input {
+table.breakdown input.meta-posit-input, table.breakdown input.peso-input {
   width: 56px; font: inherit; font-size: 12.5px; font-weight: 800; text-align: center;
   padding: 4px 4px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); color: var(--accent);
 }
+table.breakdown input.peso-input { width: 72px; }
 
 .checks { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
 .chk {
@@ -279,6 +280,7 @@ function estadoPadrao() {
   return {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
     metasCategoria: Object.assign({}, DADOS.constantes.metas_categoria_padrao),
+    pesoCategoria: {},
   };
 }
 
@@ -295,6 +297,7 @@ function lerEstado(codigo) {
       dia30: parsed.dia30 ?? padrao.dia30,
       campanha: parsed.campanha ?? padrao.campanha,
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
+      pesoCategoria: Object.assign({}, padrao.pesoCategoria, parsed.pesoCategoria || {}),
     };
   } catch (e) { return padrao; }
 }
@@ -307,6 +310,7 @@ function limparEstado(codigo) {
   const zerado = {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
     metasCategoria: Object.fromEntries(DADOS.constantes.ordem_categorias.map(c => [c, 0])),
+    pesoCategoria: {},
   };
   salvarEstado(codigo, zerado);
 }
@@ -320,9 +324,12 @@ function calcular(rca, config) {
   const linhasCategorias = ordem_categorias.map(chave => {
     const cat = rca.categorias[chave];
     const metaPosit = estado.metasCategoria[chave];
+    // Peso vem da planilha, mas pode ser sobrescrito manualmente (ex: pra
+    // simular um cenário diferente) — sem override, mostra o valor real.
+    const peso = estado.pesoCategoria[chave] !== undefined ? estado.pesoCategoria[chave] : cat.peso;
     const comissaoAtual = cat.valor * taxas_categoria[chave];
     const comissaoPotencial = cat.positivacao ? (comissaoAtual / cat.positivacao) * metaPosit : 0;
-    return { chave, label: labels_categoria[chave], atual: comissaoAtual, potencial: comissaoPotencial, ...cat, metaPosit };
+    return { chave, label: labels_categoria[chave], atual: comissaoAtual, potencial: comissaoPotencial, ...cat, peso, metaPosit };
   });
   const departamentosAtual = linhasCategorias.reduce((s, l) => s + l.atual, 0);
   const departamentosPotencial = linhasCategorias.reduce((s, l) => s + l.potencial, 0);
@@ -363,7 +370,7 @@ function montarConteudo(rca) {
     const classeDif = dif > 0.005 ? "dif-pos" : "dif-zero";
     return `<tr>
       <td>${l.label}</td>
-      <td>${l.peso.toLocaleString("pt-BR", {maximumFractionDigits:2})}</td>
+      <td><input type="text" inputmode="decimal" class="peso-input" data-chave="${l.chave}" value="${fmtInput(l.peso)}"></td>
       <td>${fmtMoeda(l.valor)}</td>
       <td>${l.positivacao}</td>
       <td><input type="text" inputmode="numeric" class="meta-posit-input" data-chave="${l.chave}" value="${fmtInput(l.metaPosit)}"></td>
@@ -470,7 +477,7 @@ function renderizarRca() {
   // depois de redesenhar.
   const ativo = document.activeElement;
   const focoAntes = (ativo && conteudo.contains(ativo) && ativo.tagName === "INPUT")
-    ? { id: ativo.id, chave: ativo.dataset.chave, inicio: ativo.selectionStart, fim: ativo.selectionEnd, valorBruto: ativo.value }
+    ? { id: ativo.id, classe: ativo.className, chave: ativo.dataset.chave, inicio: ativo.selectionStart, fim: ativo.selectionEnd, valorBruto: ativo.value }
     : null;
 
   const rca = RCAS_POR_CODIGO[codigo];
@@ -489,7 +496,7 @@ function renderizarRca() {
 
   if (focoAntes) {
     const seletor = focoAntes.chave
-      ? `[data-chave="${focoAntes.chave}"]`
+      ? `.${focoAntes.classe.split(" ")[0]}[data-chave="${focoAntes.chave}"]`
       : (focoAntes.id ? `#${focoAntes.id}` : null);
     const novo = seletor && conteudo.querySelector(seletor);
     if (novo) {
@@ -524,6 +531,12 @@ document.getElementById("conteudo").addEventListener("input", (e) => {
     const codigo = parseInt(document.getElementById("codigoInput").value);
     const estado = lerEstado(codigo);
     estado.metasCategoria[e.target.dataset.chave] = parseNum(e.target.value);
+    salvarEstado(codigo, estado);
+    renderizarRca();
+  } else if (e.target.classList.contains("peso-input")) {
+    const codigo = parseInt(document.getElementById("codigoInput").value);
+    const estado = lerEstado(codigo);
+    estado.pesoCategoria[e.target.dataset.chave] = parseNum(e.target.value);
     salvarEstado(codigo, estado);
     renderizarRca();
   } else if (e.target.id === "cfgMetaPedidosInline") {
