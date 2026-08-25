@@ -177,7 +177,7 @@ table.breakdown input.meta-posit-input {
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>Melhoria Salarial</h1>
+    <h1>Performance</h1>
     <p>Digite o código do RCA pra ver o salário atual x potencial dele — igual à planilha, 1 vendedor por vez.</p>
   </header>
 
