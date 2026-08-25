@@ -279,6 +279,38 @@ function salvarConfig(config) {
 // o novo padrão vinculado pra sempre.
 function chaveEstado(codigo) { return "melhoria_salarial_estado_v2_" + codigo; }
 
+// ---- Vínculo com o Painel Departamentos ----
+// Os dois painéis são publicados sob o mesmo domínio do GitHub Pages
+// (edmarr123.github.io/melhoria-salarial/... e edmarr123.github.io/painel-
+// -departamentos/...) — mesmo domínio = mesmo localStorage, então dá pra
+// usar uma chave compartilhada pra levar a Meta Posit editada aqui até lá.
+// "vegetais" fica de fora (categoria nova, sem bloco correspondente em
+// Departamentos ainda).
+const CHAVE_OVERRIDES_DEPARTAMENTOS = "mps_overrides_v1";
+const MAPA_CATEGORIA_DEPARTAMENTOS = {
+  bacon: "bacon", calabresa: "calabresa", frescais: "frescais", paes: "paes",
+  lactios: "lacteos", batata: "batata", bovino: "bovino", suino: "suino",
+  thermo_cat: "thermo",
+};
+
+function salvarOverrideDepartamentos(codigo, chave, valor) {
+  const chaveDep = MAPA_CATEGORIA_DEPARTAMENTOS[chave];
+  if (!chaveDep) return;
+  try {
+    const overrides = JSON.parse(localStorage.getItem(CHAVE_OVERRIDES_DEPARTAMENTOS) || "{}");
+    overrides[codigo] = Object.assign({}, overrides[codigo], { [chaveDep]: valor });
+    localStorage.setItem(CHAVE_OVERRIDES_DEPARTAMENTOS, JSON.stringify(overrides));
+  } catch (e) {}
+}
+
+function removerOverridesDepartamentos(codigo) {
+  try {
+    const overrides = JSON.parse(localStorage.getItem(CHAVE_OVERRIDES_DEPARTAMENTOS) || "{}");
+    delete overrides[codigo];
+    localStorage.setItem(CHAVE_OVERRIDES_DEPARTAMENTOS, JSON.stringify(overrides));
+  } catch (e) {}
+}
+
 function estadoPadrao(codigo) {
   // Meta Posit por padrão vem do Painel Departamentos (mesma meta de
   // positivação que o supervisor já usa lá) — só cai no valor genérico da
@@ -537,8 +569,10 @@ document.getElementById("conteudo").addEventListener("input", (e) => {
   if (e.target.classList.contains("meta-posit-input")) {
     const codigo = parseInt(document.getElementById("codigoInput").value);
     const estado = lerEstado(codigo);
-    estado.metasCategoria[e.target.dataset.chave] = parseNum(e.target.value);
+    const valor = parseNum(e.target.value);
+    estado.metasCategoria[e.target.dataset.chave] = valor;
     salvarEstado(codigo, estado);
+    salvarOverrideDepartamentos(codigo, e.target.dataset.chave, valor);
     renderizarRca();
   } else if (e.target.id === "cfgMetaPedidosInline") {
     const cfg = lerConfig();
@@ -557,6 +591,9 @@ document.getElementById("conteudo").addEventListener("click", (e) => {
   if (!e.target.closest("#btnLimpar")) return;
   const codigo = parseInt(document.getElementById("codigoInput").value);
   limparEstado(codigo);
+  // Volta o Painel Departamentos pra meta real da planilha em vez de
+  // propagar zero pra lá (zerar aqui é só pra simulação de comissão).
+  removerOverridesDepartamentos(codigo);
   renderizarRca();
 });
 
