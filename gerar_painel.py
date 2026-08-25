@@ -273,7 +273,11 @@ function salvarConfig(config) {
 // ---- Estado por RCA (checkboxes + Meta Posit de cada categoria) — Meta
 // Posit é por vendedor, não global, porque "Limpar marcações deste
 // vendedor" precisa zerar só a meta DELE, sem mexer nos outros.
-function chaveEstado(codigo) { return "melhoria_salarial_estado_" + codigo; }
+// v2: Meta Posit passou a ter um padrão por RCA (vindo do Painel
+// Departamentos) em vez de um padrão fixo igual pra todo mundo — muda a
+// chave pra não deixar marcação antiga (salva antes disso existir) mascarar
+// o novo padrão vinculado pra sempre.
+function chaveEstado(codigo) { return "melhoria_salarial_estado_v2_" + codigo; }
 
 function estadoPadrao(codigo) {
   // Meta Posit por padrão vem do Painel Departamentos (mesma meta de
