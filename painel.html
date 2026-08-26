@@ -91,8 +91,7 @@ table.breakdown input.meta-posit-input {
 .chk input { accent-color: var(--accent); width: 15px; height: 15px; }
 .chk.on { background: var(--good-soft); color: var(--good); border-color: transparent; }
 .chk.auto { cursor: default; }
-.chk.auto .ponto { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-faint); flex: none; }
-.chk.auto.on .ponto { background: var(--good); }
+.chk.auto input { accent-color: var(--good); }
 
 .resumo-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
 .resumo-box { border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
@@ -379,7 +378,9 @@ function montarConteudo(rca) {
     // original) — só mostra se bateu ou não, calculado direto do dado.
     const bateuRecompra = rca.recompra_pct < DADOS.constantes.recompra_limite;
     const on = bateuRecompra ? "on" : "";
-    return `<span class="chk auto ${on}"><span class="ponto"></span> Recompra ${fmtPct(rca.recompra_pct)} ${bateuRecompra ? "(bateu)" : "(não bateu)"}</span>`;
+    return `<label class="chk auto ${on}">
+      <input type="checkbox" disabled ${bateuRecompra ? "checked" : ""}> Recompra ${fmtPct(rca.recompra_pct)} ${bateuRecompra ? "(bateu)" : "(não bateu)"}
+    </label>`;
   })();
 
   return `
