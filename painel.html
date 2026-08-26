@@ -91,7 +91,6 @@ table.breakdown input.meta-posit-input {
 .chk input { accent-color: var(--accent); width: 15px; height: 15px; }
 .chk.on { background: var(--good-soft); color: var(--good); border-color: transparent; }
 .chk.auto { cursor: default; }
-.chk.auto input { accent-color: var(--good); }
 
 .resumo-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
 .resumo-box { border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
@@ -326,7 +325,7 @@ function calcular(rca, config) {
     { label: "Pedidos", atual: pedidosAtual, potencial: pedidosPotencial },
     { label: "Bônus Dia 15", atual: estado.dia15 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
     { label: "Bônus Dia 30", atual: estado.dia30 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
-    { label: "Recompra", atual: 0, potencial: recompraBonus },
+    { label: "Recompra", atual: recompraBonus, potencial: DADOS.constantes.recompra_premio },
     { label: "Prêmio Campanha", atual: estado.campanha ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
   ];
 
@@ -375,12 +374,11 @@ function montarConteudo(rca) {
     </label>`;
   }).join("") + (() => {
     // Recompra é automática (não tem checkbox pra marcar na planilha
-    // original) — só mostra se bateu ou não, calculado direto do dado.
+    // original, é calculada sozinha a partir dos pedidos) — por isso não é
+    // um checkbox clicável como os outros, é só um selo de status.
     const bateuRecompra = rca.recompra_pct < DADOS.constantes.recompra_limite;
     const on = bateuRecompra ? "on" : "";
-    return `<label class="chk auto ${on}">
-      <input type="checkbox" disabled ${bateuRecompra ? "checked" : ""}> Recompra ${fmtPct(rca.recompra_pct)} ${bateuRecompra ? "(bateu)" : "(não bateu)"}
-    </label>`;
+    return `<span class="chk auto ${on}">${bateuRecompra ? "✓" : "○"} Recompra ${fmtPct(rca.recompra_pct)} — automático, ${bateuRecompra ? "bateu" : "não bateu"}</span>`;
   })();
 
   return `
