@@ -155,7 +155,6 @@ table.breakdown input.meta-posit-input {
 }
 .chk input { accent-color: var(--accent); width: 15px; height: 15px; }
 .chk.on { background: var(--good-soft); color: var(--good); border-color: transparent; }
-.chk.auto { cursor: default; }
 
 .resumo-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
 .resumo-box { border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
@@ -323,8 +322,13 @@ function estadoPadrao(codigo) {
   DADOS.constantes.ordem_categorias.forEach(chave => {
     metasCategoria[chave] = metasDep[chave] !== undefined ? metasDep[chave] : DADOS.constantes.metas_categoria_padrao[chave];
   });
+  // Recompra vem com o checkbox pré-marcado de acordo com o cálculo real
+  // (clientes que só compraram 1 vez, aba 8110) — mas dá pra sobrepor na
+  // mão como as outras, se o Edmar quiser revisar um caso específico.
+  const recompraPadrao = rca ? rca.recompra_pct < DADOS.constantes.recompra_limite : false;
   return {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
+    recompra: recompraPadrao,
     metasCategoria,
   };
 }
@@ -341,6 +345,7 @@ function lerEstado(codigo) {
       dia15: parsed.dia15 ?? padrao.dia15,
       dia30: parsed.dia30 ?? padrao.dia30,
       campanha: parsed.campanha ?? padrao.campanha,
+      recompra: parsed.recompra ?? padrao.recompra,
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
     };
   } catch (e) { return padrao; }
@@ -353,6 +358,7 @@ function salvarEstado(codigo, estado) {
 function limparEstado(codigo) {
   const zerado = {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
+    recompra: false,
     metasCategoria: Object.fromEntries(DADOS.constantes.ordem_categorias.map(c => [c, 0])),
   };
   salvarEstado(codigo, zerado);
@@ -378,10 +384,6 @@ function calcular(rca, config) {
   const ticketMedio = rca.total_pedidos ? rca.valor_vendido / rca.total_pedidos : 0;
   const pedidosPotencial = taxa * ticketMedio * config.metaPedidosDia * dias_uteis;
 
-  // Recompra não tem checkbox — é automática, calculada de verdade a
-  // partir dos clientes atendidos (aba 8110): ganha o prêmio se a % de
-  // clientes que só compraram 1 vez ficar abaixo do limite.
-  const recompraBonus = rca.recompra_pct < DADOS.constantes.recompra_limite ? DADOS.constantes.recompra_premio : 0;
 
   const linhasResumo = [
     { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
@@ -390,7 +392,7 @@ function calcular(rca, config) {
     { label: "Pedidos", atual: pedidosAtual, potencial: pedidosPotencial },
     { label: "Bônus Dia 15", atual: estado.dia15 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
     { label: "Bônus Dia 30", atual: estado.dia30 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
-    { label: "Recompra", atual: recompraBonus, potencial: DADOS.constantes.recompra_premio },
+    { label: "Recompra", atual: estado.recompra ? DADOS.constantes.recompra_premio : 0, potencial: DADOS.constantes.recompra_premio },
     { label: "Prêmio Campanha", atual: estado.campanha ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
   ];
 
@@ -431,20 +433,17 @@ function montarConteudo(rca) {
     ["thermo", "Thermo bateu"],
     ["dia15", "Positivação Dia 15 bateu"],
     ["dia30", "Positivação Dia 30 bateu"],
+    // Recompra já vem pré-marcada pelo cálculo real (clientes que só
+    // compraram 1 vez, aba 8110), mas dá pra desmarcar/marcar na mão como
+    // as outras se precisar revisar um caso.
+    ["recompra", `Recompra bateu (${fmtPct(rca.recompra_pct)})`],
     ["campanha", "Prêmio Campanha bateu"],
   ].map(([chave, label]) => {
     const on = r.estado[chave] ? "on" : "";
     return `<label class="chk ${on}" data-chave="${chave}">
       <input type="checkbox" ${r.estado[chave] ? "checked" : ""} data-chave="${chave}"> ${label}
     </label>`;
-  }).join("") + (() => {
-    // Recompra é automática (não tem checkbox pra marcar na planilha
-    // original, é calculada sozinha a partir dos pedidos) — por isso não é
-    // um checkbox clicável como os outros, é só um selo de status.
-    const bateuRecompra = rca.recompra_pct < DADOS.constantes.recompra_limite;
-    const on = bateuRecompra ? "on" : "";
-    return `<span class="chk auto ${on}">${bateuRecompra ? "✓" : "○"} Recompra ${fmtPct(rca.recompra_pct)} — automático, ${bateuRecompra ? "bateu" : "não bateu"}</span>`;
-  })();
+  }).join("");
 
   return `
     <div class="panel">
