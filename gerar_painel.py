@@ -436,7 +436,7 @@ function montarConteudo(rca) {
     // Recompra já vem pré-marcada pelo cálculo real (clientes que só
     // compraram 1 vez, aba 8110), mas dá pra desmarcar/marcar na mão como
     // as outras se precisar revisar um caso.
-    ["recompra", `Recompra bateu (${fmtPct(rca.recompra_pct)})`],
+    ["recompra", "Recompra bateu"],
     ["campanha", "Prêmio Campanha bateu"],
   ].map(([chave, label]) => {
     const on = r.estado[chave] ? "on" : "";
