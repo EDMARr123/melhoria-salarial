@@ -253,7 +253,6 @@ function fmtInput(v) {
 function lerConfig() {
   const padrao = {
     taxaPct: DADOS.constantes.taxa_padrao * 100,
-    metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
   };
   try {
     const salvo = localStorage.getItem("melhoria_salarial_config");
@@ -261,7 +260,6 @@ function lerConfig() {
     const parsed = JSON.parse(salvo);
     return {
       taxaPct: parsed.taxaPct ?? padrao.taxaPct,
-      metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
     };
   } catch (e) { return padrao; }
 }
@@ -311,6 +309,26 @@ function removerOverridesDepartamentos(codigo) {
   } catch (e) {}
 }
 
+// Desafio (Meta de Pedidos/Dia) é individual por RCA — mesmo esquema de
+// chave compartilhada acima, só que numa chave própria.
+const CHAVE_OVERRIDES_META_PEDIDOS = "meta_pedidos_dia_overrides_v1";
+
+function salvarOverrideMetaPedidosDia(codigo, valor) {
+  try {
+    const overrides = JSON.parse(localStorage.getItem(CHAVE_OVERRIDES_META_PEDIDOS) || "{}");
+    overrides[codigo] = valor;
+    localStorage.setItem(CHAVE_OVERRIDES_META_PEDIDOS, JSON.stringify(overrides));
+  } catch (e) {}
+}
+
+function removerOverrideMetaPedidosDia(codigo) {
+  try {
+    const overrides = JSON.parse(localStorage.getItem(CHAVE_OVERRIDES_META_PEDIDOS) || "{}");
+    delete overrides[codigo];
+    localStorage.setItem(CHAVE_OVERRIDES_META_PEDIDOS, JSON.stringify(overrides));
+  } catch (e) {}
+}
+
 function estadoPadrao(codigo) {
   // Meta Posit por padrão vem do Painel Departamentos (mesma meta de
   // positivação que o supervisor já usa lá) — só cai no valor genérico da
@@ -329,6 +347,10 @@ function estadoPadrao(codigo) {
   return {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
     recompra: recompraPadrao,
+    // Meta de Pedidos/Dia é o "desafio" de CADA vendedor — não é um valor
+    // único pra equipe toda, por isso mora no estado por RCA (não no
+    // config global, que só tem a taxa de comissão).
+    metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
     metasCategoria,
   };
 }
@@ -346,6 +368,7 @@ function lerEstado(codigo) {
       dia30: parsed.dia30 ?? padrao.dia30,
       campanha: parsed.campanha ?? padrao.campanha,
       recompra: parsed.recompra ?? padrao.recompra,
+      metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
     };
   } catch (e) { return padrao; }
@@ -359,6 +382,7 @@ function limparEstado(codigo) {
   const zerado = {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
     recompra: false,
+    metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
     metasCategoria: Object.fromEntries(DADOS.constantes.ordem_categorias.map(c => [c, 0])),
   };
   salvarEstado(codigo, zerado);
@@ -382,7 +406,7 @@ function calcular(rca, config) {
 
   const pedidosAtual = taxa * rca.valor_vendido;
   const ticketMedio = rca.total_pedidos ? rca.valor_vendido / rca.total_pedidos : 0;
-  const pedidosPotencial = taxa * ticketMedio * config.metaPedidosDia * dias_uteis;
+  const pedidosPotencial = taxa * ticketMedio * estado.metaPedidosDia * dias_uteis;
 
 
   const linhasResumo = [
@@ -465,7 +489,7 @@ function montarConteudo(rca) {
         </div>
         <div class="campo">
           <label>Meta de pedidos/dia</label>
-          <input type="text" inputmode="numeric" id="cfgMetaPedidosInline" value="${fmtInput(config.metaPedidosDia)}">
+          <input type="text" inputmode="numeric" class="meta-pedidos-dia-input" data-chave="metaPedidosDia" value="${fmtInput(r.estado.metaPedidosDia)}">
         </div>
         <div class="media-pedidos-linha">
           QTD NO MÊS: ${rca.total_pedidos}<br>
@@ -581,15 +605,16 @@ document.getElementById("conteudo").addEventListener("input", (e) => {
     salvarEstado(codigo, estado);
     salvarOverrideDepartamentos(codigo, e.target.dataset.chave, valor);
     renderizarRca();
-  } else if (e.target.id === "cfgMetaPedidosInline") {
-    const cfg = lerConfig();
-    cfg.metaPedidosDia = parseNum(e.target.value);
-    salvarConfig(cfg);
-    // Meta de Pedidos/Dia é única pra equipe toda (não por RCA) — o
-    // Painel Departamentos mostra ela como "Desafio" em todo mundo, então
-    // salva num lugar compartilhado (mesmo domínio do GitHub Pages) pra
-    // aparecer lá também.
-    try { localStorage.setItem("meta_pedidos_dia_override_v1", String(cfg.metaPedidosDia)); } catch (e2) {}
+  } else if (e.target.classList.contains("meta-pedidos-dia-input")) {
+    const codigo = parseInt(document.getElementById("codigoInput").value);
+    const estado = lerEstado(codigo);
+    const valor = parseNum(e.target.value);
+    estado.metaPedidosDia = valor;
+    salvarEstado(codigo, estado);
+    // Desafio é individual (por RCA) — o Painel Departamentos lê esse
+    // valor pelo código, num lugar compartilhado (mesmo domínio do GitHub
+    // Pages), pra mostrar o desafio de cada vendedor certinho lá também.
+    salvarOverrideMetaPedidosDia(codigo, valor);
     renderizarRca();
   } else if (e.target.id === "cfgTaxaInline") {
     const cfg = lerConfig();
@@ -606,6 +631,7 @@ document.getElementById("conteudo").addEventListener("click", (e) => {
   // Volta o Painel Departamentos pra meta real da planilha em vez de
   // propagar zero pra lá (zerar aqui é só pra simulação de comissão).
   removerOverridesDepartamentos(codigo);
+  removerOverrideMetaPedidosDia(codigo);
   renderizarRca();
 });
 
