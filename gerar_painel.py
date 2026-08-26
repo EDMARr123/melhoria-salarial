@@ -585,6 +585,11 @@ document.getElementById("conteudo").addEventListener("input", (e) => {
     const cfg = lerConfig();
     cfg.metaPedidosDia = parseNum(e.target.value);
     salvarConfig(cfg);
+    // Meta de Pedidos/Dia é única pra equipe toda (não por RCA) — o
+    // Painel Departamentos mostra ela como "Desafio" em todo mundo, então
+    // salva num lugar compartilhado (mesmo domínio do GitHub Pages) pra
+    // aparecer lá também.
+    try { localStorage.setItem("meta_pedidos_dia_override_v1", String(cfg.metaPedidosDia)); } catch (e2) {}
     renderizarRca();
   } else if (e.target.id === "cfgTaxaInline") {
     const cfg = lerConfig();
