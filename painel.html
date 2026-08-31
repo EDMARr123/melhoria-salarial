@@ -183,26 +183,6 @@ function fmtInput(v) {
   return String(v).replace(".", ",");
 }
 
-// ---- Configuração global (só taxa + meta de pedidos/dia — valem pra
-// qualquer vendedor) ----
-function lerConfig() {
-  const padrao = {
-    taxaPct: DADOS.constantes.taxa_padrao * 100,
-  };
-  try {
-    const salvo = localStorage.getItem("melhoria_salarial_config");
-    if (!salvo) return padrao;
-    const parsed = JSON.parse(salvo);
-    return {
-      taxaPct: parsed.taxaPct ?? padrao.taxaPct,
-    };
-  } catch (e) { return padrao; }
-}
-
-function salvarConfig(config) {
-  try { localStorage.setItem("melhoria_salarial_config", JSON.stringify(config)); } catch (e) {}
-}
-
 // ---- Estado por RCA (checkboxes + Meta Posit de cada categoria) — Meta
 // Posit é por vendedor, não global, porque "Limpar marcações deste
 // vendedor" precisa zerar só a meta DELE, sem mexer nos outros.
@@ -282,10 +262,12 @@ function estadoPadrao(codigo) {
   return {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
     recompra: recompraPadrao,
-    // Meta de Pedidos/Dia é o "desafio" de CADA vendedor — não é um valor
-    // único pra equipe toda, por isso mora no estado por RCA (não no
-    // config global, que só tem a taxa de comissão).
+    // Meta de Pedidos/Dia e Taxa de Comissão são o "desafio"/acordo de CADA
+    // vendedor — não um valor único pra equipe toda — por isso moram no
+    // estado por RCA, não numa config global (senão editar um vendedor
+    // mudava o cálculo de todo mundo).
     metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
+    taxaPct: DADOS.constantes.taxa_padrao * 100,
     metasCategoria,
   };
 }
@@ -304,6 +286,7 @@ function lerEstado(codigo) {
       campanha: parsed.campanha ?? padrao.campanha,
       recompra: parsed.recompra ?? padrao.recompra,
       metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
+      taxaPct: parsed.taxaPct ?? padrao.taxaPct,
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
     };
   } catch (e) { return padrao; }
@@ -318,15 +301,16 @@ function limparEstado(codigo) {
     industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
     recompra: false,
     metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
+    taxaPct: DADOS.constantes.taxa_padrao * 100,
     metasCategoria: Object.fromEntries(DADOS.constantes.ordem_categorias.map(c => [c, 0])),
   };
   salvarEstado(codigo, zerado);
 }
 
 // ---- Cálculo ----
-function calcular(rca, config) {
-  const taxa = config.taxaPct / 100;
+function calcular(rca) {
   const estado = lerEstado(rca.codigo);
+  const taxa = estado.taxaPct / 100;
   const { dias_uteis, taxas_categoria, labels_categoria, ordem_categorias } = DADOS.constantes;
 
   const linhasCategorias = ordem_categorias.map(chave => {
@@ -363,8 +347,7 @@ function calcular(rca, config) {
 }
 
 function montarConteudo(rca) {
-  const config = lerConfig();
-  const r = calcular(rca, config);
+  const r = calcular(rca);
 
   const linhasCatHtml = r.linhasCategorias.map(l => {
     const dif = l.potencial - l.atual;
@@ -420,7 +403,7 @@ function montarConteudo(rca) {
       <div class="busca-row" style="align-items:flex-start">
         <div class="campo">
           <label>Taxa média comissão (%)</label>
-          <input type="text" inputmode="decimal" id="cfgTaxaInline" value="${fmtInput(config.taxaPct)}">
+          <input type="text" inputmode="decimal" class="taxa-pct-input" data-chave="taxaPct" value="${fmtInput(r.estado.taxaPct)}">
         </div>
         <div class="campo">
           <label>Meta de pedidos/dia</label>
@@ -551,10 +534,11 @@ document.getElementById("conteudo").addEventListener("input", (e) => {
     // Pages), pra mostrar o desafio de cada vendedor certinho lá também.
     salvarOverrideMetaPedidosDia(codigo, valor);
     renderizarRca();
-  } else if (e.target.id === "cfgTaxaInline") {
-    const cfg = lerConfig();
-    cfg.taxaPct = parseNum(e.target.value);
-    salvarConfig(cfg);
+  } else if (e.target.classList.contains("taxa-pct-input")) {
+    const codigo = parseInt(document.getElementById("codigoInput").value);
+    const estado = lerEstado(codigo);
+    estado.taxaPct = parseNum(e.target.value);
+    salvarEstado(codigo, estado);
     renderizarRca();
   }
 });
