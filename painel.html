@@ -267,7 +267,9 @@ function estadoPadrao(codigo) {
     // vendedor — não um valor único pra equipe toda — por isso moram no
     // estado por RCA, não numa config global (senão editar um vendedor
     // mudava o cálculo de todo mundo).
-    metaPedidosDia: 0,  // desde 04/10 começa zerada (o Edmar preenche)
+    // Referência: começa igual à média de pedidos/dia do próprio vendedor
+    // (a mesma "MÉDIA DE PEDIDOS" mostrada ao lado); o Edmar ajusta.
+    metaPedidosDia: rca ? Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis) : 0,
     taxaPct: (rca && rca.taxa_comissao_pct != null) ? rca.taxa_comissao_pct : DADOS.constantes.taxa_padrao * 100,
     metasCategoria,
   };
