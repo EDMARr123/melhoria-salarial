@@ -319,7 +319,7 @@ function estadoPadrao(codigo) {
   const metasCategoria = {};
   DADOS.constantes.ordem_categorias.forEach(chave => {
     // Desde 04/10 todas as metas de positivação começam zeradas (o Edmar preenche).
-    metasCategoria[chave] = 0;
+    metasCategoria[chave] = (rca && rca.categorias[chave]) ? rca.categorias[chave].positivacao : 0;  // referência = positivação realizada
   });
   // Recompra vem com o checkbox pré-marcado de acordo com o cálculo real
   // (clientes que só compraram 1 vez, aba 8110) — mas dá pra sobrepor na
@@ -353,23 +353,23 @@ function lerEstado(codigo) {
     const parsed = JSON.parse(salvo);
     return {
       // Marcações salvas antes de 04/10 (sem metasV=2) dão lugar ao resultado real do mês.
-      industrializado: parsed.metasV === 2 ? (parsed.industrializado ?? padrao.industrializado) : padrao.industrializado,
-      thermo: parsed.metasV === 2 ? (parsed.thermo ?? padrao.thermo) : padrao.thermo,
-      dia15: parsed.metasV === 2 ? (parsed.dia15 ?? padrao.dia15) : padrao.dia15,
-      dia30: parsed.metasV === 2 ? (parsed.dia30 ?? padrao.dia30) : padrao.dia30,
+      industrializado: parsed.metasV === 3 ? (parsed.industrializado ?? padrao.industrializado) : padrao.industrializado,
+      thermo: parsed.metasV === 3 ? (parsed.thermo ?? padrao.thermo) : padrao.thermo,
+      dia15: parsed.metasV === 3 ? (parsed.dia15 ?? padrao.dia15) : padrao.dia15,
+      dia30: parsed.metasV === 3 ? (parsed.dia30 ?? padrao.dia30) : padrao.dia30,
       campanha: false,
-      recompra: parsed.metasV === 2 ? (parsed.recompra ?? padrao.recompra) : padrao.recompra,
-      metaPedidosDia: parsed.metasV === 2 ? (parsed.metaPedidosDia ?? padrao.metaPedidosDia) : padrao.metaPedidosDia,
+      recompra: parsed.metasV === 3 ? (parsed.recompra ?? padrao.recompra) : padrao.recompra,
+      metaPedidosDia: parsed.metasV === 3 ? (parsed.metaPedidosDia ?? padrao.metaPedidosDia) : padrao.metaPedidosDia,
       // Taxa do relatório 1249 do mês (quando existe) vale mais que a digitada antes.
       taxaPct: padrao.taxaPct,  // fixa: sempre a do relatório 1249 (ou a padrão)
       // Metas salvas antes de 04/10 (sem metasV=2) são descartadas: começam zeradas.
-      metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasV === 2 ? (parsed.metasCategoria || {}) : {}),
+      metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasV === 3 ? (parsed.metasCategoria || {}) : {}),
     };
   } catch (e) { return padrao; }
 }
 
 function salvarEstado(codigo, estado) {
-  try { localStorage.setItem(chaveEstado(codigo), JSON.stringify(Object.assign({}, estado, { metasV: 2 }))); } catch (e) {}
+  try { localStorage.setItem(chaveEstado(codigo), JSON.stringify(Object.assign({}, estado, { metasV: 3 }))); } catch (e) {}
 }
 
 function limparEstado(codigo) {
