@@ -411,19 +411,21 @@ function calcular(rca) {
     const ganho = real[chave] || 0;
     return { atual: estado[chave] ? (ganho > 0 ? ganho : teto) : 0, potencial: Math.max(teto, ganho) };
   };
+  // Resumo direto (04/10): comissão = taxa × faturamento + bônus do mês.
+  // Departamentos ficou só na tabela por categoria, fora da soma.
+  const fmtTaxa = (taxa * 100).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const linhasResumo = [
-    { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
+    { label: `Comissão (${fmtTaxa}% × faturamento ${fmtMoeda(rca.valor_vendido)})`, atual: pedidosAtual, potencial: pedidosPotencial },
     { label: "Bônus Industrializado", ...bonus("industrializado", rca.industrializado_potencial) },
     { label: "Bônus Thermo", ...bonus("thermo", rca.thermo_potencial) },
-    { label: "Pedidos", atual: pedidosAtual, potencial: pedidosPotencial },
-    { label: "Bônus Dia 15", ...bonus("dia15", rca.premio_fixo) },
-    { label: "Bônus Dia 30", ...bonus("dia30", rca.premio_fixo) },
     { label: "Recompra", ...bonus("recompra", DADOS.constantes.recompra_premio) },
+    { label: "Positivação Dia 15", ...bonus("dia15", rca.premio_fixo) },
+    { label: "Positivação Dia 30", ...bonus("dia30", rca.premio_fixo) },
   ];
 
-  const soma = linhasResumo.reduce((s, l) => s + (l.potencial - l.atual), 0);
-  const salarioAtual = pedidosAtual;
-  const salarioTotal = salarioAtual + soma;
+  const salarioAtual = linhasResumo.reduce((s, l) => s + l.atual, 0);
+  const salarioTotal = linhasResumo.reduce((s, l) => s + l.potencial, 0);
+  const soma = salarioTotal - salarioAtual;
 
   return { linhasCategorias, linhasResumo, soma, salarioAtual, salarioTotal, estado, ticketMedio };
 }
