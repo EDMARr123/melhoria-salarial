@@ -344,7 +344,8 @@ function calcular(rca) {
   const real = rca.bonus_real || {};
   const bonus = (chave, teto) => {
     const ganho = real[chave] || 0;
-    return { atual: estado[chave] ? (ganho > 0 ? ganho : teto) : 0, potencial: Math.max(teto, ganho) };
+    // Bônus (04/10): Atual e Potencial ficam zerados; marcado, o valor ganho vai para a Diferença.
+    return { atual: 0, potencial: 0, dif: estado[chave] ? (ganho > 0 ? ganho : teto) : 0 };
   };
   const linhasResumo = [
     { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
@@ -356,7 +357,7 @@ function calcular(rca) {
     { label: "Recompra", ...bonus("recompra", DADOS.constantes.recompra_premio) },
   ];
 
-  const soma = linhasResumo.reduce((s, l) => s + (l.potencial - l.atual), 0);
+  const soma = linhasResumo.reduce((s, l) => s + (l.dif ?? (l.potencial - l.atual)), 0);
   const salarioAtual = pedidosAtual;
   const salarioTotal = salarioAtual + soma;
 
@@ -382,7 +383,7 @@ function montarConteudo(rca) {
   }).join("");
 
   const linhasResumoHtml = r.linhasResumo.map(l => {
-    const dif = l.potencial - l.atual;
+    const dif = l.dif ?? (l.potencial - l.atual);
     const classeDif = dif > 0.005 ? "dif-pos" : "dif-zero";
     return `<tr><td>${l.label}</td><td>${fmtMoeda(l.atual)}</td><td>${fmtMoeda(l.potencial)}</td><td class="${classeDif}">${fmtMoeda(dif)}</td></tr>`;
   }).join("");
