@@ -332,7 +332,7 @@ function estadoPadrao(codigo) {
     // vendedor — não um valor único pra equipe toda — por isso moram no
     // estado por RCA, não numa config global (senão editar um vendedor
     // mudava o cálculo de todo mundo).
-    metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
+    metaPedidosDia: 0,  // desde 04/10 começa zerada (o Edmar preenche)
     taxaPct: (rca && rca.taxa_comissao_pct != null) ? rca.taxa_comissao_pct : DADOS.constantes.taxa_padrao * 100,
     metasCategoria,
   };
@@ -351,7 +351,7 @@ function lerEstado(codigo) {
       dia30: parsed.dia30 ?? padrao.dia30,
       campanha: parsed.campanha ?? padrao.campanha,
       recompra: parsed.recompra ?? padrao.recompra,
-      metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
+      metaPedidosDia: parsed.metasV === 2 ? (parsed.metaPedidosDia ?? padrao.metaPedidosDia) : padrao.metaPedidosDia,
       // Taxa do relatório 1249 do mês (quando existe) vale mais que a digitada antes.
       taxaPct: padrao.taxaPct,  // fixa: sempre a do relatório 1249 (ou a padrão)
       // Metas salvas antes de 04/10 (sem metasV=2) são descartadas: começam zeradas.
