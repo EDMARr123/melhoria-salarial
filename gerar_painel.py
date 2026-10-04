@@ -514,7 +514,7 @@ function montarConteudo(rca) {
     </div>
 
     <div class="panel">
-      <h2 style="color:var(--good);font-weight:900;font-size:20px">Bônus e desafios</h2>
+      <h2 style="color:var(--good);font-weight:900;font-size:20px">Bônus</h2>
       <div class="checks">${checks}</div>
     </div>
 
