@@ -352,7 +352,7 @@ function lerEstado(codigo) {
       recompra: parsed.recompra ?? padrao.recompra,
       metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
       // Taxa do relatório 1249 do mês (quando existe) vale mais que a digitada antes.
-      taxaPct: (RCAS_POR_CODIGO[codigo] || {}).taxa_comissao_pct ?? parsed.taxaPct ?? padrao.taxaPct,
+      taxaPct: padrao.taxaPct,  // fixa: sempre a do relatório 1249 (ou a padrão)
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
     };
   } catch (e) { return padrao; }
@@ -469,7 +469,7 @@ function montarConteudo(rca) {
       <div class="busca-row" style="align-items:flex-start">
         <div class="campo">
           <label>Taxa média comissão (%)</label>
-          <input type="text" inputmode="decimal" class="taxa-pct-input" data-chave="taxaPct" value="${fmtInput(r.estado.taxaPct)}">
+          <input type="text" class="taxa-pct-input" data-chave="taxaPct" value="${fmtInput(r.estado.taxaPct)}" readonly tabindex="-1" title="% de comissão do relatório 1249 do mês (fixo)" style="background:#eceae4;cursor:not-allowed">
         </div>
         <div class="campo">
           <label>Meta de pedidos/dia</label>
