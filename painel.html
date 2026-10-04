@@ -581,6 +581,48 @@ function montarDatalist() {
 
 document.getElementById("codigoInput").addEventListener("input", renderizarRca);
 
+// ---- Link individual por vendedor: painel.html?rca=15 ----
+// Abre direto no vendedor, com o código travado. Se o link trouxer
+// &s=... (gerado pelo botão "Copiar link do meu preenchimento"), carrega o
+// que o vendedor preencheu — é assim que o gerente vê o preenchimento dele.
+function codificarEstado(est) {
+  const json = JSON.stringify(est);
+  return btoa(unescape(encodeURIComponent(json))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function decodificarEstado(txt) {
+  const b64 = txt.replace(/-/g, "+").replace(/_/g, "/");
+  return JSON.parse(decodeURIComponent(escape(atob(b64))));
+}
+const PARAMS = new URLSearchParams(location.search);
+const RCA_FIXO = parseInt(PARAMS.get("rca"));
+if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
+  const inp = document.getElementById("codigoInput");
+  inp.value = RCA_FIXO;
+  inp.readOnly = true;
+  inp.removeAttribute("list");
+  inp.style.background = "#eceae4";
+  document.querySelector("header p").textContent = "Preencha suas metas e marque seus bônus. Depois toque em \"Copiar link do meu preenchimento\" e envie para o seu gerente.";
+  if (PARAMS.get("s")) {
+    try {
+      const recebido = decodificarEstado(PARAMS.get("s"));
+      salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), recebido));
+    } catch (e) {}
+  }
+  const barra = document.createElement("div");
+  barra.style.cssText = "margin:18px 0 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap";
+  barra.innerHTML = '<button id="btnCopiarLink" style="background:var(--good);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:800;font-size:14px;cursor:pointer">Copiar link do meu preenchimento</button><span id="msgCopiar" style="font-size:13px;color:var(--ink-faint)"></span>';
+  document.querySelector(".busca-row").after(barra);
+  document.getElementById("btnCopiarLink").addEventListener("click", async () => {
+    const est = lerEstado(RCA_FIXO);
+    const dadosEnvio = { metaPedidosDia: est.metaPedidosDia, metasCategoria: est.metasCategoria,
+      industrializado: est.industrializado, thermo: est.thermo, dia15: est.dia15, dia30: est.dia30, recompra: est.recompra, metasV: 2 };
+    const url = location.origin + location.pathname + "?rca=" + RCA_FIXO + "&s=" + codificarEstado(dadosEnvio);
+    const msg = document.getElementById("msgCopiar");
+    try { await navigator.clipboard.writeText(url); msg.textContent = "Link copiado! Cole e envie para o seu gerente."; }
+    catch (e) { prompt("Copie o link abaixo e envie para o seu gerente:", url); }
+  });
+}
+
 montarDatalist();
 renderizarRca();
 </script>

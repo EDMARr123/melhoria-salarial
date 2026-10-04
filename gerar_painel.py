@@ -646,6 +646,48 @@ function montarDatalist() {
 
 document.getElementById("codigoInput").addEventListener("input", renderizarRca);
 
+// ---- Link individual por vendedor: painel.html?rca=15 ----
+// Abre direto no vendedor, com o código travado. Se o link trouxer
+// &s=... (gerado pelo botão "Copiar link do meu preenchimento"), carrega o
+// que o vendedor preencheu — é assim que o gerente vê o preenchimento dele.
+function codificarEstado(est) {
+  const json = JSON.stringify(est);
+  return btoa(unescape(encodeURIComponent(json))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function decodificarEstado(txt) {
+  const b64 = txt.replace(/-/g, "+").replace(/_/g, "/");
+  return JSON.parse(decodeURIComponent(escape(atob(b64))));
+}
+const PARAMS = new URLSearchParams(location.search);
+const RCA_FIXO = parseInt(PARAMS.get("rca"));
+if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
+  const inp = document.getElementById("codigoInput");
+  inp.value = RCA_FIXO;
+  inp.readOnly = true;
+  inp.removeAttribute("list");
+  inp.style.background = "#eceae4";
+  document.querySelector("header p").textContent = "Preencha suas metas e marque seus bônus. Depois toque em \"Copiar link do meu preenchimento\" e envie para o seu gerente.";
+  if (PARAMS.get("s")) {
+    try {
+      const recebido = decodificarEstado(PARAMS.get("s"));
+      salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), recebido));
+    } catch (e) {}
+  }
+  const barra = document.createElement("div");
+  barra.style.cssText = "margin:18px 0 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap";
+  barra.innerHTML = '<button id="btnCopiarLink" style="background:var(--good);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:800;font-size:14px;cursor:pointer">Copiar link do meu preenchimento</button><span id="msgCopiar" style="font-size:13px;color:var(--ink-faint)"></span>';
+  document.querySelector(".busca-row").after(barra);
+  document.getElementById("btnCopiarLink").addEventListener("click", async () => {
+    const est = lerEstado(RCA_FIXO);
+    const dadosEnvio = { metaPedidosDia: est.metaPedidosDia, metasCategoria: est.metasCategoria,
+      industrializado: est.industrializado, thermo: est.thermo, dia15: est.dia15, dia30: est.dia30, recompra: est.recompra, metasV: 2 };
+    const url = location.origin + location.pathname + "?rca=" + RCA_FIXO + "&s=" + codificarEstado(dadosEnvio);
+    const msg = document.getElementById("msgCopiar");
+    try { await navigator.clipboard.writeText(url); msg.textContent = "Link copiado! Cole e envie para o seu gerente."; }
+    catch (e) { prompt("Copie o link abaixo e envie para o seu gerente:", url); }
+  });
+}
+
 montarDatalist();
 renderizarRca();
 </script>
@@ -663,6 +705,52 @@ def main():
     html = html.replace("__FOTOS_RCAS_JSON__", _FOTOS_RCAS_JSON)
     with open(CAMINHO_SAIDA, "w", encoding="utf-8") as f:
         f.write(html)
+    gerar_links(dados)
+
+
+URL_PAINEL = "https://edmarr123.github.io/melhoria-salarial/painel.html"
+ORDEM_SUPERVISORES = ["LEANDRO", "FLAVIANE", "IDEGLAN", "RICARDO", "RICHARD", "RODRIGO"]
+
+
+def gerar_links(dados):
+    """links.html: o link individual (painel.html?rca=X) de cada vendedor,
+    separado por supervisor."""
+    import html as _h
+    grupos = {}
+    for r in dados["rcas"]:
+        if r.get("supervisor") in ORDEM_SUPERVISORES:
+            grupos.setdefault(r["supervisor"], []).append(r)
+    blocos = []
+    for sup in ORDEM_SUPERVISORES:
+        linhas = "".join(
+            f'<tr><td class="cod">{r["codigo"]}</td><td>{_h.escape(r["nome"])}</td>'
+            f'<td><a href="{URL_PAINEL}?rca={r["codigo"]}" target="_blank">{URL_PAINEL}?rca={r["codigo"]}</a></td>'
+            f'<td><button onclick="copiar(this, \'{URL_PAINEL}?rca={r["codigo"]}\')">Copiar</button></td></tr>'
+            for r in sorted(grupos.get(sup, []), key=lambda x: x["nome"])
+        )
+        blocos.append(f'<section><h2>Supervisor {sup} <span>{len(grupos.get(sup, []))} vendedores</span></h2>'
+                      f'<table><thead><tr><th>RCA</th><th>Vendedor</th><th>Link</th><th></th></tr></thead><tbody>{linhas}</tbody></table></section>')
+    pagina = f"""<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Links Melhoria Salarial</title>
+<style>
+body{{margin:0;background:#F3F2EC;font-family:Segoe UI,Arial,sans-serif;color:#1E2320}}
+main{{max-width:1100px;margin:0 auto;padding:28px 16px}}
+h1{{margin:0 0 4px}} p.sub{{margin:0 0 22px;color:#6B706B}}
+section{{background:#fff;border-radius:14px;padding:18px 20px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}}
+h2{{margin:0 0 10px;font-size:18px;color:#1D9A5D}} h2 span{{font-size:13px;color:#8A8F8A;font-weight:600;margin-left:8px}}
+table{{width:100%;border-collapse:collapse;font-size:14px}} th{{text-align:left;font-size:11px;color:#8A8F8A;text-transform:uppercase;padding:6px 8px}}
+td{{padding:8px;border-top:1px solid #EEE;word-break:break-all}} td.cod{{font-weight:700;width:50px}}
+a{{color:#1D6FB8}} button{{background:#1D9A5D;color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer}}
+</style></head><body><main>
+<h1>Links da Melhoria Salarial</h1>
+<p class="sub">Cada vendedor abre o próprio link, preenche as metas e bônus e toca em "Copiar link do meu preenchimento" para te enviar o resultado.</p>
+{''.join(blocos)}
+</main><script>
+function copiar(btn, url){{navigator.clipboard.writeText(url).then(()=>{{btn.textContent='Copiado!';setTimeout(()=>btn.textContent='Copiar',1500)}},()=>prompt('Copie o link:',url));}}
+</script></body></html>"""
+    with open(os.path.join(os.path.dirname(CAMINHO_SAIDA), "links.html"), "w", encoding="utf-8") as f:
+        f.write(pagina)
+    print("Links gerados:", sum(len(v) for v in grupos.values()))
     print(f"Painel gerado em: {CAMINHO_SAIDA}")
 
 
