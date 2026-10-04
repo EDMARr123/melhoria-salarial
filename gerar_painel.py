@@ -415,7 +415,8 @@ function calcular(rca) {
   // Departamentos ficou só na tabela por categoria, fora da soma.
   const fmtTaxa = (taxa * 100).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const linhasResumo = [
-    { label: `Comissão (${fmtTaxa}% × faturamento ${fmtMoeda(rca.valor_vendido)})`, atual: pedidosAtual, potencial: pedidosPotencial },
+    { label: `Pedidos — comissão ${fmtTaxa}% × faturamento ${fmtMoeda(rca.valor_vendido)}`, atual: pedidosAtual, potencial: pedidosPotencial },
+    { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
     { label: "Bônus Industrializado", ...bonus("industrializado", rca.industrializado_potencial) },
     { label: "Bônus Thermo", ...bonus("thermo", rca.thermo_potencial) },
     { label: "Recompra", ...bonus("recompra", DADOS.constantes.recompra_premio) },
@@ -423,9 +424,11 @@ function calcular(rca) {
     { label: "Positivação Dia 30", ...bonus("dia30", rca.premio_fixo) },
   ];
 
-  const salarioAtual = linhasResumo.reduce((s, l) => s + l.atual, 0);
-  const salarioTotal = linhasResumo.reduce((s, l) => s + l.potencial, 0);
-  const soma = salarioTotal - salarioAtual;
+  // Salário atual = comissão (pedidos) + bônus ganhos. Departamentos já está
+  // dentro da comissão, então entra só no upside (diferença), como na planilha.
+  const salarioAtual = linhasResumo.filter(l => l.label !== "Departamentos").reduce((s, l) => s + l.atual, 0);
+  const soma = linhasResumo.reduce((s, l) => s + (l.potencial - l.atual), 0);
+  const salarioTotal = salarioAtual + soma;
 
   return { linhasCategorias, linhasResumo, soma, salarioAtual, salarioTotal, estado, ticketMedio };
 }
