@@ -402,7 +402,6 @@ function calcular(rca) {
     { label: "Bônus Dia 15", atual: estado.dia15 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
     { label: "Bônus Dia 30", atual: estado.dia30 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
     { label: "Recompra", atual: estado.recompra ? DADOS.constantes.recompra_premio : 0, potencial: DADOS.constantes.recompra_premio },
-    { label: "Prêmio Campanha", atual: estado.campanha ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
   ];
 
   const soma = linhasResumo.reduce((s, l) => s + (l.potencial - l.atual), 0);
@@ -445,7 +444,6 @@ function montarConteudo(rca) {
     // compraram 1 vez, aba 8110), mas dá pra desmarcar/marcar na mão como
     // as outras se precisar revisar um caso.
     ["recompra", "Recompra bateu"],
-    ["campanha", "Prêmio Campanha bateu"],
   ].map(([chave, label]) => {
     const on = r.estado[chave] ? "on" : "";
     return `<label class="chk ${on}" data-chave="${chave}">
