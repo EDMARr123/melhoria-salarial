@@ -493,7 +493,7 @@ function montarConteudo(rca) {
         </div>
         <div class="media-pedidos-linha">
           QTD NO MÊS: ${rca.total_pedidos}<br>
-          <span style="display:inline-block;margin-top:6px;background:var(--good);color:#fff;border-radius:10px;padding:8px 14px;font-size:20px;font-weight:900">MÉDIA DE PEDIDOS: ${Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis)}</span>
+          <span style="display:inline-block;margin-top:4px;background:var(--good);color:#fff;border-radius:8px;padding:4px 10px;font-size:14px;font-weight:900">MÉDIA DE PEDIDOS: ${Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis)}</span>
         </div>
         <div class="media-pedidos-linha" style="margin-left:auto;text-align:right">
           PARTICIPAÇÃO INDUSTRIALIZADO: ${fmtPct(rca.industrializado_participacao_pct)}<br>
