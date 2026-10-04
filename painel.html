@@ -321,7 +321,7 @@ function limparEstado(codigo) {
 // ---- Cálculo ----
 function calcular(rca) {
   const estado = lerEstado(rca.codigo);
-  const taxa = Math.round(estado.taxaPct * 1000) / 1000 / 100;  // 3 casas, igual ao mostrado
+  const taxa = Math.round(estado.taxaPct * 100) / 100 / 100;  // 2 casas, igual ao mostrado
   const { dias_uteis, taxas_categoria, labels_categoria, ordem_categorias } = DADOS.constantes;
 
   const linhasCategorias = ordem_categorias.map(chave => {
@@ -419,7 +419,7 @@ function montarConteudo(rca) {
       <div class="busca-row" style="align-items:flex-start">
         <div class="campo">
           <label>Taxa média comissão (%)</label>
-          <input type="text" class="taxa-pct-input" data-chave="taxaPct" value="${r.estado.taxaPct.toLocaleString("pt-BR", { minimumFractionDigits: 3, maximumFractionDigits: 3 })}" readonly tabindex="-1" title="% de comissão do relatório 1249 do mês (fixo)" style="background:#eceae4;cursor:not-allowed">
+          <input type="text" class="taxa-pct-input" data-chave="taxaPct" value="${r.estado.taxaPct.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}" readonly tabindex="-1" title="% de comissão do relatório 1249 do mês (fixo)" style="background:#eceae4;cursor:not-allowed">
         </div>
         <div class="campo">
           <label style="color:var(--good);font-weight:900;font-size:13px">Meta de pedidos/dia</label>
