@@ -666,26 +666,13 @@ if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
   inp.readOnly = true;
   inp.removeAttribute("list");
   inp.style.background = "#eceae4";
-  document.querySelector("header p").textContent = "Preencha suas metas e marque seus bônus. Depois toque em \"Copiar link do meu preenchimento\" e envie para o seu gerente.";
+  document.querySelector("header p").textContent = "Preencha suas metas e marque seus bônus para ver o seu salário potencial.";
   if (PARAMS.get("s")) {
     try {
       const recebido = decodificarEstado(PARAMS.get("s"));
       salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), recebido));
     } catch (e) {}
   }
-  const barra = document.createElement("div");
-  barra.style.cssText = "margin:18px 0 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap";
-  barra.innerHTML = '<button id="btnCopiarLink" style="background:var(--good);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:800;font-size:14px;cursor:pointer">Copiar link do meu preenchimento</button><span id="msgCopiar" style="font-size:13px;color:var(--ink-faint)"></span>';
-  document.querySelector(".busca-row").after(barra);
-  document.getElementById("btnCopiarLink").addEventListener("click", async () => {
-    const est = lerEstado(RCA_FIXO);
-    const dadosEnvio = { metaPedidosDia: est.metaPedidosDia, metasCategoria: est.metasCategoria,
-      industrializado: est.industrializado, thermo: est.thermo, dia15: est.dia15, dia30: est.dia30, recompra: est.recompra, metasV: 2 };
-    const url = location.origin + location.pathname + "?rca=" + RCA_FIXO + "&s=" + codificarEstado(dadosEnvio);
-    const msg = document.getElementById("msgCopiar");
-    try { await navigator.clipboard.writeText(url); msg.textContent = "Link copiado! Cole e envie para o seu gerente."; }
-    catch (e) { prompt("Copie o link abaixo e envie para o seu gerente:", url); }
-  });
 }
 
 montarDatalist();
@@ -743,7 +730,7 @@ td{{padding:8px;border-top:1px solid #EEE;word-break:break-all}} td.cod{{font-we
 a{{color:#1D6FB8}} button{{background:#1D9A5D;color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer}}
 </style></head><body><main>
 <h1>Links da Melhoria Salarial</h1>
-<p class="sub">Cada vendedor abre o próprio link, preenche as metas e bônus e toca em "Copiar link do meu preenchimento" para te enviar o resultado.</p>
+<p class="sub">Cada vendedor abre o próprio link e preenche as metas e bônus dele.</p>
 {''.join(blocos)}
 </main><script>
 function copiar(btn, url){{navigator.clipboard.writeText(url).then(()=>{{btn.textContent='Copiado!';setTimeout(()=>btn.textContent='Copiar',1500)}},()=>prompt('Copie o link:',url));}}
