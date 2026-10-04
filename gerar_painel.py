@@ -732,7 +732,7 @@ def main():
 
 # Endereço do App da Web da planilha Google (apps_script_planilha.gs).
 # Vazio = botão "Feito" e painel de acompanhamento desligados.
-URL_PLANILHA = ""
+URL_PLANILHA = "https://script.google.com/macros/s/AKfycbwg-btEbvpUKtnkijNgUJ4gXQHr_bAyNxfmkPCFN1Zk-FE7IOi-2RgkjMeeMtLljmV01A/exec"
 URL_PAINEL = "https://edmarr123.github.io/melhoria-salarial/painel.html"
 ORDEM_SUPERVISORES = ["LEANDRO", "FLAVIANE", "IDEGLAN", "RICARDO", "RICHARD", "RODRIGO"]
 
