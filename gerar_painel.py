@@ -326,8 +326,13 @@ function estadoPadrao(codigo) {
   // mão como as outras, se o Edmar quiser revisar um caso específico.
   const recompraPadrao = rca ? rca.recompra_pct < DADOS.constantes.recompra_limite : false;
   return {
-    industrializado: false, thermo: false, dia15: false, dia30: false, campanha: false,
-    recompra: recompraPadrao,
+    // Checkboxes já vêm marcados com o resultado real do mês (4 Pilares).
+    industrializado: (rca?.bonus_real?.industrializado || 0) > 0,
+    thermo: (rca?.bonus_real?.thermo || 0) > 0,
+    dia15: (rca?.bonus_real?.dia15 || 0) > 0,
+    dia30: (rca?.bonus_real?.dia30 || 0) > 0,
+    campanha: false,
+    recompra: rca?.bonus_real ? (rca.bonus_real.recompra || 0) > 0 : recompraPadrao,
     // Meta de Pedidos/Dia e Taxa de Comissão são o "desafio"/acordo de CADA
     // vendedor — não um valor único pra equipe toda — por isso moram no
     // estado por RCA, não numa config global (senão editar um vendedor
@@ -347,12 +352,13 @@ function lerEstado(codigo) {
     if (!salvo) return padrao;
     const parsed = JSON.parse(salvo);
     return {
-      industrializado: parsed.industrializado ?? padrao.industrializado,
-      thermo: parsed.thermo ?? padrao.thermo,
-      dia15: parsed.dia15 ?? padrao.dia15,
-      dia30: parsed.dia30 ?? padrao.dia30,
-      campanha: parsed.campanha ?? padrao.campanha,
-      recompra: parsed.recompra ?? padrao.recompra,
+      // Marcações salvas antes de 04/10 (sem metasV=2) dão lugar ao resultado real do mês.
+      industrializado: parsed.metasV === 2 ? (parsed.industrializado ?? padrao.industrializado) : padrao.industrializado,
+      thermo: parsed.metasV === 2 ? (parsed.thermo ?? padrao.thermo) : padrao.thermo,
+      dia15: parsed.metasV === 2 ? (parsed.dia15 ?? padrao.dia15) : padrao.dia15,
+      dia30: parsed.metasV === 2 ? (parsed.dia30 ?? padrao.dia30) : padrao.dia30,
+      campanha: false,
+      recompra: parsed.metasV === 2 ? (parsed.recompra ?? padrao.recompra) : padrao.recompra,
       metaPedidosDia: parsed.metasV === 2 ? (parsed.metaPedidosDia ?? padrao.metaPedidosDia) : padrao.metaPedidosDia,
       // Taxa do relatório 1249 do mês (quando existe) vale mais que a digitada antes.
       taxaPct: padrao.taxaPct,  // fixa: sempre a do relatório 1249 (ou a padrão)
@@ -398,14 +404,21 @@ function calcular(rca) {
   const pedidosPotencial = taxa * ticketMedio * estado.metaPedidosDia * dias_uteis;
 
 
+  // Bônus: "atual" = o prêmio que ele REALMENTE ganhou no mês (4 Pilares)
+  // quando o checkbox está marcado; "potencial" = o teto (ou o real, se maior).
+  const real = rca.bonus_real || {};
+  const bonus = (chave, teto) => {
+    const ganho = real[chave] || 0;
+    return { atual: estado[chave] ? (ganho > 0 ? ganho : teto) : 0, potencial: Math.max(teto, ganho) };
+  };
   const linhasResumo = [
     { label: "Departamentos", atual: departamentosAtual, potencial: departamentosPotencial },
-    { label: "Bônus Industrializado", atual: estado.industrializado ? rca.industrializado_potencial : 0, potencial: rca.industrializado_potencial },
-    { label: "Bônus Thermo", atual: estado.thermo ? rca.thermo_potencial : 0, potencial: rca.thermo_potencial },
+    { label: "Bônus Industrializado", ...bonus("industrializado", rca.industrializado_potencial) },
+    { label: "Bônus Thermo", ...bonus("thermo", rca.thermo_potencial) },
     { label: "Pedidos", atual: pedidosAtual, potencial: pedidosPotencial },
-    { label: "Bônus Dia 15", atual: estado.dia15 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
-    { label: "Bônus Dia 30", atual: estado.dia30 ? rca.premio_fixo : 0, potencial: rca.premio_fixo },
-    { label: "Recompra", atual: estado.recompra ? DADOS.constantes.recompra_premio : 0, potencial: DADOS.constantes.recompra_premio },
+    { label: "Bônus Dia 15", ...bonus("dia15", rca.premio_fixo) },
+    { label: "Bônus Dia 30", ...bonus("dia30", rca.premio_fixo) },
+    { label: "Recompra", ...bonus("recompra", DADOS.constantes.recompra_premio) },
   ];
 
   const soma = linhasResumo.reduce((s, l) => s + (l.potencial - l.atual), 0);

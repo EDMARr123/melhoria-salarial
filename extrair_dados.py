@@ -155,6 +155,18 @@ def _ler_315():
     return out
 
 
+def _bonus_real(r):
+    if not r:
+        return {"industrializado": 0, "thermo": 0, "dia15": 0, "dia30": 0, "recompra": 0}
+    return {
+        "industrializado": _num(r.get("industrializado", {}).get("premio")),
+        "thermo": _num(r.get("thermo", {}).get("premio")),
+        "dia15": _num(r.get("positivacao_dia15", {}).get("premio")),
+        "dia30": _num(r.get("positivacao_dia30", {}).get("premio")),
+        "recompra": _num(r.get("recompra_premio")),
+    }
+
+
 def _ler_pilares_por_codigo():
     if not os.path.exists(CAMINHO_PAINEL_PILARES):
         return {}
@@ -296,6 +308,9 @@ def extrair():
             "industrializado_margem_pct": industrializado_pilares.get(codigo, {}).get("margem_pct", 0),
             "recompra_pct": recompra_por_rca.get(codigo, 0),
             "taxa_comissao_pct": TAXA_COMISSAO_PCT_MES.get(codigo),
+            # Prêmios que o vendedor realmente ganhou no mês (Painel 4 Pilares,
+            # planilha SOMA NAO SALVA ENCIMA) — marcam os checkboxes de bônus.
+            "bonus_real": _bonus_real(pilares.get(codigo)),
             "meta_posit_departamento": metas_departamento.get(codigo, {}),
         })
 
