@@ -203,6 +203,7 @@ table.breakdown input.meta-posit-input {
 const DADOS = __DADOS_JSON__;
 const FOTOS_SUPERVISORES = __FOTOS_SUPERVISORES_JSON__;
 const FOTOS_RCAS = __FOTOS_RCAS_JSON__;
+const URL_PLANILHA = "__URL_PLANILHA__";
 const RCAS_POR_CODIGO = Object.fromEntries(DADOS.rcas.map(r => [r.codigo, r]));
 
 function fmtMoeda(v) {
@@ -672,6 +673,39 @@ if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
       salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), recebido));
     } catch (e) {}
   }
+
+  // ---- Botão "Feito": manda o preenchimento para a planilha do gerente ----
+  if (URL_PLANILHA && !PARAMS.get("ver")) {
+    const barra = document.createElement("div");
+    barra.style.cssText = "margin-left:auto;display:flex;align-items:center;gap:10px";
+    barra.innerHTML = '<span id="msgFeito" style="font-size:13px;color:var(--ink-faint)"></span>'
+      + '<button id="btnFeito" style="background:var(--good);color:#fff;border:0;border-radius:10px;padding:12px 26px;font-weight:900;font-size:16px;cursor:pointer">✓ Feito</button>';
+    document.querySelector(".busca-row").appendChild(barra);
+    document.getElementById("btnFeito").addEventListener("click", async () => {
+      const btn = document.getElementById("btnFeito"), msg = document.getElementById("msgFeito");
+      const rca = RCAS_POR_CODIGO[RCA_FIXO], r = calcular(rca), est = lerEstado(RCA_FIXO);
+      btn.disabled = true; msg.textContent = "Enviando...";
+      try {
+        await fetch(URL_PLANILHA, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({ rca: RCA_FIXO, nome: rca.nome, supervisor: rca.supervisor,
+            metaPedidosDia: est.metaPedidosDia, salarioAtual: Math.round(r.salarioAtual * 100) / 100,
+            salarioPotencial: Math.round(r.salarioTotal * 100) / 100,
+            estado: { metaPedidosDia: est.metaPedidosDia, metasCategoria: est.metasCategoria,
+              industrializado: est.industrializado, thermo: est.thermo, dia15: est.dia15, dia30: est.dia30, recompra: est.recompra } }) });
+        msg.textContent = "Enviado! Seu gerente já pode ver.";
+        btn.textContent = "✓ Enviado";
+      } catch (e) { msg.textContent = "Não foi possível enviar. Tente de novo."; btn.disabled = false; }
+    });
+  }
+
+  // ---- Gerente abrindo o preenchimento de um vendedor (?rca=X&ver=1) ----
+  if (URL_PLANILHA && PARAMS.get("ver")) {
+    document.querySelector("header p").textContent = "Preenchimento enviado pelo vendedor (somente leitura).";
+    fetch(URL_PLANILHA).then(r => r.json()).then(lista => {
+      const item = lista.find(x => Number(x.rca) === RCA_FIXO);
+      if (item) { salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), item.estado, { metasV: 3 })); renderizarRca(); }
+    }).catch(() => {});
+  }
 }
 
 montarDatalist();
@@ -687,13 +721,18 @@ def main():
         dados = json.load(f)
 
     html = TEMPLATE.replace("__DADOS_JSON__", json.dumps(dados, ensure_ascii=False))
+    html = html.replace("__URL_PLANILHA__", URL_PLANILHA)
     html = html.replace("__FOTOS_SUPERVISORES_JSON__", _FOTOS_SUPERVISORES_JSON)
     html = html.replace("__FOTOS_RCAS_JSON__", _FOTOS_RCAS_JSON)
     with open(CAMINHO_SAIDA, "w", encoding="utf-8") as f:
         f.write(html)
     gerar_links(dados)
+    gerar_acompanhamento(dados)
 
 
+# Endereço do App da Web da planilha Google (apps_script_planilha.gs).
+# Vazio = botão "Feito" e painel de acompanhamento desligados.
+URL_PLANILHA = ""
 URL_PAINEL = "https://edmarr123.github.io/melhoria-salarial/painel.html"
 ORDEM_SUPERVISORES = ["LEANDRO", "FLAVIANE", "IDEGLAN", "RICARDO", "RICHARD", "RODRIGO"]
 
@@ -738,6 +777,60 @@ function copiar(btn, url){{navigator.clipboard.writeText(url).then(()=>{{btn.tex
         f.write(pagina)
     print("Links gerados:", sum(len(v) for v in grupos.values()))
     print(f"Painel gerado em: {CAMINHO_SAIDA}")
+
+
+
+def gerar_acompanhamento(dados):
+    """acompanhamento.html: painel do gerente — quem já clicou em "Feito"
+    (lido da planilha Google), separado por supervisor."""
+    rcas = [{"codigo": r["codigo"], "nome": r["nome"], "supervisor": r["supervisor"]}
+            for r in dados["rcas"] if r.get("supervisor") in ORDEM_SUPERVISORES]
+    pagina = """<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Acompanhamento Melhoria Salarial</title>
+<style>
+body{margin:0;background:#F3F2EC;font-family:Segoe UI,Arial,sans-serif;color:#1E2320}
+main{max-width:1100px;margin:0 auto;padding:28px 16px}
+h1{margin:0 0 4px} p.sub{margin:0 0 18px;color:#6B706B}
+.resumo{display:flex;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.card{background:#fff;border-radius:12px;padding:12px 18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.card b{display:block;font-size:26px}
+section{background:#fff;border-radius:14px;padding:18px 20px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+h2{margin:0 0 10px;font-size:18px;color:#1D9A5D} h2 span{font-size:13px;color:#8A8F8A;font-weight:600;margin-left:8px}
+table{width:100%;border-collapse:collapse;font-size:14px} th{text-align:left;font-size:11px;color:#8A8F8A;text-transform:uppercase;padding:6px 8px}
+td{padding:8px;border-top:1px solid #EEE} .ok{color:#1D9A5D;font-weight:800} .pend{color:#C0392B;font-weight:800}
+a{color:#1D6FB8;font-weight:700} .num{text-align:right}
+</style></head><body><main>
+<h1>Acompanhamento — Melhoria Salarial</h1>
+<p class="sub" id="status">Carregando respostas...</p>
+<div class="resumo" id="resumo"></div><div id="lista"></div>
+</main><script>
+const URL_PLANILHA = "__URL__", URL_PAINEL = "__PAINEL__";
+const RCAS = __RCAS__, ORDEM = __ORDEM__;
+const brl = v => (v === "" || v == null) ? "—" : Number(v).toLocaleString("pt-BR", {style:"currency", currency:"BRL"});
+function montar(respostas) {
+  const porRca = {}; respostas.forEach(r => porRca[Number(r.rca)] = r);
+  const feitos = RCAS.filter(r => porRca[r.codigo]).length;
+  document.getElementById("resumo").innerHTML =
+    `<div class="card">Feito<b class="ok">${feitos}</b></div><div class="card">Pendentes<b class="pend">${RCAS.length - feitos}</b></div><div class="card">Total<b>${RCAS.length}</b></div>`;
+  document.getElementById("lista").innerHTML = ORDEM.map(sup => {
+    const doSup = RCAS.filter(r => r.supervisor === sup).sort((a,b) => a.nome.localeCompare(b.nome));
+    const ok = doSup.filter(r => porRca[r.codigo]).length;
+    const linhas = doSup.map(r => { const x = porRca[r.codigo];
+      return x ? `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="ok">✓ Feito</td><td>${new Date(x.data).toLocaleString("pt-BR")}</td>
+        <td class="num">${x.metaPedidosDia}</td><td class="num">${brl(x.salarioAtual)}</td><td class="num">${brl(x.salarioPotencial)}</td>
+        <td><a href="${URL_PAINEL}?rca=${r.codigo}&ver=1" target="_blank">Ver</a></td></tr>`
+      : `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="pend">Pendente</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td></td></tr>`; }).join("");
+    return `<section><h2>Supervisor ${sup} <span>${ok} de ${doSup.length} feitos</span></h2><table><thead><tr><th>RCA</th><th>Vendedor</th><th>Status</th><th>Quando</th><th class="num">Meta ped./dia</th><th class="num">Salário atual</th><th class="num">Potencial</th><th></th></tr></thead><tbody>${linhas}</tbody></table></section>`;
+  }).join("");
+}
+if (!URL_PLANILHA) { document.getElementById("status").textContent = "Planilha ainda não configurada."; montar([]); }
+else fetch(URL_PLANILHA).then(r => r.json()).then(l => { document.getElementById("status").textContent = "Atualizado em " + new Date().toLocaleString("pt-BR") + " · recarregue a página para ver novos envios"; montar(l); })
+  .catch(() => { document.getElementById("status").textContent = "Não foi possível ler a planilha."; montar([]); });
+</script></body></html>"""
+    pagina = (pagina.replace("__URL__", URL_PLANILHA).replace("__PAINEL__", URL_PAINEL)
+              .replace("__RCAS__", json.dumps(rcas, ensure_ascii=False)).replace("__ORDEM__", json.dumps(ORDEM_SUPERVISORES)))
+    with open(os.path.join(os.path.dirname(CAMINHO_SAIDA), "acompanhamento.html"), "w", encoding="utf-8") as f:
+        f.write(pagina)
 
 
 if __name__ == "__main__":
