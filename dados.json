@@ -1,42 +1,42 @@
 {
   "rcas": [
     {
-      "codigo": 33,
-      "nome": "ARTHUR",
-      "rota": "GYN RT 19 - SEG 02",
+      "codigo": 31,
+      "nome": "GYN RT 29",
+      "rota": "MARANHÃO VAREJO",
       "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 1626744.39,
-      "total_pedidos": 419,
+      "valor_vendido": 0,
+      "total_pedidos": 24.0,
       "categorias": {
         "bacon": {
-          "peso": 47.393,
-          "valor": 1146.82,
-          "positivacao": 1
+          "peso": 108.801,
+          "valor": 1871.38,
+          "positivacao": 1.0
         },
         "calabresa": {
-          "peso": 3368.83,
-          "valor": 69156.12,
-          "positivacao": 20
+          "peso": 1917.2,
+          "valor": 35587.32,
+          "positivacao": 4.0
         },
         "frescais": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
+          "peso": 936.0,
+          "valor": 10801.6,
+          "positivacao": 3.0
         },
         "paes": {
-          "peso": 50.4,
-          "valor": 1319.52,
-          "positivacao": 8
+          "peso": 12.0,
+          "valor": 328.56,
+          "positivacao": 1.0
         },
         "lactios": {
-          "peso": 43.5,
-          "valor": 1801.44,
-          "positivacao": 5
-        },
-        "batata": {
           "peso": 0,
           "valor": 0,
           "positivacao": 0
+        },
+        "batata": {
+          "peso": 52.5,
+          "valor": 698.25,
+          "positivacao": 1.0
         },
         "bovino": {
           "peso": 0,
@@ -44,14 +44,14 @@
           "positivacao": 0
         },
         "suino": {
-          "peso": 22,
-          "valor": 417.78,
-          "positivacao": 1
+          "peso": 1720.655,
+          "valor": 26736.17,
+          "positivacao": 2.0
         },
         "thermo_cat": {
-          "peso": 4798.2,
-          "valor": 70519.59,
-          "positivacao": 20
+          "peso": 130.32,
+          "valor": 1859.83,
+          "positivacao": 2.0
         },
         "vegetais": {
           "peso": 0,
@@ -59,61 +59,52 @@
           "positivacao": 0
         }
       },
-      "industrializado_potencial": 4066.860975,
-      "thermo_potencial": 976.0466339999999,
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.25925925925925924,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
+      "recompra_pct": 0,
+      "taxa_comissao_pct": null,
+      "meta_posit_departamento": {}
     },
     {
-      "codigo": 23,
-      "nome": "FABIO L.",
-      "rota": "GYN RT 21 - SEG 01",
+      "codigo": 26,
+      "nome": "GYN RT 27",
+      "rota": "MARANHÃO",
       "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 1138417.78,
-      "total_pedidos": 298,
+      "valor_vendido": 0,
+      "total_pedidos": 18.0,
       "categorias": {
         "bacon": {
-          "peso": 211.037,
-          "valor": 5305.26,
-          "positivacao": 1
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "calabresa": {
-          "peso": 384,
-          "valor": 8392.55,
-          "positivacao": 9
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "frescais": {
-          "peso": 200,
-          "valor": 2580.55,
-          "positivacao": 1
+          "peso": 1400.0,
+          "valor": 14640.0,
+          "positivacao": 2.0
         },
         "paes": {
-          "peso": 176.4,
-          "valor": 4808.6,
-          "positivacao": 4
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "lactios": {
-          "peso": 254.944,
-          "valor": 11764.54,
-          "positivacao": 16
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "batata": {
-          "peso": 120,
-          "valor": 1126,
-          "positivacao": 2
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "bovino": {
           "peso": 0,
@@ -121,104 +112,96 @@
           "positivacao": 0
         },
         "suino": {
-          "peso": 306.604,
-          "valor": 6374.3,
-          "positivacao": 1
+          "peso": 489.62,
+          "valor": 6365.06,
+          "positivacao": 1.0
         },
         "thermo_cat": {
-          "peso": 1135.44,
-          "valor": 16462.87,
-          "positivacao": 7
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "vegetais": {
-          "peso": 4.5,
-          "valor": 90.54,
-          "positivacao": 1
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         }
       },
-      "industrializado_potencial": 2846.0444500000003,
-      "thermo_potencial": 683.050668,
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.3220338983050847,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
+      "recompra_pct": 0,
+      "taxa_comissao_pct": null,
+      "meta_posit_departamento": {}
     },
     {
       "codigo": 164,
       "nome": "JOAO VITOR",
       "rota": "GYN RT 13 - BR GOYÁ",
       "supervisor": "IDEGLAN",
-      "valor_vendido": 485355.13,
-      "total_pedidos": 515,
+      "valor_vendido": 527428.6235155,
+      "total_pedidos": 451.0,
       "categorias": {
         "bacon": {
-          "peso": 280.23,
-          "valor": 7047.94,
-          "positivacao": 10
+          "peso": 212.521,
+          "valor": 5684.96,
+          "positivacao": 11.0
         },
         "calabresa": {
-          "peso": 933.8,
-          "valor": 22074.85,
-          "positivacao": 24
+          "peso": 737.0,
+          "valor": 16974.96,
+          "positivacao": 20.0
         },
         "frescais": {
-          "peso": 699,
-          "valor": 10705.91,
-          "positivacao": 14
+          "peso": 809.0,
+          "valor": 11060.92,
+          "positivacao": 13.0
         },
         "paes": {
-          "peso": 361.2,
-          "valor": 9125.54,
-          "positivacao": 16
+          "peso": 359.04,
+          "valor": 9299.53,
+          "positivacao": 16.0
         },
         "lactios": {
-          "peso": 310.635,
-          "valor": 14071.74,
-          "positivacao": 25
+          "peso": 479.313,
+          "valor": 20851.67,
+          "positivacao": 26.0
         },
         "batata": {
-          "peso": 1079,
-          "valor": 12082.22,
-          "positivacao": 21
+          "peso": 1133.7,
+          "valor": 14266.16,
+          "positivacao": 18.0
         },
         "bovino": {
-          "peso": 165.25,
-          "valor": 6749.78,
-          "positivacao": 3
+          "peso": 225.95,
+          "valor": 8680.04,
+          "positivacao": 8.0
         },
         "suino": {
-          "peso": 98.089,
-          "valor": 1492.27,
-          "positivacao": 4
+          "peso": 227.089,
+          "valor": 3653.87,
+          "positivacao": 7.0
         },
         "thermo_cat": {
-          "peso": 943.8,
-          "valor": 15303.66,
-          "positivacao": 36
+          "peso": 1185.624,
+          "valor": 20592.47,
+          "positivacao": 41.0
         },
         "vegetais": {
-          "peso": 92.5,
-          "valor": 1512.6,
-          "positivacao": 7
+          "peso": 61.0,
+          "valor": 994.73,
+          "positivacao": 6.0
         }
       },
-      "industrializado_potencial": 1213.387825,
-      "thermo_potencial": 291.213078,
+      "industrializado_potencial": 1318.57155878875,
+      "thermo_potencial": 316.4571741093,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.15149476221298547,
-      "industrializado_margem_pct": 0.2246422339150718,
-      "recompra_pct": 0.21782178217821782,
+      "industrializado_participacao_pct": 0.21442880601772338,
+      "industrializado_margem_pct": 0.22227760069934063,
+      "recompra_pct": 0.205607476635514,
+      "taxa_comissao_pct": 2.0805,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -236,1596 +219,67 @@
       "nome": "GABRIEL LOURENÇO",
       "rota": "GYN RT 106 - VL. NOVA",
       "supervisor": "FLAVIANE",
-      "valor_vendido": 446129.66,
-      "total_pedidos": 374,
+      "valor_vendido": 491166.345,
+      "total_pedidos": 328.0,
       "categorias": {
         "bacon": {
-          "peso": 159.25,
-          "valor": 3328.94,
-          "positivacao": 2
+          "peso": 190.25,
+          "valor": 4251.48,
+          "positivacao": 2.0
         },
         "calabresa": {
-          "peso": 299.6,
-          "valor": 7489.77,
-          "positivacao": 17
+          "peso": 251.2,
+          "valor": 6186.4,
+          "positivacao": 12.0
         },
         "frescais": {
-          "peso": 602,
-          "valor": 8298.5,
-          "positivacao": 17
+          "peso": 1697.0,
+          "valor": 19280.05,
+          "positivacao": 24.0
         },
         "paes": {
-          "peso": 110.4,
-          "valor": 3080.35,
-          "positivacao": 8
+          "peso": 90.48,
+          "valor": 2751.17,
+          "positivacao": 6.0
         },
         "lactios": {
-          "peso": 970.452,
-          "valor": 37963.68,
-          "positivacao": 20
+          "peso": 878.745,
+          "valor": 32412.43,
+          "positivacao": 19.0
         },
         "batata": {
-          "peso": 277.5,
-          "valor": 3562.08,
-          "positivacao": 11
+          "peso": 159.6,
+          "valor": 2151.82,
+          "positivacao": 8.0
         },
         "bovino": {
-          "peso": 80.3,
-          "valor": 1807.63,
-          "positivacao": 5
+          "peso": 123.2,
+          "valor": 3765.66,
+          "positivacao": 6.0
         },
         "suino": {
-          "peso": 103.685,
-          "valor": 2428.67,
-          "positivacao": 4
+          "peso": 136.277,
+          "valor": 2617.42,
+          "positivacao": 3.0
         },
         "thermo_cat": {
-          "peso": 447.904,
-          "valor": 8531.41,
-          "positivacao": 32
+          "peso": 559.936,
+          "valor": 11426.16,
+          "positivacao": 38.0
         },
         "vegetais": {
-          "peso": 56.5,
-          "valor": 952.15,
-          "positivacao": 8
+          "peso": 68.0,
+          "valor": 1280.55,
+          "positivacao": 8.0
         }
       },
-      "industrializado_potencial": 1115.32415,
-      "thermo_potencial": 267.677796,
+      "industrializado_potencial": 1227.9158625,
+      "thermo_potencial": 294.69980699999996,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.09059069668300841,
-      "industrializado_margem_pct": 0.22820859349162664,
-      "recompra_pct": 0.24468085106382978,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 45,
-      "nome": "TIAGO",
-      "rota": "GYN RT 40 - PALMEIRAS",
-      "supervisor": "IDEGLAN",
-      "valor_vendido": 393179.66,
-      "total_pedidos": 271,
-      "categorias": {
-        "bacon": {
-          "peso": 124.253,
-          "valor": 4019.93,
-          "positivacao": 8
-        },
-        "calabresa": {
-          "peso": 695.2,
-          "valor": 16389.91,
-          "positivacao": 17
-        },
-        "frescais": {
-          "peso": 163,
-          "valor": 2398.8,
-          "positivacao": 8
-        },
-        "paes": {
-          "peso": 606,
-          "valor": 17002.16,
-          "positivacao": 22
-        },
-        "lactios": {
-          "peso": 239.694,
-          "valor": 11477.24,
-          "positivacao": 23
-        },
-        "batata": {
-          "peso": 558.5,
-          "valor": 5512.64,
-          "positivacao": 13
-        },
-        "bovino": {
-          "peso": 100.74,
-          "valor": 5678.19,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 197.124,
-          "valor": 2701.73,
-          "positivacao": 4
-        },
-        "thermo_cat": {
-          "peso": 822.88,
-          "valor": 13284.54,
-          "positivacao": 20
-        },
-        "vegetais": {
-          "peso": 66,
-          "valor": 996.05,
-          "positivacao": 4
-        }
-      },
-      "industrializado_potencial": 982.9491499999999,
-      "thermo_potencial": 235.907796,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.26416740384045717,
-      "industrializado_margem_pct": 0.14682294668420934,
-      "recompra_pct": 0.37373737373737376,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 47,
-      "nome": "MARCELO",
-      "rota": "GYN RT 42 - INHUMAS",
-      "supervisor": "RODRIGO",
-      "valor_vendido": 384260.97,
-      "total_pedidos": 364,
-      "categorias": {
-        "bacon": {
-          "peso": 28.743,
-          "valor": 924.24,
-          "positivacao": 3
-        },
-        "calabresa": {
-          "peso": 331.2,
-          "valor": 8325.54,
-          "positivacao": 21
-        },
-        "frescais": {
-          "peso": 338,
-          "valor": 5181.62,
-          "positivacao": 9
-        },
-        "paes": {
-          "peso": 182.4,
-          "valor": 5024.01,
-          "positivacao": 24
-        },
-        "lactios": {
-          "peso": 120.55,
-          "valor": 5858.66,
-          "positivacao": 24
-        },
-        "batata": {
-          "peso": 508,
-          "valor": 6876.71,
-          "positivacao": 22
-        },
-        "bovino": {
-          "peso": 60,
-          "valor": 1056.6,
-          "positivacao": 4
-        },
-        "suino": {
-          "peso": 80,
-          "valor": 1986.35,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 1486.856,
-          "valor": 26801.46,
-          "positivacao": 50
-        },
-        "vegetais": {
-          "peso": 35.5,
-          "valor": 566.66,
-          "positivacao": 6
-        }
-      },
-      "industrializado_potencial": 960.652425,
-      "thermo_potencial": 230.556582,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.12648411900451595,
-      "industrializado_margem_pct": 0.24973014112912661,
-      "recompra_pct": 0.1834862385321101,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 405,
-      "nome": "WILLIAN",
-      "rota": "GYN RT 77 - TLMK",
-      "supervisor": "RODRIGO",
-      "valor_vendido": 378228.36,
-      "total_pedidos": 369,
-      "categorias": {
-        "bacon": {
-          "peso": 93.429,
-          "valor": 2871.65,
-          "positivacao": 8
-        },
-        "calabresa": {
-          "peso": 183.4,
-          "valor": 4252.59,
-          "positivacao": 18
-        },
-        "frescais": {
-          "peso": 857,
-          "valor": 12740.41,
-          "positivacao": 26
-        },
-        "paes": {
-          "peso": 25.2,
-          "valor": 766.72,
-          "positivacao": 3
-        },
-        "lactios": {
-          "peso": 117.5,
-          "valor": 5445.59,
-          "positivacao": 8
-        },
-        "batata": {
-          "peso": 327,
-          "valor": 4036.61,
-          "positivacao": 9
-        },
-        "bovino": {
-          "peso": 103.23,
-          "valor": 2849.42,
-          "positivacao": 7
-        },
-        "suino": {
-          "peso": 162.489,
-          "valor": 3048.74,
-          "positivacao": 5
-        },
-        "thermo_cat": {
-          "peso": 1779.36,
-          "valor": 23498.92,
-          "positivacao": 23
-        },
-        "vegetais": {
-          "peso": 18,
-          "valor": 396,
-          "positivacao": 1
-        }
-      },
-      "industrializado_potencial": 945.5708999999999,
-      "thermo_potencial": 226.93701599999997,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.27014030886212403,
-      "industrializado_margem_pct": 0.2592921801611092,
-      "recompra_pct": 0.40869565217391307,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 85,
-      "nome": "CARLOS HENRIQUE",
-      "rota": "GYN RT 61 - JD ITAIPU",
-      "supervisor": "LEANDRO",
-      "valor_vendido": 372141.16,
-      "total_pedidos": 436,
-      "categorias": {
-        "bacon": {
-          "peso": 143.62,
-          "valor": 4307.25,
-          "positivacao": 7
-        },
-        "calabresa": {
-          "peso": 480.6,
-          "valor": 11984.93,
-          "positivacao": 30
-        },
-        "frescais": {
-          "peso": 229,
-          "valor": 3479.71,
-          "positivacao": 12
-        },
-        "paes": {
-          "peso": 98.4,
-          "valor": 2705.51,
-          "positivacao": 10
-        },
-        "lactios": {
-          "peso": 182.05,
-          "valor": 8730.55,
-          "positivacao": 26
-        },
-        "batata": {
-          "peso": 409,
-          "valor": 5310.44,
-          "positivacao": 14
-        },
-        "bovino": {
-          "peso": 62.48,
-          "valor": 1395.71,
-          "positivacao": 5
-        },
-        "suino": {
-          "peso": 152.893,
-          "valor": 2502.31,
-          "positivacao": 5
-        },
-        "thermo_cat": {
-          "peso": 786.072,
-          "valor": 13898.11,
-          "positivacao": 51
-        },
-        "vegetais": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        }
-      },
-      "industrializado_potencial": 930.3529,
-      "thermo_potencial": 223.28469599999997,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.20837055633004986,
-      "industrializado_margem_pct": 0.2613080306864895,
-      "recompra_pct": 0.1717171717171717,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 439,
-      "nome": "GUILHERME AUGUSTO",
-      "rota": "GYN RT 07 - TRINDADE",
-      "supervisor": "IDEGLAN",
-      "valor_vendido": 315635.04,
-      "total_pedidos": 408,
-      "categorias": {
-        "bacon": {
-          "peso": 154.023,
-          "valor": 4189.96,
-          "positivacao": 3
-        },
-        "calabresa": {
-          "peso": 272.8,
-          "valor": 6615.17,
-          "positivacao": 22
-        },
-        "frescais": {
-          "peso": 231,
-          "valor": 3678.05,
-          "positivacao": 11
-        },
-        "paes": {
-          "peso": 196.8,
-          "valor": 5259.92,
-          "positivacao": 13
-        },
-        "lactios": {
-          "peso": 85.28,
-          "valor": 3983.9,
-          "positivacao": 13
-        },
-        "batata": {
-          "peso": 797,
-          "valor": 10552.73,
-          "positivacao": 20
-        },
-        "bovino": {
-          "peso": 12.52,
-          "valor": 525.84,
-          "positivacao": 1
-        },
-        "suino": {
-          "peso": 442.115,
-          "valor": 7306.39,
-          "positivacao": 7
-        },
-        "thermo_cat": {
-          "peso": 1760.088,
-          "valor": 32907.04,
-          "positivacao": 29
-        },
-        "vegetais": {
-          "peso": 16.5,
-          "valor": 254.66,
-          "positivacao": 3
-        }
-      },
-      "industrializado_potencial": 789.0876,
-      "thermo_potencial": 189.381024,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.1864287110548393,
-      "industrializado_margem_pct": 0.2211733326398007,
-      "recompra_pct": 0.24468085106382978,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 738,
-      "nome": "MARCEL HENRIQUE",
-      "rota": "GYN RT 62 - TRINDADE",
-      "supervisor": "IDEGLAN",
-      "valor_vendido": 306499.46,
-      "total_pedidos": 378,
-      "categorias": {
-        "bacon": {
-          "peso": 218.863,
-          "valor": 5751.36,
-          "positivacao": 6
-        },
-        "calabresa": {
-          "peso": 409.2,
-          "valor": 9607.12,
-          "positivacao": 13
-        },
-        "frescais": {
-          "peso": 316,
-          "valor": 4585.29,
-          "positivacao": 13
-        },
-        "paes": {
-          "peso": 259.2,
-          "valor": 7061.26,
-          "positivacao": 10
-        },
-        "lactios": {
-          "peso": 147.615,
-          "valor": 6965.21,
-          "positivacao": 17
-        },
-        "batata": {
-          "peso": 982,
-          "valor": 11186.92,
-          "positivacao": 24
-        },
-        "bovino": {
-          "peso": 286.95,
-          "valor": 13494.11,
-          "positivacao": 7
-        },
-        "suino": {
-          "peso": 81.478,
-          "valor": 1083.82,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 872.712,
-          "valor": 13757.61,
-          "positivacao": 40
-        },
-        "vegetais": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        }
-      },
-      "industrializado_potencial": 766.2486500000001,
-      "thermo_potencial": 183.899676,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.11517749777801016,
-      "industrializado_margem_pct": 0.2245694371681416,
-      "recompra_pct": 0.21839080459770116,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 81,
-      "nome": "LOIOLA",
-      "rota": "GYN RT 57 - AP. GYN",
-      "supervisor": "LEANDRO",
-      "valor_vendido": 294546.25,
-      "total_pedidos": 393,
-      "categorias": {
-        "bacon": {
-          "peso": 59.56,
-          "valor": 1358.59,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 170.5,
-          "valor": 4249.95,
-          "positivacao": 14
-        },
-        "frescais": {
-          "peso": 1009,
-          "valor": 14676.14,
-          "positivacao": 14
-        },
-        "paes": {
-          "peso": 57.6,
-          "valor": 1579.75,
-          "positivacao": 7
-        },
-        "lactios": {
-          "peso": 148.75,
-          "valor": 7030.6,
-          "positivacao": 14
-        },
-        "batata": {
-          "peso": 375,
-          "valor": 4819.5,
-          "positivacao": 12
-        },
-        "bovino": {
-          "peso": 82.56,
-          "valor": 2057.94,
-          "positivacao": 4
-        },
-        "suino": {
-          "peso": 27.68,
-          "valor": 862.05,
-          "positivacao": 1
-        },
-        "thermo_cat": {
-          "peso": 1083.368,
-          "valor": 18608.43,
-          "positivacao": 37
-        },
-        "vegetais": {
-          "peso": 5.5,
-          "valor": 83.74,
-          "positivacao": 1
-        }
-      },
-      "industrializado_potencial": 736.365625,
-      "thermo_potencial": 176.72775,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.27817351841136184,
-      "industrializado_margem_pct": 0.2582361100507852,
-      "recompra_pct": 0.2871287128712871,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 428,
-      "nome": "TAUA F.",
-      "rota": "GYN RT 45 - NOVA VENEZA",
-      "supervisor": "IDEGLAN",
-      "valor_vendido": 290668.94,
-      "total_pedidos": 253,
-      "categorias": {
-        "bacon": {
-          "peso": 242.352,
-          "valor": 6368.3,
-          "positivacao": 8
-        },
-        "calabresa": {
-          "peso": 374.355,
-          "valor": 9157.92,
-          "positivacao": 20
-        },
-        "frescais": {
-          "peso": 259,
-          "valor": 4044.8,
-          "positivacao": 9
-        },
-        "paes": {
-          "peso": 258,
-          "valor": 6965.7,
-          "positivacao": 22
-        },
-        "lactios": {
-          "peso": 101.295,
-          "valor": 4795.15,
-          "positivacao": 17
-        },
-        "batata": {
-          "peso": 175,
-          "valor": 2322.03,
-          "positivacao": 10
-        },
-        "bovino": {
-          "peso": 139.36,
-          "valor": 6900.83,
-          "positivacao": 8
-        },
-        "suino": {
-          "peso": 56.05,
-          "valor": 919.21,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 639.864,
-          "valor": 11739.14,
-          "positivacao": 37
-        },
-        "vegetais": {
-          "peso": 4.5,
-          "valor": 94.5,
-          "positivacao": 1
-        }
-      },
-      "industrializado_potencial": 726.67235,
-      "thermo_potencial": 174.401364,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2480612421872657,
-      "industrializado_margem_pct": 0.23520563288827567,
-      "recompra_pct": 0.3473684210526316,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 657,
-      "nome": "YURI ENRIQUE",
-      "rota": "GYN RT 108 - JD OLIMPICO",
-      "supervisor": "FLAVIANE",
-      "valor_vendido": 283940.71,
-      "total_pedidos": 242,
-      "categorias": {
-        "bacon": {
-          "peso": 31.054,
-          "valor": 884.99,
-          "positivacao": 3
-        },
-        "calabresa": {
-          "peso": 203.8,
-          "valor": 5201,
-          "positivacao": 16
-        },
-        "frescais": {
-          "peso": 130,
-          "valor": 2203.88,
-          "positivacao": 7
-        },
-        "paes": {
-          "peso": 67.2,
-          "valor": 1830.4,
-          "positivacao": 7
-        },
-        "lactios": {
-          "peso": 132.573,
-          "valor": 5790.08,
-          "positivacao": 13
-        },
-        "batata": {
-          "peso": 87,
-          "valor": 1131.33,
-          "positivacao": 6
-        },
-        "bovino": {
-          "peso": 20,
-          "valor": 350.72,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 223.697,
-          "valor": 3948.12,
-          "positivacao": 3
-        },
-        "thermo_cat": {
-          "peso": 465.048,
-          "valor": 7609.91,
-          "positivacao": 19
-        },
-        "vegetais": {
-          "peso": 45.5,
-          "valor": 805.37,
-          "positivacao": 4
-        }
-      },
-      "industrializado_potencial": 709.8517750000001,
-      "thermo_potencial": 170.36442600000004,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.21679693211575016,
-      "industrializado_margem_pct": 0.23353260717290578,
-      "recompra_pct": 0.2222222222222222,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 729,
-      "nome": "MARCELO ALVES",
-      "rota": "GYN RT 101 - JD AMERICA",
-      "supervisor": "RICARDO",
-      "valor_vendido": 283288.45,
-      "total_pedidos": 313,
-      "categorias": {
-        "bacon": {
-          "peso": 14.61,
-          "valor": 336.84,
-          "positivacao": 1
-        },
-        "calabresa": {
-          "peso": 93.8,
-          "valor": 2042.21,
-          "positivacao": 10
-        },
-        "frescais": {
-          "peso": 230,
-          "valor": 3325.2,
-          "positivacao": 3
-        },
-        "paes": {
-          "peso": 115.2,
-          "valor": 3199.38,
-          "positivacao": 8
-        },
-        "lactios": {
-          "peso": 128.579,
-          "valor": 5523.82,
-          "positivacao": 12
-        },
-        "batata": {
-          "peso": 158,
-          "valor": 2094.86,
-          "positivacao": 6
-        },
-        "bovino": {
-          "peso": 20,
-          "valor": 342.74,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 31.63,
-          "valor": 479.22,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 192.096,
-          "valor": 3537.53,
-          "positivacao": 12
-        },
-        "vegetais": {
-          "peso": 37.5,
-          "valor": 593.89,
-          "positivacao": 4
-        }
-      },
-      "industrializado_potencial": 708.221125,
-      "thermo_potencial": 169.97307,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.10668374810771697,
-      "industrializado_margem_pct": 0.21552081325896533,
-      "recompra_pct": 0.28378378378378377,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 42,
-      "nome": "PAULO RONAN",
-      "rota": "GYN RT 37 - ST OESTE",
-      "supervisor": "RICHARD",
-      "valor_vendido": 278532.01,
-      "total_pedidos": 368,
-      "categorias": {
-        "bacon": {
-          "peso": 61.899,
-          "valor": 1753,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 145.915,
-          "valor": 3467.2,
-          "positivacao": 11
-        },
-        "frescais": {
-          "peso": 1037,
-          "valor": 14666.41,
-          "positivacao": 11
-        },
-        "paes": {
-          "peso": 68.4,
-          "valor": 2172.15,
-          "positivacao": 3
-        },
-        "lactios": {
-          "peso": 98.218,
-          "valor": 3627.72,
-          "positivacao": 4
-        },
-        "batata": {
-          "peso": 288,
-          "valor": 3779.7,
-          "positivacao": 9
-        },
-        "bovino": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        },
-        "suino": {
-          "peso": 329.071,
-          "valor": 8844.58,
-          "positivacao": 7
-        },
-        "thermo_cat": {
-          "peso": 475.008,
-          "valor": 8200.7,
-          "positivacao": 11
-        },
-        "vegetais": {
-          "peso": 82.5,
-          "valor": 1280.95,
-          "positivacao": 3
-        }
-      },
-      "industrializado_potencial": 696.3300250000001,
-      "thermo_potencial": 167.11920600000002,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.12212485146834154,
-      "industrializado_margem_pct": 0.23870050301943369,
-      "recompra_pct": 0.22972972972972974,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 644,
-      "nome": "ALBERTO SANTOS",
-      "rota": "GYN RT 10 - BR ILDA",
-      "supervisor": "RICARDO",
-      "valor_vendido": 275727.79,
-      "total_pedidos": 300,
-      "categorias": {
-        "bacon": {
-          "peso": 143.458,
-          "valor": 3308.15,
-          "positivacao": 3
-        },
-        "calabresa": {
-          "peso": 136.2,
-          "valor": 2837.76,
-          "positivacao": 8
-        },
-        "frescais": {
-          "peso": 1474,
-          "valor": 19487.39,
-          "positivacao": 12
-        },
-        "paes": {
-          "peso": 90,
-          "valor": 2458.04,
-          "positivacao": 5
-        },
-        "lactios": {
-          "peso": 33.25,
-          "valor": 1532.7,
-          "positivacao": 7
-        },
-        "batata": {
-          "peso": 175.5,
-          "valor": 1744.08,
-          "positivacao": 4
-        },
-        "bovino": {
-          "peso": 40,
-          "valor": 685.57,
-          "positivacao": 3
-        },
-        "suino": {
-          "peso": 23.369,
-          "valor": 329.5,
-          "positivacao": 1
-        },
-        "thermo_cat": {
-          "peso": 413.592,
-          "valor": 5878.99,
-          "positivacao": 25
-        },
-        "vegetais": {
-          "peso": 5.5,
-          "valor": 81.95,
-          "positivacao": 1
-        }
-      },
-      "industrializado_potencial": 689.319475,
-      "thermo_potencial": 165.43667399999998,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.1997405932961075,
-      "industrializado_margem_pct": 0.24266924301597548,
-      "recompra_pct": 0.35802469135802467,
-      "meta_posit_departamento": {}
-    },
-    {
-      "codigo": 12,
-      "nome": "FABIANO",
-      "rota": "GYN RT 08 - VL PEDROSO",
-      "supervisor": "FLAVIANE",
-      "valor_vendido": 275061.85,
-      "total_pedidos": 260,
-      "categorias": {
-        "bacon": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        },
-        "calabresa": {
-          "peso": 152.245,
-          "valor": 3293.34,
-          "positivacao": 7
-        },
-        "frescais": {
-          "peso": 124,
-          "valor": 1772.3,
-          "positivacao": 9
-        },
-        "paes": {
-          "peso": 112.8,
-          "valor": 3059.32,
-          "positivacao": 10
-        },
-        "lactios": {
-          "peso": 86.43,
-          "valor": 3990.04,
-          "positivacao": 19
-        },
-        "batata": {
-          "peso": 67,
-          "valor": 909.5,
-          "positivacao": 4
-        },
-        "bovino": {
-          "peso": 30,
-          "valor": 519.44,
-          "positivacao": 3
-        },
-        "suino": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        },
-        "thermo_cat": {
-          "peso": 309.072,
-          "valor": 5702.38,
-          "positivacao": 33
-        },
-        "vegetais": {
-          "peso": 22,
-          "valor": 341.33,
-          "positivacao": 2
-        }
-      },
-      "industrializado_potencial": 687.654625,
-      "thermo_potencial": 165.03710999999998,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.16443711929462054,
-      "industrializado_margem_pct": 0.26598562264318354,
-      "recompra_pct": 0.37755102040816324,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 347,
-      "nome": "MATIAS",
-      "rota": "GYN RT 98 - BR.VITORIA/JD.CURIT",
-      "supervisor": "RODRIGO",
-      "valor_vendido": 262130.2,
-      "total_pedidos": 307,
-      "categorias": {
-        "bacon": {
-          "peso": 55.857,
-          "valor": 1672.63,
-          "positivacao": 5
-        },
-        "calabresa": {
-          "peso": 403.4,
-          "valor": 10203.17,
-          "positivacao": 12
-        },
-        "frescais": {
-          "peso": 627,
-          "valor": 8840.32,
-          "positivacao": 6
-        },
-        "paes": {
-          "peso": 108,
-          "valor": 2923.93,
-          "positivacao": 14
-        },
-        "lactios": {
-          "peso": 124.25,
-          "valor": 5954.84,
-          "positivacao": 14
-        },
-        "batata": {
-          "peso": 309,
-          "valor": 4119.68,
-          "positivacao": 12
-        },
-        "bovino": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        },
-        "suino": {
-          "peso": 45.348,
-          "valor": 643.94,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 1015,
-          "valor": 19591.49,
-          "positivacao": 28
-        },
-        "vegetais": {
-          "peso": 16.5,
-          "valor": 257.95,
-          "positivacao": 1
-        }
-      },
-      "industrializado_potencial": 655.3255,
-      "thermo_potencial": 157.27812,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.22818034202538207,
-      "industrializado_margem_pct": 0.25106501633434364,
-      "recompra_pct": 0.23684210526315788,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 15,
-      "nome": "WESLEY",
-      "rota": "GYN RT 11 - JD TIRADENTES",
-      "supervisor": "LEANDRO",
-      "valor_vendido": 254670.85,
-      "total_pedidos": 426,
-      "categorias": {
-        "bacon": {
-          "peso": 50.806,
-          "valor": 1257.45,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 250,
-          "valor": 6175.97,
-          "positivacao": 19
-        },
-        "frescais": {
-          "peso": 346,
-          "valor": 5043.61,
-          "positivacao": 9
-        },
-        "paes": {
-          "peso": 91.2,
-          "valor": 2455,
-          "positivacao": 15
-        },
-        "lactios": {
-          "peso": 340.806,
-          "valor": 14232.35,
-          "positivacao": 22
-        },
-        "batata": {
-          "peso": 200,
-          "valor": 2682,
-          "positivacao": 13
-        },
-        "bovino": {
-          "peso": 48.12,
-          "valor": 1861.39,
-          "positivacao": 3
-        },
-        "suino": {
-          "peso": 12,
-          "valor": 249,
-          "positivacao": 1
-        },
-        "thermo_cat": {
-          "peso": 537.624,
-          "valor": 8402.18,
-          "positivacao": 41
-        },
-        "vegetais": {
-          "peso": 44,
-          "valor": 650.95,
-          "positivacao": 5
-        }
-      },
-      "industrializado_potencial": 636.677125,
-      "thermo_potencial": 152.80251,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.30402322881125315,
-      "industrializado_margem_pct": 0.22774509294511694,
-      "recompra_pct": 0.22115384615384615,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 467,
-      "nome": "IGOR SA",
-      "rota": "GYN RT 50 - CD JARDIM",
-      "supervisor": "RICARDO",
-      "valor_vendido": 240097.03,
-      "total_pedidos": 254,
-      "categorias": {
-        "bacon": {
-          "peso": 14.96,
-          "valor": 344.91,
-          "positivacao": 1
-        },
-        "calabresa": {
-          "peso": 17.6,
-          "valor": 454.75,
-          "positivacao": 1
-        },
-        "frescais": {
-          "peso": 61,
-          "valor": 894.41,
-          "positivacao": 3
-        },
-        "paes": {
-          "peso": 32.4,
-          "valor": 869.87,
-          "positivacao": 1
-        },
-        "lactios": {
-          "peso": 312.805,
-          "valor": 11487.07,
-          "positivacao": 8
-        },
-        "batata": {
-          "peso": 175,
-          "valor": 2259,
-          "positivacao": 5
-        },
-        "bovino": {
-          "peso": 247.32,
-          "valor": 6516.83,
-          "positivacao": 3
-        },
-        "suino": {
-          "peso": 80.252,
-          "valor": 2201.67,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 352.2,
-          "valor": 4914.82,
-          "positivacao": 15
-        },
-        "vegetais": {
-          "peso": 110,
-          "valor": 1626.21,
-          "positivacao": 5
-        }
-      },
-      "industrializado_potencial": 600.242575,
-      "thermo_potencial": 144.058218,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.09457484041581243,
-      "industrializado_margem_pct": 0.2546951605289511,
-      "recompra_pct": 0.34210526315789475,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 687,
-      "nome": "EDREY MARTINS",
-      "rota": "GYN RT 02 - ST. BUENO",
-      "supervisor": "RICHARD",
-      "valor_vendido": 236228.81,
-      "total_pedidos": 302,
-      "categorias": {
-        "bacon": {
-          "peso": 171.988,
-          "valor": 5217.61,
-          "positivacao": 6
-        },
-        "calabresa": {
-          "peso": 299.755,
-          "valor": 7366.47,
-          "positivacao": 11
-        },
-        "frescais": {
-          "peso": 1037,
-          "valor": 14680.58,
-          "positivacao": 11
-        },
-        "paes": {
-          "peso": 21.6,
-          "valor": 618.11,
-          "positivacao": 4
-        },
-        "lactios": {
-          "peso": 71.883,
-          "valor": 2730.83,
-          "positivacao": 5
-        },
-        "batata": {
-          "peso": 589.5,
-          "valor": 7619.26,
-          "positivacao": 9
-        },
-        "bovino": {
-          "peso": 120,
-          "valor": 2641,
-          "positivacao": 4
-        },
-        "suino": {
-          "peso": 410.186,
-          "valor": 12720.26,
-          "positivacao": 13
-        },
-        "thermo_cat": {
-          "peso": 80.832,
-          "valor": 1669.12,
-          "positivacao": 5
-        },
-        "vegetais": {
-          "peso": 83.5,
-          "valor": 1601.39,
-          "positivacao": 7
-        }
-      },
-      "industrializado_potencial": 590.572025,
-      "thermo_potencial": 141.73728599999998,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.11802238325468024,
-      "industrializado_margem_pct": 0.2272241993094595,
-      "recompra_pct": 0.2911392405063291,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 698,
-      "nome": "FERNANDO OLIVEIRA",
-      "rota": "RT 24 - PQ ANHANGU",
-      "supervisor": "RICARDO",
-      "valor_vendido": 234477.05,
-      "total_pedidos": 339,
-      "categorias": {
-        "bacon": {
-          "peso": 62.316,
-          "valor": 2200.81,
-          "positivacao": 4
-        },
-        "calabresa": {
-          "peso": 66,
-          "valor": 1638.62,
-          "positivacao": 6
-        },
-        "frescais": {
-          "peso": 98,
-          "valor": 1416.11,
-          "positivacao": 4
-        },
-        "paes": {
-          "peso": 135.6,
-          "valor": 3779.84,
-          "positivacao": 14
-        },
-        "lactios": {
-          "peso": 35.65,
-          "valor": 1756.05,
-          "positivacao": 9
-        },
-        "batata": {
-          "peso": 556.5,
-          "valor": 6575.21,
-          "positivacao": 14
-        },
-        "bovino": {
-          "peso": 20,
-          "valor": 330.72,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 179.821,
-          "valor": 3313.14,
-          "positivacao": 4
-        },
-        "thermo_cat": {
-          "peso": 302.496,
-          "valor": 5193.7,
-          "positivacao": 20
-        },
-        "vegetais": {
-          "peso": 134.5,
-          "valor": 2022.39,
-          "positivacao": 6
-        }
-      },
-      "industrializado_potencial": 586.192625,
-      "thermo_potencial": 140.68623,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.08803914645195055,
-      "industrializado_margem_pct": 0.22953950855297262,
-      "recompra_pct": 0.22727272727272727,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 192,
-      "nome": "LUCAS LEAL",
-      "rota": "GYN RT 83 - EXPANSUL",
-      "supervisor": "LEANDRO",
-      "valor_vendido": 233600.61,
-      "total_pedidos": 322,
-      "categorias": {
-        "bacon": {
-          "peso": 34.143,
-          "valor": 843.19,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 305,
-          "valor": 7711.58,
-          "positivacao": 15
-        },
-        "frescais": {
-          "peso": 812,
-          "valor": 11623.99,
-          "positivacao": 20
-        },
-        "paes": {
-          "peso": 54,
-          "valor": 1445.18,
-          "positivacao": 8
-        },
-        "lactios": {
-          "peso": 144.103,
-          "valor": 5859.13,
-          "positivacao": 11
-        },
-        "batata": {
-          "peso": 292.5,
-          "valor": 3719.08,
-          "positivacao": 12
-        },
-        "bovino": {
-          "peso": 41.76,
-          "valor": 1546.32,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 39.167,
-          "valor": 710.98,
-          "positivacao": 3
-        },
-        "thermo_cat": {
-          "peso": 592.248,
-          "valor": 9039.43,
-          "positivacao": 27
-        },
-        "vegetais": {
-          "peso": 25.5,
-          "valor": 397.26,
-          "positivacao": 3
-        }
-      },
-      "industrializado_potencial": 584.001525,
-      "thermo_potencial": 140.160366,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.24255823552395692,
-      "industrializado_margem_pct": 0.2647912486605353,
-      "recompra_pct": 0.24675324675324675,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 334,
-      "nome": "JOAO GABRIEL",
-      "rota": "GYN RT 99 - ST. MARISTA",
-      "supervisor": "RICHARD",
-      "valor_vendido": 232517.62,
-      "total_pedidos": 241,
-      "categorias": {
-        "bacon": {
-          "peso": 168.385,
-          "valor": 4856.74,
-          "positivacao": 5
-        },
-        "calabresa": {
-          "peso": 115.8,
-          "valor": 2873.15,
-          "positivacao": 7
-        },
-        "frescais": {
-          "peso": 255,
-          "valor": 3549.94,
-          "positivacao": 12
-        },
-        "paes": {
-          "peso": 10.8,
-          "valor": 300.4,
-          "positivacao": 1
-        },
-        "lactios": {
-          "peso": 7.9,
-          "valor": 272.49,
-          "positivacao": 1
-        },
-        "batata": {
-          "peso": 134.5,
-          "valor": 1505.03,
-          "positivacao": 7
-        },
-        "bovino": {
-          "peso": 221.74,
-          "valor": 6446.13,
-          "positivacao": 3
-        },
-        "suino": {
-          "peso": 101.126,
-          "valor": 1908.75,
-          "positivacao": 5
-        },
-        "thermo_cat": {
-          "peso": 1651.896,
-          "valor": 34709.93,
-          "positivacao": 16
-        },
-        "vegetais": {
-          "peso": 44,
-          "valor": 690.38,
-          "positivacao": 3
-        }
-      },
-      "industrializado_potencial": 581.29405,
-      "thermo_potencial": 139.510572,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.05653707531261647,
-      "industrializado_margem_pct": 0.20900990313264706,
-      "recompra_pct": 0.25806451612903225,
+      "industrializado_participacao_pct": 0.15705573230999775,
+      "industrializado_margem_pct": 0.2462931638736748,
+      "recompra_pct": 0.32,
+      "taxa_comissao_pct": 1.9304,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -1843,66 +297,67 @@
       "nome": "MARCOS SILVA",
       "rota": "GYN RT 59 - AP. GYN",
       "supervisor": "LEANDRO",
-      "valor_vendido": 232251.97,
-      "total_pedidos": 343,
+      "valor_vendido": 414138.05292152,
+      "total_pedidos": 285.0,
       "categorias": {
         "bacon": {
-          "peso": 348.202,
-          "valor": 8142.38,
-          "positivacao": 4
+          "peso": 20.507,
+          "valor": 460.38,
+          "positivacao": 1.0
         },
         "calabresa": {
-          "peso": 352,
-          "valor": 7889.76,
-          "positivacao": 22
+          "peso": 598.35,
+          "valor": 12444.09,
+          "positivacao": 28.0
         },
         "frescais": {
-          "peso": 507,
-          "valor": 7153.67,
-          "positivacao": 25
+          "peso": 1819.0,
+          "valor": 20418.99,
+          "positivacao": 35.0
         },
         "paes": {
-          "peso": 26.4,
-          "valor": 752.02,
-          "positivacao": 4
+          "peso": 22.32,
+          "valor": 655.26,
+          "positivacao": 4.0
         },
         "lactios": {
-          "peso": 195.445,
-          "valor": 9073.68,
-          "positivacao": 25
+          "peso": 172.914,
+          "valor": 8076.33,
+          "positivacao": 23.0
         },
         "batata": {
-          "peso": 486.5,
-          "valor": 5062.58,
-          "positivacao": 19
+          "peso": 230.5,
+          "valor": 2720.51,
+          "positivacao": 10.0
         },
         "bovino": {
-          "peso": 10,
-          "valor": 176.1,
-          "positivacao": 1
+          "peso": 40.62,
+          "valor": 1263.79,
+          "positivacao": 2.0
         },
         "suino": {
-          "peso": 138.902,
-          "valor": 2176.62,
-          "positivacao": 6
+          "peso": 134.972,
+          "valor": 2095.62,
+          "positivacao": 4.0
         },
         "thermo_cat": {
-          "peso": 541.44,
-          "valor": 8762.7,
-          "positivacao": 47
+          "peso": 404.264,
+          "valor": 6661.03,
+          "positivacao": 39.0
         },
         "vegetais": {
-          "peso": 132,
-          "valor": 1985.54,
-          "positivacao": 5
+          "peso": 82.5,
+          "valor": 1290.76,
+          "positivacao": 7.0
         }
       },
-      "industrializado_potencial": 580.6299250000001,
-      "thermo_potencial": 139.351182,
+      "industrializado_potencial": 1035.3451323038,
+      "thermo_potencial": 248.482831752912,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.0841613469553032,
-      "industrializado_margem_pct": 0.2617593418135108,
-      "recompra_pct": 0.23529411764705882,
+      "industrializado_participacao_pct": 0.16024878547583338,
+      "industrializado_margem_pct": 0.21831371652837014,
+      "recompra_pct": 0.3564356435643564,
+      "taxa_comissao_pct": 1.9562,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -1916,70 +371,71 @@
       }
     },
     {
-      "codigo": 357,
-      "nome": "LUCIANO",
-      "rota": "GYN RT 95 - FINSOCIAL",
+      "codigo": 405,
+      "nome": "WILLIAN",
+      "rota": "GYN RT 77 - TLMK",
       "supervisor": "RODRIGO",
-      "valor_vendido": 217329.84,
-      "total_pedidos": 320,
+      "valor_vendido": 392279.7122,
+      "total_pedidos": 329.0,
       "categorias": {
         "bacon": {
-          "peso": 38.56,
-          "valor": 1119.43,
-          "positivacao": 3
+          "peso": 107.074,
+          "valor": 2601.82,
+          "positivacao": 6.0
         },
         "calabresa": {
-          "peso": 325.6,
-          "valor": 8005.03,
-          "positivacao": 17
+          "peso": 84.6,
+          "valor": 1885.56,
+          "positivacao": 6.0
         },
         "frescais": {
-          "peso": 221,
-          "valor": 3113.2,
-          "positivacao": 10
+          "peso": 807.0,
+          "valor": 10530.62,
+          "positivacao": 18.0
         },
         "paes": {
-          "peso": 69.6,
-          "valor": 1877.47,
-          "positivacao": 9
+          "peso": 32.4,
+          "valor": 971.37,
+          "positivacao": 5.0
         },
         "lactios": {
-          "peso": 158.495,
-          "valor": 7330.33,
-          "positivacao": 24
+          "peso": 97.4,
+          "valor": 4337.61,
+          "positivacao": 12.0
         },
         "batata": {
-          "peso": 358.5,
-          "valor": 4760.1,
-          "positivacao": 25
+          "peso": 447.0,
+          "valor": 5497.15,
+          "positivacao": 11.0
         },
         "bovino": {
-          "peso": 70.08,
-          "valor": 2509.99,
-          "positivacao": 3
+          "peso": 60.0,
+          "valor": 1079.4,
+          "positivacao": 4.0
         },
         "suino": {
-          "peso": 85.606,
-          "valor": 1535.05,
-          "positivacao": 2
+          "peso": 188.287,
+          "valor": 3510.42,
+          "positivacao": 6.0
         },
         "thermo_cat": {
-          "peso": 1057.56,
-          "valor": 20066.99,
-          "positivacao": 54
+          "peso": 1882.032,
+          "valor": 23960.24,
+          "positivacao": 17.0
         },
         "vegetais": {
-          "peso": 16.5,
-          "valor": 261.14,
-          "positivacao": 2
+          "peso": 5.5,
+          "valor": 84.15,
+          "positivacao": 1.0
         }
       },
-      "industrializado_potencial": 543.3246,
-      "thermo_potencial": 130.397904,
+      "industrializado_potencial": 980.6992805,
+      "thermo_potencial": 235.36782732,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.11970602590966448,
-      "industrializado_margem_pct": 0.18215850169692113,
-      "recompra_pct": 0.2,
+      "industrializado_participacao_pct": 0.36965867662345203,
+      "industrializado_margem_pct": 0.22765667798851508,
+      "recompra_pct": 0.35,
+      "taxa_comissao_pct": 2.0234,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -1993,70 +449,539 @@
       }
     },
     {
-      "codigo": 722,
-      "nome": "LUIZ GUSTAVO",
-      "rota": "GYN RT 79-JD GUANAB",
+      "codigo": 47,
+      "nome": "MARCELO",
+      "rota": "GYN RT 42 - INHUMAS",
       "supervisor": "RODRIGO",
-      "valor_vendido": 216374.78,
-      "total_pedidos": 404,
+      "valor_vendido": 398247.51,
+      "total_pedidos": 365.0,
       "categorias": {
         "bacon": {
-          "peso": 15,
-          "valor": 632.25,
-          "positivacao": 3
+          "peso": 123.119,
+          "valor": 3916.87,
+          "positivacao": 6.0
         },
         "calabresa": {
-          "peso": 170.8,
-          "valor": 4070.73,
-          "positivacao": 16
+          "peso": 356.5,
+          "valor": 8351.9,
+          "positivacao": 20.0
         },
         "frescais": {
-          "peso": 454,
-          "valor": 6298.12,
-          "positivacao": 13
+          "peso": 447.0,
+          "valor": 6267.42,
+          "positivacao": 14.0
         },
         "paes": {
-          "peso": 133.2,
-          "valor": 3664.73,
-          "positivacao": 15
+          "peso": 240.72,
+          "valor": 6852.0,
+          "positivacao": 21.0
         },
         "lactios": {
-          "peso": 118.65,
-          "valor": 5598.73,
-          "positivacao": 16
+          "peso": 140.039,
+          "valor": 6638.15,
+          "positivacao": 21.0
         },
         "batata": {
-          "peso": 419.5,
-          "valor": 5512.89,
-          "positivacao": 16
+          "peso": 531.2,
+          "valor": 7454.48,
+          "positivacao": 18.0
         },
         "bovino": {
-          "peso": 196.87,
-          "valor": 8898.82,
-          "positivacao": 5
+          "peso": 197.94,
+          "valor": 6068.92,
+          "positivacao": 11.0
         },
         "suino": {
-          "peso": 46.97,
-          "valor": 999.01,
-          "positivacao": 3
+          "peso": 110.0,
+          "valor": 2540.03,
+          "positivacao": 4.0
         },
         "thermo_cat": {
-          "peso": 336.36,
-          "valor": 5723.71,
-          "positivacao": 25
+          "peso": 1363.048,
+          "valor": 25959.96,
+          "positivacao": 50.0
         },
         "vegetais": {
-          "peso": 9,
-          "valor": 164.95,
-          "positivacao": 2
+          "peso": 19.0,
+          "valor": 339.58,
+          "positivacao": 4.0
         }
       },
-      "industrializado_potencial": 540.93695,
-      "thermo_potencial": 129.82486799999998,
+      "industrializado_potencial": 995.618775,
+      "thermo_potencial": 238.94850599999998,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.1336808680823946,
-      "industrializado_margem_pct": 0.24724943499245752,
-      "recompra_pct": 0.07526881720430108,
+      "industrializado_participacao_pct": 0.23218739598086238,
+      "industrializado_margem_pct": 0.2662138697442035,
+      "recompra_pct": 0.2018348623853211,
+      "taxa_comissao_pct": 2.0267,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 85,
+      "nome": "CARLOS HENRIQUE",
+      "rota": "GYN RT 61 - JD ITAIPU",
+      "supervisor": "LEANDRO",
+      "valor_vendido": 378951.63,
+      "total_pedidos": 357.0,
+      "categorias": {
+        "bacon": {
+          "peso": 141.126,
+          "valor": 3808.85,
+          "positivacao": 8.0
+        },
+        "calabresa": {
+          "peso": 338.0,
+          "valor": 8107.16,
+          "positivacao": 28.0
+        },
+        "frescais": {
+          "peso": 523.0,
+          "valor": 6983.75,
+          "positivacao": 19.0
+        },
+        "paes": {
+          "peso": 168.96,
+          "valor": 4932.95,
+          "positivacao": 14.0
+        },
+        "lactios": {
+          "peso": 169.05,
+          "valor": 8212.15,
+          "positivacao": 23.0
+        },
+        "batata": {
+          "peso": 210.4,
+          "valor": 2931.65,
+          "positivacao": 10.0
+        },
+        "bovino": {
+          "peso": 11.8,
+          "valor": 524.98,
+          "positivacao": 1.0
+        },
+        "suino": {
+          "peso": 177.698,
+          "valor": 2871.48,
+          "positivacao": 5.0
+        },
+        "thermo_cat": {
+          "peso": 714.52,
+          "valor": 13750.74,
+          "positivacao": 46.0
+        },
+        "vegetais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        }
+      },
+      "industrializado_potencial": 947.3790750000001,
+      "thermo_potencial": 227.370978,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2505396005289646,
+      "industrializado_margem_pct": 0.2575128289137637,
+      "recompra_pct": 0.27,
+      "taxa_comissao_pct": 2.0801,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 45,
+      "nome": "TIAGO",
+      "rota": "GYN RT 40 - PALMEIRAS",
+      "supervisor": "IDEGLAN",
+      "valor_vendido": 402511.73,
+      "total_pedidos": 233.0,
+      "categorias": {
+        "bacon": {
+          "peso": 108.455,
+          "valor": 2923.02,
+          "positivacao": 5.0
+        },
+        "calabresa": {
+          "peso": 809.8,
+          "valor": 18578.24,
+          "positivacao": 21.0
+        },
+        "frescais": {
+          "peso": 892.0,
+          "valor": 10301.15,
+          "positivacao": 15.0
+        },
+        "paes": {
+          "peso": 444.24,
+          "valor": 12898.74,
+          "positivacao": 23.0
+        },
+        "lactios": {
+          "peso": 208.905,
+          "valor": 9255.57,
+          "positivacao": 19.0
+        },
+        "batata": {
+          "peso": 97.5,
+          "valor": 1343.65,
+          "positivacao": 7.0
+        },
+        "bovino": {
+          "peso": 122.334,
+          "valor": 6711.71,
+          "positivacao": 3.0
+        },
+        "suino": {
+          "peso": 378.465,
+          "valor": 6383.82,
+          "positivacao": 4.0
+        },
+        "thermo_cat": {
+          "peso": 979.52,
+          "valor": 16349.62,
+          "positivacao": 18.0
+        },
+        "vegetais": {
+          "peso": 66.0,
+          "valor": 1016.68,
+          "positivacao": 4.0
+        }
+      },
+      "industrializado_potencial": 1006.279325,
+      "thermo_potencial": 241.507038,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.26180166227702234,
+      "industrializado_margem_pct": 0.18096051007073943,
+      "recompra_pct": 0.3465346534653465,
+      "taxa_comissao_pct": 2.1385,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 42,
+      "nome": "PAULO RONAN",
+      "rota": "GYN RT 37 - ST OESTE",
+      "supervisor": "RICHARD",
+      "valor_vendido": 327753.36,
+      "total_pedidos": 367.0,
+      "categorias": {
+        "bacon": {
+          "peso": 41.436,
+          "valor": 1031.76,
+          "positivacao": 1.0
+        },
+        "calabresa": {
+          "peso": 203.2,
+          "valor": 4530.41,
+          "positivacao": 12.0
+        },
+        "frescais": {
+          "peso": 1662.0,
+          "valor": 20540.9,
+          "positivacao": 23.0
+        },
+        "paes": {
+          "peso": 50.4,
+          "valor": 1523.1,
+          "positivacao": 3.0
+        },
+        "lactios": {
+          "peso": 25.675,
+          "valor": 976.33,
+          "positivacao": 3.0
+        },
+        "batata": {
+          "peso": 440.5,
+          "valor": 6181.55,
+          "positivacao": 15.0
+        },
+        "bovino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "suino": {
+          "peso": 267.952,
+          "valor": 6321.62,
+          "positivacao": 10.0
+        },
+        "thermo_cat": {
+          "peso": 573.44,
+          "valor": 9910.33,
+          "positivacao": 14.0
+        },
+        "vegetais": {
+          "peso": 36.5,
+          "valor": 616.55,
+          "positivacao": 3.0
+        }
+      },
+      "industrializado_potencial": 819.3833999999999,
+      "thermo_potencial": 196.65201599999997,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.11145990997620894,
+      "industrializado_margem_pct": 0.23306955019919712,
+      "recompra_pct": 0.10526315789473684,
+      "taxa_comissao_pct": 2.9626,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 738,
+      "nome": "MARCEL HENRIQUE",
+      "rota": "GYN RT 62 - TRINDADE",
+      "supervisor": "IDEGLAN",
+      "valor_vendido": 307199.44,
+      "total_pedidos": 364.0,
+      "categorias": {
+        "bacon": {
+          "peso": 61.708,
+          "valor": 1527.72,
+          "positivacao": 3.0
+        },
+        "calabresa": {
+          "peso": 449.6,
+          "valor": 10003.58,
+          "positivacao": 15.0
+        },
+        "frescais": {
+          "peso": 831.0,
+          "valor": 9475.77,
+          "positivacao": 22.0
+        },
+        "paes": {
+          "peso": 181.2,
+          "valor": 5105.57,
+          "positivacao": 9.0
+        },
+        "lactios": {
+          "peso": 309.145,
+          "valor": 13728.98,
+          "positivacao": 27.0
+        },
+        "batata": {
+          "peso": 664.8,
+          "valor": 8120.54,
+          "positivacao": 18.0
+        },
+        "bovino": {
+          "peso": 261.69,
+          "valor": 12807.81,
+          "positivacao": 6.0
+        },
+        "suino": {
+          "peso": 189.849,
+          "valor": 2770.31,
+          "positivacao": 6.0
+        },
+        "thermo_cat": {
+          "peso": 824.976,
+          "valor": 13030.17,
+          "positivacao": 37.0
+        },
+        "vegetais": {
+          "peso": 4.5,
+          "valor": 88.88,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 767.9986,
+      "thermo_potencial": 184.31966400000002,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.26188618703211175,
+      "industrializado_margem_pct": 0.21855435997612907,
+      "recompra_pct": 0.13043478260869565,
+      "taxa_comissao_pct": 2.1407,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 644,
+      "nome": "ALBERTO SANTOS",
+      "rota": "GYN RT 10 - BR ILDA",
+      "supervisor": "RICARDO",
+      "valor_vendido": 298668.528,
+      "total_pedidos": 321.0,
+      "categorias": {
+        "bacon": {
+          "peso": 378.899,
+          "valor": 8417.84,
+          "positivacao": 5.0
+        },
+        "calabresa": {
+          "peso": 309.56,
+          "valor": 5858.74,
+          "positivacao": 14.0
+        },
+        "frescais": {
+          "peso": 2398.0,
+          "valor": 28557.0,
+          "positivacao": 18.0
+        },
+        "paes": {
+          "peso": 72.0,
+          "valor": 1985.99,
+          "positivacao": 3.0
+        },
+        "lactios": {
+          "peso": 372.774,
+          "valor": 14809.77,
+          "positivacao": 13.0
+        },
+        "batata": {
+          "peso": 134.5,
+          "valor": 1605.93,
+          "positivacao": 9.0
+        },
+        "bovino": {
+          "peso": 50.0,
+          "valor": 877.9,
+          "positivacao": 4.0
+        },
+        "suino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "thermo_cat": {
+          "peso": 746.328,
+          "valor": 10239.71,
+          "positivacao": 27.0
+        },
+        "vegetais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        }
+      },
+      "industrializado_potencial": 746.67132,
+      "thermo_potencial": 179.2011168,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2205071637142833,
+      "industrializado_margem_pct": 0.24417289317840235,
+      "recompra_pct": 0.32941176470588235,
+      "taxa_comissao_pct": 2.0674,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 657,
+      "nome": "YURI ENRIQUE",
+      "rota": "GYN RT 108 - JD OLIMPICO",
+      "supervisor": "FLAVIANE",
+      "valor_vendido": 288096.437992,
+      "total_pedidos": 191.0,
+      "categorias": {
+        "bacon": {
+          "peso": 40.947,
+          "valor": 1415.35,
+          "positivacao": 2.0
+        },
+        "calabresa": {
+          "peso": 514.4,
+          "valor": 11043.83,
+          "positivacao": 13.0
+        },
+        "frescais": {
+          "peso": 530.0,
+          "valor": 6726.37,
+          "positivacao": 14.0
+        },
+        "paes": {
+          "peso": 92.4,
+          "valor": 2460.29,
+          "positivacao": 7.0
+        },
+        "lactios": {
+          "peso": 392.917,
+          "valor": 15681.52,
+          "positivacao": 11.0
+        },
+        "batata": {
+          "peso": 155.0,
+          "valor": 2190.97,
+          "positivacao": 3.0
+        },
+        "bovino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "suino": {
+          "peso": 100.1,
+          "valor": 1363.46,
+          "positivacao": 1.0
+        },
+        "thermo_cat": {
+          "peso": 628.008,
+          "valor": 11326.51,
+          "positivacao": 15.0
+        },
+        "vegetais": {
+          "peso": 57.0,
+          "valor": 1202.59,
+          "positivacao": 8.0
+        }
+      },
+      "industrializado_potencial": 720.2410949800001,
+      "thermo_potencial": 172.85786279520002,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2161535228760073,
+      "industrializado_margem_pct": 0.22122431962273545,
+      "recompra_pct": 0.35,
+      "taxa_comissao_pct": 2.0608,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2074,66 +999,67 @@
       "nome": "HAMBER",
       "rota": "GYN RT 65 - PARQUE SANTA RITA",
       "supervisor": "IDEGLAN",
-      "valor_vendido": 215759.1,
-      "total_pedidos": 314,
+      "valor_vendido": 276107.23806,
+      "total_pedidos": 302.0,
       "categorias": {
         "bacon": {
-          "peso": 263.619,
-          "valor": 6943.92,
-          "positivacao": 6
+          "peso": 122.125,
+          "valor": 3330.23,
+          "positivacao": 7.0
         },
         "calabresa": {
-          "peso": 286.545,
-          "valor": 7024.83,
-          "positivacao": 16
+          "peso": 252.4,
+          "valor": 5606.52,
+          "positivacao": 18.0
         },
         "frescais": {
-          "peso": 349,
-          "valor": 4654.47,
-          "positivacao": 9
+          "peso": 791.0,
+          "valor": 9800.35,
+          "positivacao": 17.0
         },
         "paes": {
-          "peso": 94.8,
-          "valor": 2637.36,
-          "positivacao": 10
+          "peso": 76.32,
+          "valor": 2225.14,
+          "positivacao": 8.0
         },
         "lactios": {
-          "peso": 114,
-          "valor": 5508.7,
-          "positivacao": 12
+          "peso": 146.34,
+          "valor": 6400.34,
+          "positivacao": 13.0
         },
         "batata": {
-          "peso": 333.5,
-          "valor": 3330.9,
-          "positivacao": 13
+          "peso": 174.5,
+          "valor": 1920.03,
+          "positivacao": 10.0
         },
         "bovino": {
-          "peso": 163.75,
-          "valor": 6494.29,
-          "positivacao": 3
+          "peso": 145.61,
+          "valor": 5213.86,
+          "positivacao": 5.0
         },
         "suino": {
-          "peso": 418.611,
-          "valor": 7134.73,
-          "positivacao": 7
+          "peso": 196.858,
+          "valor": 3596.87,
+          "positivacao": 6.0
         },
         "thermo_cat": {
-          "peso": 461.904,
-          "valor": 8743.15,
-          "positivacao": 20
+          "peso": 363.872,
+          "valor": 7260.62,
+          "positivacao": 17.0
         },
         "vegetais": {
-          "peso": 32,
-          "valor": 487.08,
-          "positivacao": 4
+          "peso": 11.0,
+          "valor": 167.98,
+          "positivacao": 2.0
         }
       },
-      "industrializado_potencial": 539.39775,
-      "thermo_potencial": 129.45546000000002,
+      "industrializado_potencial": 690.26809515,
+      "thermo_potencial": 165.664342836,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2313696447872796,
-      "industrializado_margem_pct": 0.22232389150012136,
-      "recompra_pct": 0.17391304347826086,
+      "industrializado_participacao_pct": 0.2149413047516832,
+      "industrializado_margem_pct": 0.216133142890724,
+      "recompra_pct": 0.14666666666666667,
+      "taxa_comissao_pct": 2.0426,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2147,224 +1073,71 @@
       }
     },
     {
-      "codigo": 398,
-      "nome": "UCLEIBSON",
-      "rota": "GYN RT 110 - VAREJO MARISTA",
-      "supervisor": "RICARDO",
-      "valor_vendido": 211337.35,
-      "total_pedidos": 270,
-      "categorias": {
-        "bacon": {
-          "peso": 6,
-          "valor": 397.07,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 28.8,
-          "valor": 745.42,
-          "positivacao": 2
-        },
-        "frescais": {
-          "peso": 447,
-          "valor": 6735,
-          "positivacao": 6
-        },
-        "paes": {
-          "peso": 10.8,
-          "valor": 299.6,
-          "positivacao": 3
-        },
-        "lactios": {
-          "peso": 54.65,
-          "valor": 2575.27,
-          "positivacao": 6
-        },
-        "batata": {
-          "peso": 60,
-          "valor": 813.18,
-          "positivacao": 1
-        },
-        "bovino": {
-          "peso": 10,
-          "valor": 165.55,
-          "positivacao": 1
-        },
-        "suino": {
-          "peso": 100.91,
-          "valor": 3425.85,
-          "positivacao": 1
-        },
-        "thermo_cat": {
-          "peso": 139.144,
-          "valor": 2510.69,
-          "positivacao": 12
-        },
-        "vegetais": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        }
-      },
-      "industrializado_potencial": 528.343375,
-      "thermo_potencial": 126.80241000000001,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.05401665089631622,
-      "industrializado_margem_pct": 0.27212934610129486,
-      "recompra_pct": 0.5142857142857142,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 471,
-      "nome": "ANTONIO EDVALDO",
-      "rota": "GYN RT 47 - ST UNIV",
-      "supervisor": "FLAVIANE",
-      "valor_vendido": 207693.1,
-      "total_pedidos": 317,
-      "categorias": {
-        "bacon": {
-          "peso": 217.564,
-          "valor": 6146.62,
-          "positivacao": 6
-        },
-        "calabresa": {
-          "peso": 280,
-          "valor": 7065,
-          "positivacao": 19
-        },
-        "frescais": {
-          "peso": 180,
-          "valor": 2730.17,
-          "positivacao": 8
-        },
-        "paes": {
-          "peso": 102,
-          "valor": 2780.14,
-          "positivacao": 9
-        },
-        "lactios": {
-          "peso": 66.49,
-          "valor": 2889.08,
-          "positivacao": 12
-        },
-        "batata": {
-          "peso": 181,
-          "valor": 2391.26,
-          "positivacao": 10
-        },
-        "bovino": {
-          "peso": 20,
-          "valor": 346.95,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 261.371,
-          "valor": 5646.82,
-          "positivacao": 3
-        },
-        "thermo_cat": {
-          "peso": 302.424,
-          "valor": 5986.09,
-          "positivacao": 20
-        },
-        "vegetais": {
-          "peso": 44,
-          "valor": 690.89,
-          "positivacao": 4
-        }
-      },
-      "industrializado_potencial": 519.23275,
-      "thermo_potencial": 124.61586,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.07058395449163994,
-      "industrializado_margem_pct": 0.26488804277498634,
-      "recompra_pct": 0.30303030303030304,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 735,
-      "nome": "CARLOS RAFAEL",
-      "rota": "GYN RT 90 - VERA CRUZ",
+      "codigo": 428,
+      "nome": "TAUA F.",
+      "rota": "GYN RT 45 - NOVA VENEZA",
       "supervisor": "IDEGLAN",
-      "valor_vendido": 200920.93,
-      "total_pedidos": 325,
+      "valor_vendido": 271541.75,
+      "total_pedidos": 246.0,
       "categorias": {
         "bacon": {
-          "peso": 181.237,
-          "valor": 5310.73,
-          "positivacao": 4
+          "peso": 155.602,
+          "valor": 3821.71,
+          "positivacao": 6.0
         },
         "calabresa": {
-          "peso": 197.2,
-          "valor": 4825.02,
-          "positivacao": 13
+          "peso": 342.195,
+          "valor": 7974.56,
+          "positivacao": 17.0
         },
         "frescais": {
-          "peso": 387,
-          "valor": 5407.91,
-          "positivacao": 14
+          "peso": 196.0,
+          "valor": 2652.55,
+          "positivacao": 9.0
         },
         "paes": {
-          "peso": 126,
-          "valor": 3457.76,
-          "positivacao": 12
+          "peso": 213.12,
+          "valor": 5849.02,
+          "positivacao": 22.0
         },
         "lactios": {
-          "peso": 124.46,
-          "valor": 5978.27,
-          "positivacao": 27
+          "peso": 250.983,
+          "valor": 10355.14,
+          "positivacao": 21.0
         },
         "batata": {
-          "peso": 165,
-          "valor": 2008.14,
-          "positivacao": 11
+          "peso": 180.6,
+          "valor": 2591.54,
+          "positivacao": 10.0
         },
         "bovino": {
-          "peso": 225.1,
-          "valor": 8769.2,
-          "positivacao": 8
+          "peso": 239.85,
+          "valor": 9753.31,
+          "positivacao": 7.0
         },
         "suino": {
-          "peso": 66.219,
-          "valor": 1029.74,
-          "positivacao": 3
+          "peso": 93.298,
+          "valor": 1611.15,
+          "positivacao": 5.0
         },
         "thermo_cat": {
-          "peso": 481.6,
-          "valor": 8599.3,
-          "positivacao": 35
+          "peso": 474.792,
+          "valor": 8743.96,
+          "positivacao": 31.0
         },
         "vegetais": {
-          "peso": 24.5,
-          "valor": 417.46,
-          "positivacao": 2
+          "peso": 4.5,
+          "valor": 72.0,
+          "positivacao": 1.0
         }
       },
-      "industrializado_potencial": 502.302325,
-      "thermo_potencial": 120.55255799999999,
+      "industrializado_potencial": 678.854375,
+      "thermo_potencial": 162.92505,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.13222491450143387,
-      "industrializado_margem_pct": 0.24496508389430754,
-      "recompra_pct": 0.26595744680851063,
+      "industrializado_participacao_pct": 0.23228398579592274,
+      "industrializado_margem_pct": 0.2388330901567528,
+      "recompra_pct": 0.22105263157894736,
+      "taxa_comissao_pct": 2.042,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2378,70 +1151,71 @@
       }
     },
     {
-      "codigo": 679,
-      "nome": "RAFAEL COSTA",
-      "rota": "GYN RT 15 - JD AMERICA",
-      "supervisor": "RICHARD",
-      "valor_vendido": 200600.79,
-      "total_pedidos": 303,
+      "codigo": 439,
+      "nome": "GUILHERME AUGUSTO",
+      "rota": "GYN RT 07 - TRINDADE",
+      "supervisor": "IDEGLAN",
+      "valor_vendido": 273273.066,
+      "total_pedidos": 386.0,
       "categorias": {
         "bacon": {
-          "peso": 112.58,
-          "valor": 3151.45,
-          "positivacao": 7
+          "peso": 193.206,
+          "valor": 4842.66,
+          "positivacao": 3.0
         },
         "calabresa": {
-          "peso": 333.8,
-          "valor": 7255.59,
-          "positivacao": 21
+          "peso": 218.4,
+          "valor": 4990.34,
+          "positivacao": 15.0
         },
         "frescais": {
-          "peso": 258,
-          "valor": 3786.42,
-          "positivacao": 13
+          "peso": 245.0,
+          "valor": 3060.22,
+          "positivacao": 11.0
         },
         "paes": {
-          "peso": 73.2,
-          "valor": 2052.4,
-          "positivacao": 6
+          "peso": 102.96,
+          "valor": 2986.83,
+          "positivacao": 15.0
         },
         "lactios": {
-          "peso": 91.18,
-          "valor": 3888.68,
-          "positivacao": 13
+          "peso": 131.354,
+          "valor": 6087.87,
+          "positivacao": 17.0
         },
         "batata": {
-          "peso": 529,
-          "valor": 6867.26,
-          "positivacao": 17
+          "peso": 585.1,
+          "valor": 7876.51,
+          "positivacao": 16.0
         },
         "bovino": {
-          "peso": 33.06,
-          "valor": 922.84,
-          "positivacao": 3
+          "peso": 40.91,
+          "valor": 1799.59,
+          "positivacao": 2.0
         },
         "suino": {
-          "peso": 151.289,
-          "valor": 2937.07,
-          "positivacao": 8
+          "peso": 241.361,
+          "valor": 4004.93,
+          "positivacao": 6.0
         },
         "thermo_cat": {
-          "peso": 1053.48,
-          "valor": 21683.09,
-          "positivacao": 23
+          "peso": 911.672,
+          "valor": 17105.6,
+          "positivacao": 28.0
         },
         "vegetais": {
-          "peso": 26.5,
-          "valor": 449.15,
-          "positivacao": 5
+          "peso": 5.5,
+          "valor": 85.53,
+          "positivacao": 1.0
         }
       },
-      "industrializado_potencial": 501.501975,
-      "thermo_potencial": 120.360474,
+      "industrializado_potencial": 683.182665,
+      "thermo_potencial": 163.9638396,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.08461712471319459,
-      "industrializado_margem_pct": 0.23891786709036783,
-      "recompra_pct": 0.140625,
+      "industrializado_participacao_pct": 0.20246543433592537,
+      "industrializado_margem_pct": 0.2371631801606014,
+      "recompra_pct": 0.21649484536082475,
+      "taxa_comissao_pct": 2.0799,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2459,53 +1233,53 @@
       "nome": "JEAN PIERRE",
       "rota": "GYN RT 97 - ST PERIM",
       "supervisor": "RICARDO",
-      "valor_vendido": 199292.71,
-      "total_pedidos": 233,
+      "valor_vendido": 252975.259689128,
+      "total_pedidos": 173.0,
       "categorias": {
         "bacon": {
-          "peso": 24.99,
-          "valor": 1014.78,
-          "positivacao": 2
+          "peso": 15.84,
+          "valor": 390.07,
+          "positivacao": 1.0
         },
         "calabresa": {
-          "peso": 241.96,
-          "valor": 5941.06,
-          "positivacao": 13
+          "peso": 161.4,
+          "valor": 3554.68,
+          "positivacao": 9.0
         },
         "frescais": {
-          "peso": 31,
-          "valor": 455.01,
-          "positivacao": 3
+          "peso": 111.0,
+          "valor": 1312.63,
+          "positivacao": 11.0
         },
         "paes": {
-          "peso": 73.2,
-          "valor": 2106.51,
-          "positivacao": 6
+          "peso": 41.52,
+          "valor": 1262.93,
+          "positivacao": 6.0
         },
         "lactios": {
-          "peso": 64.94,
-          "valor": 3114.86,
-          "positivacao": 6
+          "peso": 57.0,
+          "valor": 2941.33,
+          "positivacao": 6.0
         },
         "batata": {
-          "peso": 136,
-          "valor": 1681.64,
-          "positivacao": 4
+          "peso": 59.7,
+          "valor": 805.17,
+          "positivacao": 3.0
         },
         "bovino": {
-          "peso": 50,
-          "valor": 887.8,
-          "positivacao": 5
+          "peso": 30.0,
+          "valor": 533.59,
+          "positivacao": 3.0
         },
         "suino": {
-          "peso": 12,
-          "valor": 256.1,
-          "positivacao": 1
+          "peso": 12.0,
+          "valor": 248.41,
+          "positivacao": 1.0
         },
         "thermo_cat": {
-          "peso": 298.776,
-          "valor": 5384.45,
-          "positivacao": 24
+          "peso": 318.96,
+          "valor": 5620.83,
+          "positivacao": 23.0
         },
         "vegetais": {
           "peso": 0,
@@ -2513,12 +1287,325 @@
           "positivacao": 0
         }
       },
-      "industrializado_potencial": 498.23177499999997,
-      "thermo_potencial": 119.575626,
+      "industrializado_potencial": 632.43814922282,
+      "thermo_potencial": 151.7851558134768,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.0850678074683713,
-      "industrializado_margem_pct": 0.285119362196322,
-      "recompra_pct": 0.30303030303030304,
+      "industrializado_participacao_pct": 0.18366155669568335,
+      "industrializado_margem_pct": 0.2686217362817329,
+      "recompra_pct": 0.4142857142857143,
+      "taxa_comissao_pct": 1.9656,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 687,
+      "nome": "EDREY MARTINS",
+      "rota": "GYN RT 02 - ST. BUENO",
+      "supervisor": "RICHARD",
+      "valor_vendido": 269144.39,
+      "total_pedidos": 314.0,
+      "categorias": {
+        "bacon": {
+          "peso": 167.759,
+          "valor": 4826.21,
+          "positivacao": 4.0
+        },
+        "calabresa": {
+          "peso": 249.4,
+          "valor": 5674.42,
+          "positivacao": 14.0
+        },
+        "frescais": {
+          "peso": 1165.0,
+          "valor": 16108.72,
+          "positivacao": 16.0
+        },
+        "paes": {
+          "peso": 29.52,
+          "valor": 912.67,
+          "positivacao": 4.0
+        },
+        "lactios": {
+          "peso": 68.69,
+          "valor": 2976.66,
+          "positivacao": 6.0
+        },
+        "batata": {
+          "peso": 555.0,
+          "valor": 7820.03,
+          "positivacao": 10.0
+        },
+        "bovino": {
+          "peso": 90.0,
+          "valor": 1817.0,
+          "positivacao": 4.0
+        },
+        "suino": {
+          "peso": 463.704,
+          "valor": 12345.43,
+          "positivacao": 15.0
+        },
+        "thermo_cat": {
+          "peso": 333.464,
+          "valor": 7227.23,
+          "positivacao": 12.0
+        },
+        "vegetais": {
+          "peso": 72.0,
+          "valor": 1340.4,
+          "positivacao": 6.0
+        }
+      },
+      "industrializado_potencial": 672.860975,
+      "thermo_potencial": 161.486634,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.11825693264496427,
+      "industrializado_margem_pct": 0.24101629229841742,
+      "recompra_pct": 0.0300187617260788,
+      "taxa_comissao_pct": 2.7699,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 347,
+      "nome": "MATIAS",
+      "rota": "GYN RT 98 - BR.VITORIA/JD.CURIT",
+      "supervisor": "RODRIGO",
+      "valor_vendido": 304240.89,
+      "total_pedidos": 284.0,
+      "categorias": {
+        "bacon": {
+          "peso": 61.187,
+          "valor": 1817.74,
+          "positivacao": 4.0
+        },
+        "calabresa": {
+          "peso": 247.6,
+          "valor": 6000.63,
+          "positivacao": 14.0
+        },
+        "frescais": {
+          "peso": 979.0,
+          "valor": 10260.07,
+          "positivacao": 9.0
+        },
+        "paes": {
+          "peso": 98.64,
+          "valor": 2854.3,
+          "positivacao": 11.0
+        },
+        "lactios": {
+          "peso": 139.93,
+          "valor": 6308.55,
+          "positivacao": 19.0
+        },
+        "batata": {
+          "peso": 175.5,
+          "valor": 2460.26,
+          "positivacao": 8.0
+        },
+        "bovino": {
+          "peso": 25.91,
+          "valor": 1129.44,
+          "positivacao": 2.0
+        },
+        "suino": {
+          "peso": 50.589,
+          "valor": 806.51,
+          "positivacao": 3.0
+        },
+        "thermo_cat": {
+          "peso": 1424.368,
+          "valor": 28472.94,
+          "positivacao": 41.0
+        },
+        "vegetais": {
+          "peso": 16.5,
+          "valor": 277.2,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 760.6022250000001,
+      "thermo_potencial": 182.544534,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2701388587395346,
+      "industrializado_margem_pct": 0.2308209056911011,
+      "recompra_pct": 0.20512820512820512,
+      "taxa_comissao_pct": 2.0529,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 471,
+      "nome": "ANTONIO EDVALDO",
+      "rota": "GYN RT 47 - ST UNIV",
+      "supervisor": "FLAVIANE",
+      "valor_vendido": 261054.47,
+      "total_pedidos": 305.0,
+      "categorias": {
+        "bacon": {
+          "peso": 169.804,
+          "valor": 4339.47,
+          "positivacao": 4.0
+        },
+        "calabresa": {
+          "peso": 205.6,
+          "valor": 4671.18,
+          "positivacao": 13.0
+        },
+        "frescais": {
+          "peso": 351.0,
+          "valor": 4618.01,
+          "positivacao": 13.0
+        },
+        "paes": {
+          "peso": 51.6,
+          "valor": 1435.95,
+          "positivacao": 9.0
+        },
+        "lactios": {
+          "peso": 135.74,
+          "valor": 5530.72,
+          "positivacao": 13.0
+        },
+        "batata": {
+          "peso": 255.6,
+          "valor": 3416.42,
+          "positivacao": 9.0
+        },
+        "bovino": {
+          "peso": 20.0,
+          "valor": 353.59,
+          "positivacao": 2.0
+        },
+        "suino": {
+          "peso": 217.474,
+          "valor": 4845.16,
+          "positivacao": 3.0
+        },
+        "thermo_cat": {
+          "peso": 342.672,
+          "valor": 7052.12,
+          "positivacao": 22.0
+        },
+        "vegetais": {
+          "peso": 43.0,
+          "valor": 691.89,
+          "positivacao": 3.0
+        }
+      },
+      "industrializado_potencial": 652.636175,
+      "thermo_potencial": 156.632682,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.09712865671290746,
+      "industrializado_margem_pct": 0.25380450635626023,
+      "recompra_pct": 0.30392156862745096,
+      "taxa_comissao_pct": 2.1079,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 81,
+      "nome": "LOIOLA",
+      "rota": "GYN RT 57 - AP. GYN",
+      "supervisor": "LEANDRO",
+      "valor_vendido": 258570.2,
+      "total_pedidos": 310.0,
+      "categorias": {
+        "bacon": {
+          "peso": 15.81,
+          "valor": 380.23,
+          "positivacao": 1.0
+        },
+        "calabresa": {
+          "peso": 133.2,
+          "valor": 3092.08,
+          "positivacao": 11.0
+        },
+        "frescais": {
+          "peso": 1101.0,
+          "valor": 14074.59,
+          "positivacao": 18.0
+        },
+        "paes": {
+          "peso": 37.44,
+          "valor": 1229.02,
+          "positivacao": 5.0
+        },
+        "lactios": {
+          "peso": 83.4,
+          "valor": 4097.33,
+          "positivacao": 14.0
+        },
+        "batata": {
+          "peso": 213.0,
+          "valor": 2865.46,
+          "positivacao": 5.0
+        },
+        "bovino": {
+          "peso": 22.224,
+          "valor": 724.19,
+          "positivacao": 2.0
+        },
+        "suino": {
+          "peso": 48.0,
+          "valor": 1090.9,
+          "positivacao": 2.0
+        },
+        "thermo_cat": {
+          "peso": 710.784,
+          "valor": 14600.33,
+          "positivacao": 28.0
+        },
+        "vegetais": {
+          "peso": 64.0,
+          "valor": 1018.23,
+          "positivacao": 2.0
+        }
+      },
+      "industrializado_potencial": 646.4255,
+      "thermo_potencial": 155.14212,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2883544971539644,
+      "industrializado_margem_pct": 0.2409284202823193,
+      "recompra_pct": 0.36,
+      "taxa_comissao_pct": 2.1522,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2536,53 +1623,53 @@
       "nome": "BERALDO",
       "rota": "GYN RT 12 - ST GARAVELO",
       "supervisor": "RICARDO",
-      "valor_vendido": 197112.23,
-      "total_pedidos": 295,
+      "valor_vendido": 253030.8496088,
+      "total_pedidos": 281.0,
       "categorias": {
         "bacon": {
-          "peso": 14.12,
-          "valor": 325.85,
-          "positivacao": 1
+          "peso": 70.82,
+          "valor": 1641.09,
+          "positivacao": 4.0
         },
         "calabresa": {
-          "peso": 187.8,
-          "valor": 4772.74,
-          "positivacao": 13
+          "peso": 259.8,
+          "valor": 5954.09,
+          "positivacao": 16.0
         },
         "frescais": {
-          "peso": 116,
-          "valor": 1665.65,
-          "positivacao": 3
+          "peso": 400.0,
+          "valor": 4339.13,
+          "positivacao": 11.0
         },
         "paes": {
-          "peso": 46.8,
-          "valor": 1265.07,
-          "positivacao": 6
+          "peso": 40.32,
+          "valor": 1123.6,
+          "positivacao": 6.0
         },
         "lactios": {
-          "peso": 29.7,
-          "valor": 1361.91,
-          "positivacao": 6
+          "peso": 50.68,
+          "valor": 2114.53,
+          "positivacao": 8.0
         },
         "batata": {
-          "peso": 224.5,
-          "valor": 2407.93,
-          "positivacao": 10
+          "peso": 211.0,
+          "valor": 2353.85,
+          "positivacao": 9.0
         },
         "bovino": {
-          "peso": 10,
-          "valor": 171,
-          "positivacao": 1
+          "peso": 10.0,
+          "valor": 171.0,
+          "positivacao": 1.0
         },
         "suino": {
-          "peso": 39.959,
-          "valor": 534.08,
-          "positivacao": 1
+          "peso": 36.76,
+          "valor": 489.66,
+          "positivacao": 2.0
         },
         "thermo_cat": {
-          "peso": 271.216,
-          "valor": 4348.37,
-          "positivacao": 25
+          "peso": 556.576,
+          "valor": 8370.89,
+          "positivacao": 18.0
         },
         "vegetais": {
           "peso": 0,
@@ -2590,12 +1677,13 @@
           "positivacao": 0
         }
       },
-      "industrializado_potencial": 492.78057500000006,
-      "thermo_potencial": 118.267338,
+      "industrializado_potencial": 632.577124022,
+      "thermo_potencial": 151.81850976528,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.2621019823337175,
-      "industrializado_margem_pct": 0.25921603719202546,
-      "recompra_pct": 0.25,
+      "industrializado_participacao_pct": 0.2064867192311831,
+      "industrializado_margem_pct": 0.2530440683781978,
+      "recompra_pct": 0.1891891891891892,
+      "taxa_comissao_pct": 2.0111,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2609,147 +1697,71 @@
       }
     },
     {
-      "codigo": 473,
-      "nome": "KAIKY DIAS",
-      "rota": "GYN RT 03 - CENTRO",
-      "supervisor": "RICHARD",
-      "valor_vendido": 196891.72,
-      "total_pedidos": 360,
-      "categorias": {
-        "bacon": {
-          "peso": 35.573,
-          "valor": 918,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 179.2,
-          "valor": 4291.56,
-          "positivacao": 8
-        },
-        "frescais": {
-          "peso": 436,
-          "valor": 6300.28,
-          "positivacao": 16
-        },
-        "paes": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        },
-        "lactios": {
-          "peso": 100.805,
-          "valor": 4200.75,
-          "positivacao": 8
-        },
-        "batata": {
-          "peso": 423,
-          "valor": 5061.76,
-          "positivacao": 17
-        },
-        "bovino": {
-          "peso": 121.92,
-          "valor": 4393,
-          "positivacao": 5
-        },
-        "suino": {
-          "peso": 436.34,
-          "valor": 12311.34,
-          "positivacao": 8
-        },
-        "thermo_cat": {
-          "peso": 376.952,
-          "valor": 6883.81,
-          "positivacao": 18
-        },
-        "vegetais": {
-          "peso": 137.5,
-          "valor": 2287.53,
-          "positivacao": 8
-        }
-      },
-      "industrializado_potencial": 492.2293,
-      "thermo_potencial": 118.135032,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.1375670500068215,
-      "industrializado_margem_pct": 0.24158777608328946,
-      "recompra_pct": 0.27380952380952384,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 650,
-      "nome": "ANDRE WILKER",
-      "rota": "GYN RT 96 - HIDROLANDIA",
+      "codigo": 15,
+      "nome": "WESLEY",
+      "rota": "GYN RT 11 - JD TIRADENTES",
       "supervisor": "LEANDRO",
-      "valor_vendido": 195897.98,
-      "total_pedidos": 221,
+      "valor_vendido": 255036.587,
+      "total_pedidos": 370.0,
       "categorias": {
         "bacon": {
-          "peso": 212.302,
-          "valor": 5339.58,
-          "positivacao": 4
+          "peso": 79.336,
+          "valor": 2349.66,
+          "positivacao": 4.0
         },
         "calabresa": {
-          "peso": 241.59,
-          "valor": 5517.24,
-          "positivacao": 21
+          "peso": 265.0,
+          "valor": 6063.66,
+          "positivacao": 22.0
         },
         "frescais": {
-          "peso": 568,
-          "valor": 9346.76,
-          "positivacao": 17
+          "peso": 1224.0,
+          "valor": 13517.69,
+          "positivacao": 21.0
         },
         "paes": {
-          "peso": 122.4,
-          "valor": 3492.82,
-          "positivacao": 15
+          "peso": 101.04,
+          "valor": 2946.49,
+          "positivacao": 13.0
         },
         "lactios": {
-          "peso": 68.47,
-          "valor": 3104.77,
-          "positivacao": 15
+          "peso": 141.53,
+          "valor": 6714.36,
+          "positivacao": 23.0
         },
         "batata": {
-          "peso": 319,
-          "valor": 3737.92,
-          "positivacao": 12
+          "peso": 230.5,
+          "valor": 3199.88,
+          "positivacao": 12.0
         },
         "bovino": {
-          "peso": 24.9,
-          "valor": 1073.16,
-          "positivacao": 1
+          "peso": 30.7,
+          "valor": 1118.21,
+          "positivacao": 2.0
         },
         "suino": {
-          "peso": 243.542,
-          "valor": 4367.77,
-          "positivacao": 6
+          "peso": 66.438,
+          "valor": 852.45,
+          "positivacao": 3.0
         },
         "thermo_cat": {
-          "peso": 482.856,
-          "valor": 9069.03,
-          "positivacao": 34
+          "peso": 433.608,
+          "valor": 6788.0,
+          "positivacao": 41.0
         },
         "vegetais": {
-          "peso": 130.5,
-          "valor": 2179.45,
-          "positivacao": 10
+          "peso": 21.0,
+          "valor": 324.34,
+          "positivacao": 4.0
         }
       },
-      "industrializado_potencial": 489.74495,
-      "thermo_potencial": 117.53878800000001,
+      "industrializado_potencial": 637.5914675,
+      "thermo_potencial": 153.0219522,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.27011143814869626,
-      "industrializado_margem_pct": 0.2773157907130156,
-      "recompra_pct": 0.38636363636363635,
+      "industrializado_participacao_pct": 0.33572755582711744,
+      "industrializado_margem_pct": 0.21942688029540533,
+      "recompra_pct": 0.26666666666666666,
+      "taxa_comissao_pct": 2.1842,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2763,70 +1775,149 @@
       }
     },
     {
-      "codigo": 561,
-      "nome": "THALLES VIEIRA",
-      "rota": "GYN RT 06 - GOIANIRA",
-      "supervisor": "RODRIGO",
-      "valor_vendido": 192465.95,
-      "total_pedidos": 304,
+      "codigo": 679,
+      "nome": "RAFAEL COSTA",
+      "rota": "GYN RT 15 - JD AMERICA",
+      "supervisor": "RICHARD",
+      "valor_vendido": 247403.994,
+      "total_pedidos": 292.0,
       "categorias": {
         "bacon": {
-          "peso": 56.434,
-          "valor": 2004.2,
-          "positivacao": 4
+          "peso": 153.92,
+          "valor": 4082.72,
+          "positivacao": 9.0
         },
         "calabresa": {
-          "peso": 375.9,
-          "valor": 9383.31,
-          "positivacao": 15
+          "peso": 397.0,
+          "valor": 7901.95,
+          "positivacao": 21.0
         },
         "frescais": {
-          "peso": 199,
-          "valor": 2923.21,
-          "positivacao": 6
+          "peso": 883.0,
+          "valor": 10216.48,
+          "positivacao": 21.0
         },
         "paes": {
-          "peso": 163.2,
-          "valor": 4547.47,
-          "positivacao": 13
+          "peso": 67.2,
+          "valor": 1904.82,
+          "positivacao": 6.0
         },
         "lactios": {
-          "peso": 101.9,
-          "valor": 4854.15,
-          "positivacao": 18
+          "peso": 123.75,
+          "valor": 5693.82,
+          "positivacao": 14.0
         },
         "batata": {
-          "peso": 702,
-          "valor": 7667.77,
-          "positivacao": 15
+          "peso": 646.7,
+          "valor": 8735.45,
+          "positivacao": 17.0
         },
         "bovino": {
-          "peso": 77.5,
-          "valor": 2767.02,
-          "positivacao": 5
+          "peso": 276.43,
+          "valor": 7466.31,
+          "positivacao": 12.0
         },
         "suino": {
-          "peso": 28,
-          "valor": 665,
-          "positivacao": 1
+          "peso": 167.634,
+          "valor": 2992.94,
+          "positivacao": 6.0
         },
         "thermo_cat": {
-          "peso": 756.68,
-          "valor": 13380.07,
-          "positivacao": 37
+          "peso": 1258.624,
+          "valor": 25683.35,
+          "positivacao": 24.0
         },
         "vegetais": {
-          "peso": 9,
-          "valor": 198,
-          "positivacao": 1
+          "peso": 22.0,
+          "valor": 365.15,
+          "positivacao": 3.0
         }
       },
-      "industrializado_potencial": 481.16487500000005,
-      "thermo_potencial": 115.47957000000001,
+      "industrializado_potencial": 618.509985,
+      "thermo_potencial": 148.4423964,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.15918593432814016,
-      "industrializado_margem_pct": 0.2672578170777873,
-      "recompra_pct": 0.2987012987012987,
+      "industrializado_participacao_pct": 0.11974208468113896,
+      "industrializado_margem_pct": 0.2553109196106932,
+      "recompra_pct": 0.14492753623188406,
+      "taxa_comissao_pct": 2.5798,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 334,
+      "nome": "JOAO GABRIEL",
+      "rota": "GYN RT 99 - ST. MARISTA",
+      "supervisor": "RICHARD",
+      "valor_vendido": 239304.65798,
+      "total_pedidos": 217.0,
+      "categorias": {
+        "bacon": {
+          "peso": 153.194,
+          "valor": 4035.46,
+          "positivacao": 4.0
+        },
+        "calabresa": {
+          "peso": 98.8,
+          "valor": 2312.69,
+          "positivacao": 5.0
+        },
+        "frescais": {
+          "peso": 539.0,
+          "valor": 6486.67,
+          "positivacao": 13.0
+        },
+        "paes": {
+          "peso": 12.0,
+          "valor": 335.77,
+          "positivacao": 1.0
+        },
+        "lactios": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "batata": {
+          "peso": 118.5,
+          "valor": 1526.28,
+          "positivacao": 6.0
+        },
+        "bovino": {
+          "peso": 71.15,
+          "valor": 1710.19,
+          "positivacao": 4.0
+        },
+        "suino": {
+          "peso": 111.63,
+          "valor": 2364.43,
+          "positivacao": 5.0
+        },
+        "thermo_cat": {
+          "peso": 1150.808,
+          "valor": 24357.3,
+          "positivacao": 18.0
+        },
+        "vegetais": {
+          "peso": 117.0,
+          "valor": 1819.98,
+          "positivacao": 7.0
+        }
+      },
+      "industrializado_potencial": 598.26164495,
+      "thermo_potencial": 143.582794788,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.04991678850228789,
+      "industrializado_margem_pct": 0.21267512207291225,
+      "recompra_pct": 0.36363636363636365,
+      "taxa_comissao_pct": 2.8211,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2844,66 +1935,67 @@
       "nome": "WALLACE SOUSA",
       "rota": "GYN RT 14 - AP CENTRO",
       "supervisor": "LEANDRO",
-      "valor_vendido": 188649.59,
-      "total_pedidos": 245,
+      "valor_vendido": 241342.87488,
+      "total_pedidos": 253.0,
       "categorias": {
         "bacon": {
-          "peso": 28.682,
-          "valor": 724.76,
-          "positivacao": 1
+          "peso": 83.457,
+          "valor": 1895.75,
+          "positivacao": 2.0
         },
         "calabresa": {
-          "peso": 307.4,
-          "valor": 7585.76,
-          "positivacao": 20
+          "peso": 206.6,
+          "valor": 4822.8,
+          "positivacao": 14.0
         },
         "frescais": {
-          "peso": 265,
-          "valor": 3740.14,
-          "positivacao": 13
+          "peso": 899.0,
+          "valor": 10069.77,
+          "positivacao": 17.0
         },
         "paes": {
-          "peso": 64.8,
-          "valor": 1775.08,
-          "positivacao": 6
+          "peso": 122.4,
+          "valor": 3551.38,
+          "positivacao": 8.0
         },
         "lactios": {
-          "peso": 166.639,
-          "valor": 7334.69,
-          "positivacao": 10
+          "peso": 247.207,
+          "valor": 10176.33,
+          "positivacao": 14.0
         },
         "batata": {
-          "peso": 76.5,
-          "valor": 936.32,
-          "positivacao": 6
+          "peso": 145.5,
+          "valor": 1895.42,
+          "positivacao": 5.0
         },
         "bovino": {
-          "peso": 20,
-          "valor": 342,
-          "positivacao": 2
+          "peso": 54.22,
+          "valor": 1613.69,
+          "positivacao": 3.0
         },
         "suino": {
-          "peso": 15,
-          "valor": 262.5,
-          "positivacao": 1
+          "peso": 40.0,
+          "valor": 744.0,
+          "positivacao": 1.0
         },
         "thermo_cat": {
-          "peso": 757.248,
-          "valor": 14295.55,
-          "positivacao": 35
+          "peso": 529.456,
+          "valor": 9563.62,
+          "positivacao": 29.0
         },
         "vegetais": {
-          "peso": 88,
-          "valor": 1258.09,
-          "positivacao": 4
+          "peso": 148.5,
+          "valor": 2247.23,
+          "positivacao": 5.0
         }
       },
-      "industrializado_potencial": 471.623975,
-      "thermo_potencial": 113.189754,
+      "industrializado_potencial": 603.3571872,
+      "thermo_potencial": 144.805724928,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.15112066491760268,
-      "industrializado_margem_pct": 0.2619661692507759,
-      "recompra_pct": 0.27848101265822783,
+      "industrializado_participacao_pct": 0.18748156548022304,
+      "industrializado_margem_pct": 0.2350210915892228,
+      "recompra_pct": 0.225,
+      "taxa_comissao_pct": 2.011,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2917,70 +2009,695 @@
       }
     },
     {
-      "codigo": 377,
-      "nome": "CELISMAR",
-      "rota": "GYN RT 103 - S. CANEDO",
-      "supervisor": "FLAVIANE",
-      "valor_vendido": 174911.33,
-      "total_pedidos": 363,
+      "codigo": 650,
+      "nome": "ANDRE WILKER",
+      "rota": "GYN RT 96 - HIDROLANDIA",
+      "supervisor": "LEANDRO",
+      "valor_vendido": 254447.820638,
+      "total_pedidos": 231.0,
       "categorias": {
         "bacon": {
-          "peso": 48.548,
-          "valor": 1306.41,
-          "positivacao": 3
+          "peso": 181.095,
+          "valor": 4505.97,
+          "positivacao": 6.0
         },
         "calabresa": {
-          "peso": 159.6,
-          "valor": 3827.19,
-          "positivacao": 15
+          "peso": 273.74,
+          "valor": 5735.93,
+          "positivacao": 22.0
         },
         "frescais": {
-          "peso": 384,
-          "valor": 5289.72,
-          "positivacao": 16
+          "peso": 645.0,
+          "valor": 9241.14,
+          "positivacao": 18.0
         },
         "paes": {
-          "peso": 196.8,
-          "valor": 5435.33,
-          "positivacao": 16
+          "peso": 156.0,
+          "valor": 4610.07,
+          "positivacao": 13.0
         },
         "lactios": {
-          "peso": 74.29,
-          "valor": 3301.95,
-          "positivacao": 19
+          "peso": 192.335,
+          "valor": 9000.86,
+          "positivacao": 17.0
         },
         "batata": {
-          "peso": 339,
-          "valor": 3814.26,
-          "positivacao": 18
+          "peso": 551.8,
+          "valor": 7289.12,
+          "positivacao": 16.0
         },
         "bovino": {
-          "peso": 343.81,
-          "valor": 7308.12,
-          "positivacao": 16
+          "peso": 187.484,
+          "valor": 5353.55,
+          "positivacao": 7.0
         },
         "suino": {
-          "peso": 156.38,
-          "valor": 2387.05,
-          "positivacao": 7
+          "peso": 233.03,
+          "valor": 3749.18,
+          "positivacao": 6.0
         },
         "thermo_cat": {
-          "peso": 516.312,
-          "valor": 9195.11,
-          "positivacao": 48
+          "peso": 452.04,
+          "valor": 9717.43,
+          "positivacao": 37.0
         },
         "vegetais": {
-          "peso": 11,
-          "valor": 162.52,
-          "positivacao": 2
+          "peso": 173.0,
+          "valor": 2988.27,
+          "positivacao": 9.0
         }
       },
-      "industrializado_potencial": 437.278325,
-      "thermo_potencial": 104.94679799999999,
+      "industrializado_potencial": 636.1195515950001,
+      "thermo_potencial": 152.6686923828,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.22080206095354618,
-      "industrializado_margem_pct": 0.25014703481155004,
-      "recompra_pct": 0.2608695652173913,
+      "industrializado_participacao_pct": 0.20370970311332676,
+      "industrializado_margem_pct": 0.27030917059183995,
+      "recompra_pct": 0.36082474226804123,
+      "taxa_comissao_pct": 2.0906,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 192,
+      "nome": "LUCAS LEAL",
+      "rota": "GYN RT 83 - EXPANSUL",
+      "supervisor": "LEANDRO",
+      "valor_vendido": 242615.56,
+      "total_pedidos": 293.0,
+      "categorias": {
+        "bacon": {
+          "peso": 37.326,
+          "valor": 923.1,
+          "positivacao": 2.0
+        },
+        "calabresa": {
+          "peso": 365.8,
+          "valor": 8260.14,
+          "positivacao": 21.0
+        },
+        "frescais": {
+          "peso": 679.0,
+          "valor": 8725.9,
+          "positivacao": 20.0
+        },
+        "paes": {
+          "peso": 82.8,
+          "valor": 2265.12,
+          "positivacao": 10.0
+        },
+        "lactios": {
+          "peso": 86.165,
+          "valor": 3868.84,
+          "positivacao": 13.0
+        },
+        "batata": {
+          "peso": 129.5,
+          "valor": 1664.46,
+          "positivacao": 5.0
+        },
+        "bovino": {
+          "peso": 138.06,
+          "valor": 5222.22,
+          "positivacao": 4.0
+        },
+        "suino": {
+          "peso": 83.412,
+          "valor": 1340.44,
+          "positivacao": 4.0
+        },
+        "thermo_cat": {
+          "peso": 436.128,
+          "valor": 7167.87,
+          "positivacao": 25.0
+        },
+        "vegetais": {
+          "peso": 107.0,
+          "valor": 1650.49,
+          "positivacao": 5.0
+        }
+      },
+      "industrializado_potencial": 606.5389,
+      "thermo_potencial": 145.569336,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2225690306095784,
+      "industrializado_margem_pct": 0.261718982146055,
+      "recompra_pct": 0.3375,
+      "taxa_comissao_pct": 2.0232,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 398,
+      "nome": "UCLEIBSON",
+      "rota": "GYN RT 110 - VAREJO MARISTA",
+      "supervisor": "RICARDO",
+      "valor_vendido": 228589.53,
+      "total_pedidos": 251.0,
+      "categorias": {
+        "bacon": {
+          "peso": 3.0,
+          "valor": 176.3,
+          "positivacao": 1.0
+        },
+        "calabresa": {
+          "peso": 20.8,
+          "valor": 509.32,
+          "positivacao": 3.0
+        },
+        "frescais": {
+          "peso": 632.0,
+          "valor": 9139.3,
+          "positivacao": 9.0
+        },
+        "paes": {
+          "peso": 15.6,
+          "valor": 421.65,
+          "positivacao": 4.0
+        },
+        "lactios": {
+          "peso": 45.0,
+          "valor": 1917.9,
+          "positivacao": 4.0
+        },
+        "batata": {
+          "peso": 82.0,
+          "valor": 1156.62,
+          "positivacao": 2.0
+        },
+        "bovino": {
+          "peso": 10.0,
+          "valor": 165.9,
+          "positivacao": 1.0
+        },
+        "suino": {
+          "peso": 151.128,
+          "valor": 3193.05,
+          "positivacao": 3.0
+        },
+        "thermo_cat": {
+          "peso": 93.144,
+          "valor": 1622.55,
+          "positivacao": 10.0
+        },
+        "vegetais": {
+          "peso": 4.5,
+          "valor": 91.94,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 571.473825,
+      "thermo_potencial": 137.153718,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.06776237739322531,
+      "industrializado_margem_pct": 0.2905011015424626,
+      "recompra_pct": 0.5733333333333334,
+      "taxa_comissao_pct": 1.9709,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 729,
+      "nome": "MARCELO ALVES",
+      "rota": "GYN RT 101 - JD AMERICA",
+      "supervisor": "RICARDO",
+      "valor_vendido": 227137.48,
+      "total_pedidos": 259.0,
+      "categorias": {
+        "bacon": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "calabresa": {
+          "peso": 68.0,
+          "valor": 1639.58,
+          "positivacao": 7.0
+        },
+        "frescais": {
+          "peso": 153.0,
+          "valor": 2187.82,
+          "positivacao": 5.0
+        },
+        "paes": {
+          "peso": 116.4,
+          "valor": 3160.01,
+          "positivacao": 7.0
+        },
+        "lactios": {
+          "peso": 139.82,
+          "valor": 6283.54,
+          "positivacao": 6.0
+        },
+        "batata": {
+          "peso": 78.5,
+          "valor": 1087.63,
+          "positivacao": 3.0
+        },
+        "bovino": {
+          "peso": 20.0,
+          "valor": 349.12,
+          "positivacao": 2.0
+        },
+        "suino": {
+          "peso": 95.52,
+          "valor": 1635.26,
+          "positivacao": 2.0
+        },
+        "thermo_cat": {
+          "peso": 357.928,
+          "valor": 5660.11,
+          "positivacao": 13.0
+        },
+        "vegetais": {
+          "peso": 48.5,
+          "valor": 768.01,
+          "positivacao": 4.0
+        }
+      },
+      "industrializado_potencial": 567.8437,
+      "thermo_potencial": 136.282488,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.1026046427916696,
+      "industrializado_margem_pct": 0.21054995505730514,
+      "recompra_pct": 0.40789473684210525,
+      "taxa_comissao_pct": 1.9637,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 473,
+      "nome": "KAIKY DIAS",
+      "rota": "GYN RT 03 - CENTRO",
+      "supervisor": "RICHARD",
+      "valor_vendido": 219287.15,
+      "total_pedidos": 322.0,
+      "categorias": {
+        "bacon": {
+          "peso": 97.176,
+          "valor": 2430.7,
+          "positivacao": 4.0
+        },
+        "calabresa": {
+          "peso": 244.6,
+          "valor": 5369.91,
+          "positivacao": 13.0
+        },
+        "frescais": {
+          "peso": 786.0,
+          "valor": 10138.26,
+          "positivacao": 29.0
+        },
+        "paes": {
+          "peso": 18.0,
+          "valor": 490.87,
+          "positivacao": 5.0
+        },
+        "lactios": {
+          "peso": 449.629,
+          "valor": 16782.68,
+          "positivacao": 10.0
+        },
+        "batata": {
+          "peso": 507.6,
+          "valor": 6539.86,
+          "positivacao": 14.0
+        },
+        "bovino": {
+          "peso": 81.86,
+          "valor": 3394.7,
+          "positivacao": 3.0
+        },
+        "suino": {
+          "peso": 413.812,
+          "valor": 9847.73,
+          "positivacao": 10.0
+        },
+        "thermo_cat": {
+          "peso": 314.912,
+          "valor": 5784.54,
+          "positivacao": 15.0
+        },
+        "vegetais": {
+          "peso": 94.5,
+          "valor": 1520.17,
+          "positivacao": 8.0
+        }
+      },
+      "industrializado_potencial": 548.217875,
+      "thermo_potencial": 131.57229,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.1114030621493325,
+      "industrializado_margem_pct": 0.2458014072550703,
+      "recompra_pct": 0.32222222222222224,
+      "taxa_comissao_pct": 2.7714,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 722,
+      "nome": "LUIZ GUSTAVO",
+      "rota": "GYN RT 79-JD GUANAB",
+      "supervisor": "RODRIGO",
+      "valor_vendido": 209202.11274,
+      "total_pedidos": 376.0,
+      "categorias": {
+        "bacon": {
+          "peso": 122.571,
+          "valor": 3188.76,
+          "positivacao": 5.0
+        },
+        "calabresa": {
+          "peso": 251.0,
+          "valor": 5279.95,
+          "positivacao": 15.0
+        },
+        "frescais": {
+          "peso": 1093.0,
+          "valor": 12936.46,
+          "positivacao": 19.0
+        },
+        "paes": {
+          "peso": 131.04,
+          "valor": 3711.29,
+          "positivacao": 11.0
+        },
+        "lactios": {
+          "peso": 187.75,
+          "valor": 8926.98,
+          "positivacao": 23.0
+        },
+        "batata": {
+          "peso": 504.0,
+          "valor": 6448.94,
+          "positivacao": 20.0
+        },
+        "bovino": {
+          "peso": 211.18,
+          "valor": 7309.57,
+          "positivacao": 8.0
+        },
+        "suino": {
+          "peso": 76.92,
+          "valor": 1380.28,
+          "positivacao": 5.0
+        },
+        "thermo_cat": {
+          "peso": 445.264,
+          "valor": 8522.3,
+          "positivacao": 25.0
+        },
+        "vegetais": {
+          "peso": 18.0,
+          "valor": 339.44,
+          "positivacao": 2.0
+        }
+      },
+      "industrializado_potencial": 523.0052818500001,
+      "thermo_potencial": 125.521267644,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.0205171642734834,
+      "industrializado_margem_pct": 0.24685613175700533,
+      "recompra_pct": 0.22826086956521738,
+      "taxa_comissao_pct": 2.0449,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 467,
+      "nome": "IGOR SA",
+      "rota": "GYN RT 50 - CD JARDIM",
+      "supervisor": "RICARDO",
+      "valor_vendido": 215582.186708,
+      "total_pedidos": 204.0,
+      "categorias": {
+        "bacon": {
+          "peso": 137.136,
+          "valor": 3073.43,
+          "positivacao": 9.0
+        },
+        "calabresa": {
+          "peso": 86.6,
+          "valor": 1754.82,
+          "positivacao": 6.0
+        },
+        "frescais": {
+          "peso": 75.0,
+          "valor": 957.34,
+          "positivacao": 3.0
+        },
+        "paes": {
+          "peso": 31.2,
+          "valor": 863.62,
+          "positivacao": 2.0
+        },
+        "lactios": {
+          "peso": 255.712,
+          "valor": 10323.69,
+          "positivacao": 11.0
+        },
+        "batata": {
+          "peso": 127.0,
+          "valor": 1779.37,
+          "positivacao": 3.0
+        },
+        "bovino": {
+          "peso": 317.82,
+          "valor": 8379.41,
+          "positivacao": 3.0
+        },
+        "suino": {
+          "peso": 65.514,
+          "valor": 1633.39,
+          "positivacao": 2.0
+        },
+        "thermo_cat": {
+          "peso": 330.208,
+          "valor": 4836.47,
+          "positivacao": 28.0
+        },
+        "vegetais": {
+          "peso": 258.5,
+          "valor": 3752.24,
+          "positivacao": 3.0
+        }
+      },
+      "industrializado_potencial": 538.95546677,
+      "thermo_potencial": 129.34931202479999,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.14192169801784754,
+      "industrializado_margem_pct": 0.277111384590333,
+      "recompra_pct": 0.3026315789473684,
+      "taxa_comissao_pct": 1.9384,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 357,
+      "nome": "LUCIANO",
+      "rota": "GYN RT 95 - FINSOCIAL",
+      "supervisor": "RODRIGO",
+      "valor_vendido": 191408.19,
+      "total_pedidos": 280.0,
+      "categorias": {
+        "bacon": {
+          "peso": 152.752,
+          "valor": 3651.41,
+          "positivacao": 3.0
+        },
+        "calabresa": {
+          "peso": 249.8,
+          "valor": 5487.11,
+          "positivacao": 10.0
+        },
+        "frescais": {
+          "peso": 345.0,
+          "valor": 4496.78,
+          "positivacao": 8.0
+        },
+        "paes": {
+          "peso": 94.08,
+          "valor": 2966.48,
+          "positivacao": 11.0
+        },
+        "lactios": {
+          "peso": 224.805,
+          "valor": 9979.9,
+          "positivacao": 28.0
+        },
+        "batata": {
+          "peso": 310.8,
+          "valor": 4228.77,
+          "positivacao": 18.0
+        },
+        "bovino": {
+          "peso": 59.528,
+          "valor": 2282.83,
+          "positivacao": 2.0
+        },
+        "suino": {
+          "peso": 272.907,
+          "valor": 4710.78,
+          "positivacao": 6.0
+        },
+        "thermo_cat": {
+          "peso": 996.6,
+          "valor": 19099.79,
+          "positivacao": 53.0
+        },
+        "vegetais": {
+          "peso": 11.0,
+          "valor": 177.05,
+          "positivacao": 2.0
+        }
+      },
+      "industrializado_potencial": 478.52047500000003,
+      "thermo_potencial": 114.84491399999999,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.0998625439493223,
+      "industrializado_margem_pct": 0.24433184945655548,
+      "recompra_pct": 0.2413793103448276,
+      "taxa_comissao_pct": 2.1314,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 698,
+      "nome": "FERNANDO OLIVEIRA",
+      "rota": "RT 24 - PQ ANHANGU",
+      "supervisor": "RICARDO",
+      "valor_vendido": 191031.24,
+      "total_pedidos": 270.0,
+      "categorias": {
+        "bacon": {
+          "peso": 17.31,
+          "valor": 380.65,
+          "positivacao": 1.0
+        },
+        "calabresa": {
+          "peso": 49.2,
+          "valor": 1011.91,
+          "positivacao": 5.0
+        },
+        "frescais": {
+          "peso": 93.0,
+          "valor": 1110.78,
+          "positivacao": 3.0
+        },
+        "paes": {
+          "peso": 101.28,
+          "valor": 3127.02,
+          "positivacao": 9.0
+        },
+        "lactios": {
+          "peso": 41.1,
+          "valor": 2054.27,
+          "positivacao": 7.0
+        },
+        "batata": {
+          "peso": 258.0,
+          "valor": 3137.69,
+          "positivacao": 9.0
+        },
+        "bovino": {
+          "peso": 86.28,
+          "valor": 2637.24,
+          "positivacao": 4.0
+        },
+        "suino": {
+          "peso": 154.344,
+          "valor": 2933.32,
+          "positivacao": 6.0
+        },
+        "thermo_cat": {
+          "peso": 463.024,
+          "valor": 6828.49,
+          "positivacao": 23.0
+        },
+        "vegetais": {
+          "peso": 45.5,
+          "valor": 702.44,
+          "positivacao": 4.0
+        }
+      },
+      "industrializado_potencial": 477.5781,
+      "thermo_potencial": 114.61874399999999,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.09344319808634441,
+      "industrializado_margem_pct": 0.24480549402343083,
+      "recompra_pct": 0.28205128205128205,
+      "taxa_comissao_pct": 1.8989,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -2998,66 +2715,67 @@
       "nome": "JULIO CESAR",
       "rota": "GYN RT 85 - CAMPINAS",
       "supervisor": "RICHARD",
-      "valor_vendido": 159701.3,
-      "total_pedidos": 312,
+      "valor_vendido": 179657.49,
+      "total_pedidos": 306.0,
       "categorias": {
         "bacon": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
+          "peso": 115.722,
+          "valor": 2777.34,
+          "positivacao": 3.0
         },
         "calabresa": {
-          "peso": 133,
-          "valor": 3237.97,
-          "positivacao": 10
+          "peso": 110.4,
+          "valor": 2659.32,
+          "positivacao": 11.0
         },
         "frescais": {
-          "peso": 617,
-          "valor": 8790.47,
-          "positivacao": 14
+          "peso": 1325.0,
+          "valor": 16818.17,
+          "positivacao": 21.0
         },
         "paes": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
+          "peso": 7.2,
+          "valor": 200.91,
+          "positivacao": 1.0
         },
         "lactios": {
-          "peso": 79.663,
-          "valor": 3003.36,
-          "positivacao": 3
+          "peso": 158.557,
+          "valor": 5921.94,
+          "positivacao": 6.0
         },
         "batata": {
-          "peso": 402,
-          "valor": 4896.54,
-          "positivacao": 10
+          "peso": 341.0,
+          "valor": 4609.56,
+          "positivacao": 6.0
         },
         "bovino": {
-          "peso": 148.99,
-          "valor": 4667.35,
-          "positivacao": 4
+          "peso": 104.86,
+          "valor": 4048.13,
+          "positivacao": 4.0
         },
         "suino": {
-          "peso": 338.765,
-          "valor": 7183.62,
-          "positivacao": 10
+          "peso": 308.538,
+          "valor": 5906.27,
+          "positivacao": 7.0
         },
         "thermo_cat": {
-          "peso": 974.584,
-          "valor": 16309.39,
-          "positivacao": 21
+          "peso": 968.104,
+          "valor": 15854.16,
+          "positivacao": 22.0
         },
         "vegetais": {
-          "peso": 104.5,
-          "valor": 1672,
-          "positivacao": 10
+          "peso": 82.5,
+          "valor": 1315.05,
+          "positivacao": 8.0
         }
       },
-      "industrializado_potencial": 399.25325,
-      "thermo_potencial": 95.82078,
+      "industrializado_potencial": 449.14372499999996,
+      "thermo_potencial": 107.794494,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.21717725250701847,
-      "industrializado_margem_pct": 0.2089081109936226,
-      "recompra_pct": 0.12727272727272726,
+      "industrializado_participacao_pct": 0.1417333616316247,
+      "industrializado_margem_pct": 0.23216744576451429,
+      "recompra_pct": 0.16129032258064516,
+      "taxa_comissao_pct": 2.7711,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -3069,149 +2787,453 @@
         "suino": 15.0,
         "thermo_cat": 40.0
       }
+    },
+    {
+      "codigo": 561,
+      "nome": "THALLES VIEIRA",
+      "rota": "GYN RT 06 - GOIANIRA",
+      "supervisor": "RODRIGO",
+      "valor_vendido": 167459.67,
+      "total_pedidos": 239.0,
+      "categorias": {
+        "bacon": {
+          "peso": 15.0,
+          "valor": 565.0,
+          "positivacao": 2.0
+        },
+        "calabresa": {
+          "peso": 438.415,
+          "valor": 10149.61,
+          "positivacao": 20.0
+        },
+        "frescais": {
+          "peso": 256.0,
+          "valor": 3132.6,
+          "positivacao": 11.0
+        },
+        "paes": {
+          "peso": 172.8,
+          "valor": 4896.54,
+          "positivacao": 14.0
+        },
+        "lactios": {
+          "peso": 162.995,
+          "valor": 7647.31,
+          "positivacao": 20.0
+        },
+        "batata": {
+          "peso": 341.1,
+          "valor": 4091.45,
+          "positivacao": 10.0
+        },
+        "bovino": {
+          "peso": 45.06,
+          "valor": 840.95,
+          "positivacao": 3.0
+        },
+        "suino": {
+          "peso": 28.0,
+          "valor": 644.0,
+          "positivacao": 1.0
+        },
+        "thermo_cat": {
+          "peso": 387.88,
+          "valor": 7143.14,
+          "positivacao": 20.0
+        },
+        "vegetais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        }
+      },
+      "industrializado_potencial": 418.649175,
+      "thermo_potencial": 100.475802,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.3020392834476776,
+      "industrializado_margem_pct": 0.24609824432479718,
+      "recompra_pct": 0.2537313432835821,
+      "taxa_comissao_pct": 2.1482,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 377,
+      "nome": "CELISMAR",
+      "rota": "GYN RT 103 - S. CANEDO",
+      "supervisor": "FLAVIANE",
+      "valor_vendido": 175018.13,
+      "total_pedidos": 312.0,
+      "categorias": {
+        "bacon": {
+          "peso": 57.757,
+          "valor": 1257.56,
+          "positivacao": 3.0
+        },
+        "calabresa": {
+          "peso": 150.4,
+          "valor": 3045.63,
+          "positivacao": 16.0
+        },
+        "frescais": {
+          "peso": 736.0,
+          "valor": 8586.27,
+          "positivacao": 19.0
+        },
+        "paes": {
+          "peso": 196.32,
+          "valor": 5841.75,
+          "positivacao": 16.0
+        },
+        "lactios": {
+          "peso": 94.045,
+          "valor": 4521.93,
+          "positivacao": 23.0
+        },
+        "batata": {
+          "peso": 198.6,
+          "valor": 2644.95,
+          "positivacao": 8.0
+        },
+        "bovino": {
+          "peso": 183.0,
+          "valor": 3828.26,
+          "positivacao": 12.0
+        },
+        "suino": {
+          "peso": 271.155,
+          "valor": 4017.99,
+          "positivacao": 9.0
+        },
+        "thermo_cat": {
+          "peso": 451.208,
+          "valor": 8737.09,
+          "positivacao": 47.0
+        },
+        "vegetais": {
+          "peso": 5.5,
+          "valor": 81.24,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 437.54532500000005,
+      "thermo_potencial": 105.01087799999999,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.2084509759074674,
+      "industrializado_margem_pct": 0.2414089574870443,
+      "recompra_pct": 0.3565217391304348,
+      "taxa_comissao_pct": 2.09,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 12,
+      "nome": "FABIANO",
+      "rota": "GYN RT 08 - VL PEDROSO",
+      "supervisor": "FLAVIANE",
+      "valor_vendido": 165702.64,
+      "total_pedidos": 237.0,
+      "categorias": {
+        "bacon": {
+          "peso": 98.735,
+          "valor": 2354.34,
+          "positivacao": 1.0
+        },
+        "calabresa": {
+          "peso": 153.105,
+          "valor": 3185.93,
+          "positivacao": 8.0
+        },
+        "frescais": {
+          "peso": 1041.0,
+          "valor": 11232.78,
+          "positivacao": 16.0
+        },
+        "paes": {
+          "peso": 114.96,
+          "valor": 3267.6,
+          "positivacao": 11.0
+        },
+        "lactios": {
+          "peso": 106.495,
+          "valor": 4618.71,
+          "positivacao": 18.0
+        },
+        "batata": {
+          "peso": 103.0,
+          "valor": 1423.72,
+          "positivacao": 4.0
+        },
+        "bovino": {
+          "peso": 54.8,
+          "valor": 1355.01,
+          "positivacao": 3.0
+        },
+        "suino": {
+          "peso": 15.0,
+          "valor": 266.85,
+          "positivacao": 1.0
+        },
+        "thermo_cat": {
+          "peso": 250.592,
+          "valor": 4722.23,
+          "positivacao": 30.0
+        },
+        "vegetais": {
+          "peso": 16.5,
+          "valor": 275.0,
+          "positivacao": 2.0
+        }
+      },
+      "industrializado_potencial": 414.25660000000005,
+      "thermo_potencial": 99.42158400000001,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.258494553858647,
+      "industrializado_margem_pct": 0.24010487706390585,
+      "recompra_pct": 0.4,
+      "taxa_comissao_pct": 2.1217,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 735,
+      "nome": "CARLOS RAFAEL",
+      "rota": "GYN RT 90 - VERA CRUZ",
+      "supervisor": "IDEGLAN",
+      "valor_vendido": 152729.51,
+      "total_pedidos": 220.0,
+      "categorias": {
+        "bacon": {
+          "peso": 231.33,
+          "valor": 5906.51,
+          "positivacao": 6.0
+        },
+        "calabresa": {
+          "peso": 171.6,
+          "valor": 4022.34,
+          "positivacao": 11.0
+        },
+        "frescais": {
+          "peso": 580.0,
+          "valor": 6814.69,
+          "positivacao": 18.0
+        },
+        "paes": {
+          "peso": 97.92,
+          "valor": 2741.68,
+          "positivacao": 10.0
+        },
+        "lactios": {
+          "peso": 129.105,
+          "valor": 5737.28,
+          "positivacao": 16.0
+        },
+        "batata": {
+          "peso": 70.5,
+          "valor": 848.35,
+          "positivacao": 6.0
+        },
+        "bovino": {
+          "peso": 144.45,
+          "valor": 5249.56,
+          "positivacao": 7.0
+        },
+        "suino": {
+          "peso": 143.193,
+          "valor": 2767.94,
+          "positivacao": 6.0
+        },
+        "thermo_cat": {
+          "peso": 352.656,
+          "valor": 6263.36,
+          "positivacao": 26.0
+        },
+        "vegetais": {
+          "peso": 5.5,
+          "valor": 87.95,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 381.823775,
+      "thermo_potencial": 91.637706,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.15023835275841585,
+      "industrializado_margem_pct": 0.22929130513038756,
+      "recompra_pct": 0.38461538461538464,
+      "taxa_comissao_pct": 1.9691,
+      "meta_posit_departamento": {
+        "bacon": 15.0,
+        "calabresa": 15.0,
+        "frescais": 20.0,
+        "paes": 15.0,
+        "lactios": 15.0,
+        "batata": 15.0,
+        "bovino": 15.0,
+        "suino": 15.0,
+        "thermo_cat": 40.0
+      }
+    },
+    {
+      "codigo": 797,
+      "nome": "GLEIBSON B.",
+      "rota": "GYN RT 23 - NOVO MUNDO",
+      "supervisor": "FLAVIANE",
+      "valor_vendido": 146221.846736,
+      "total_pedidos": 203.0,
+      "categorias": {
+        "bacon": {
+          "peso": 135.912,
+          "valor": 3010.44,
+          "positivacao": 6.0
+        },
+        "calabresa": {
+          "peso": 152.4,
+          "valor": 2911.63,
+          "positivacao": 12.0
+        },
+        "frescais": {
+          "peso": 554.0,
+          "valor": 6990.17,
+          "positivacao": 15.0
+        },
+        "paes": {
+          "peso": 18.72,
+          "valor": 592.5,
+          "positivacao": 3.0
+        },
+        "lactios": {
+          "peso": 55.075,
+          "valor": 2469.32,
+          "positivacao": 9.0
+        },
+        "batata": {
+          "peso": 10.5,
+          "valor": 127.58,
+          "positivacao": 1.0
+        },
+        "bovino": {
+          "peso": 36.7,
+          "valor": 1572.93,
+          "positivacao": 3.0
+        },
+        "suino": {
+          "peso": 68.616,
+          "valor": 1961.46,
+          "positivacao": 2.0
+        },
+        "thermo_cat": {
+          "peso": 105.096,
+          "valor": 1709.77,
+          "positivacao": 11.0
+        },
+        "vegetais": {
+          "peso": 5.5,
+          "valor": 82.5,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 365.55461684000005,
+      "thermo_potencial": 87.7331080416,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.1371018794215812,
+      "industrializado_margem_pct": 0.2531989386096575,
+      "recompra_pct": 0.2857142857142857,
+      "taxa_comissao_pct": 1.9191,
+      "meta_posit_departamento": {}
     },
     {
       "codigo": 660,
       "nome": "LUCAS",
       "rota": "GYN RT 04 - JD TRIUNFO",
       "supervisor": "RODRIGO",
-      "valor_vendido": 144121.2,
-      "total_pedidos": 218,
+      "valor_vendido": 142812.516,
+      "total_pedidos": 209.0,
       "categorias": {
         "bacon": {
-          "peso": 10,
-          "valor": 399,
-          "positivacao": 1
+          "peso": 71.337,
+          "valor": 1987.28,
+          "positivacao": 5.0
         },
         "calabresa": {
-          "peso": 182.305,
-          "valor": 4486.56,
-          "positivacao": 16
+          "peso": 173.695,
+          "valor": 3922.74,
+          "positivacao": 17.0
         },
         "frescais": {
-          "peso": 277,
-          "valor": 4011.13,
-          "positivacao": 9
+          "peso": 469.0,
+          "valor": 6463.0,
+          "positivacao": 15.0
         },
         "paes": {
-          "peso": 10.8,
-          "valor": 289.62,
-          "positivacao": 3
+          "peso": 22.32,
+          "valor": 676.98,
+          "positivacao": 6.0
         },
         "lactios": {
-          "peso": 91.785,
-          "valor": 3974.47,
-          "positivacao": 14
+          "peso": 126.165,
+          "valor": 5566.15,
+          "positivacao": 18.0
         },
         "batata": {
-          "peso": 181,
-          "valor": 2230.88,
-          "positivacao": 14
+          "peso": 151.5,
+          "valor": 2039.15,
+          "positivacao": 8.0
         },
         "bovino": {
-          "peso": 52,
-          "valor": 1823.82,
-          "positivacao": 3
+          "peso": 32.86,
+          "valor": 938.7,
+          "positivacao": 4.0
         },
         "suino": {
-          "peso": 47.98,
-          "valor": 792.7,
-          "positivacao": 3
+          "peso": 95.327,
+          "valor": 1428.57,
+          "positivacao": 3.0
         },
         "thermo_cat": {
-          "peso": 394.776,
-          "valor": 7446.64,
-          "positivacao": 25
-        },
-        "vegetais": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
-        }
-      },
-      "industrializado_potencial": 360.30300000000005,
-      "thermo_potencial": 86.47272000000001,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.13281071213734952,
-      "industrializado_margem_pct": 0.273992953555457,
-      "recompra_pct": 0.16923076923076924,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 352,
-      "nome": "DOUGLAS",
-      "rota": "GYN RT 34 - ST P LUDOVICO",
-      "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 111526.2,
-      "total_pedidos": 147,
-      "categorias": {
-        "bacon": {
-          "peso": 51.36,
-          "valor": 1489.46,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 100.8,
-          "valor": 2432.76,
-          "positivacao": 7
-        },
-        "frescais": {
-          "peso": 461,
-          "valor": 6689.95,
-          "positivacao": 15
-        },
-        "paes": {
-          "peso": 25.2,
-          "valor": 700.92,
-          "positivacao": 1
-        },
-        "lactios": {
-          "peso": 16.005,
-          "valor": 569.07,
-          "positivacao": 1
-        },
-        "batata": {
-          "peso": 108,
-          "valor": 1058.55,
-          "positivacao": 5
-        },
-        "bovino": {
-          "peso": 36.22,
-          "valor": 1267.93,
-          "positivacao": 2
-        },
-        "suino": {
-          "peso": 193.435,
-          "valor": 3848.88,
-          "positivacao": 6
-        },
-        "thermo_cat": {
-          "peso": 147.88,
-          "valor": 3043.4,
-          "positivacao": 8
+          "peso": 297.272,
+          "valor": 5580.79,
+          "positivacao": 24.0
         },
         "vegetais": {
           "peso": 5.5,
-          "valor": 87.73,
-          "positivacao": 1
+          "valor": 82.5,
+          "positivacao": 1.0
         }
       },
-      "industrializado_potencial": 278.8155,
-      "thermo_potencial": 66.91572,
+      "industrializado_potencial": 357.03129,
+      "thermo_potencial": 85.6875096,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0,
-      "industrializado_margem_pct": 0,
-      "recompra_pct": 0.3469387755102041,
+      "industrializado_participacao_pct": 0.15832956735559206,
+      "industrializado_margem_pct": 0.26289491235277357,
+      "recompra_pct": 0.2714285714285714,
+      "taxa_comissao_pct": 2.0892,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -3225,57 +3247,57 @@
       }
     },
     {
-      "codigo": 781,
-      "nome": "JOAO LUCAS",
-      "rota": "GYN RT 72 - PQ ATHENEU",
+      "codigo": 33,
+      "nome": "ARTHUR",
+      "rota": "GYN RT 19 - SEG 02",
       "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 101432.69,
-      "total_pedidos": 146,
+      "valor_vendido": 0,
+      "total_pedidos": 26.0,
       "categorias": {
         "bacon": {
-          "peso": 31.33,
-          "valor": 748.13,
-          "positivacao": 1
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "calabresa": {
-          "peso": 84.2,
-          "valor": 2181.15,
-          "positivacao": 6
+          "peso": 339.2,
+          "valor": 6915.52,
+          "positivacao": 6.0
         },
         "frescais": {
-          "peso": 208,
-          "valor": 3239.2,
-          "positivacao": 10
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "paes": {
-          "peso": 21.6,
-          "valor": 599.63,
-          "positivacao": 5
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "lactios": {
-          "peso": 20.6,
-          "valor": 906.23,
-          "positivacao": 5
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "batata": {
-          "peso": 143,
-          "valor": 1881.38,
-          "positivacao": 6
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "bovino": {
-          "peso": 61.72,
-          "valor": 2538.66,
-          "positivacao": 2
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "suino": {
-          "peso": 84.965,
-          "valor": 2393.05,
-          "positivacao": 3
+          "peso": 22.0,
+          "valor": 366.02,
+          "positivacao": 1.0
         },
         "thermo_cat": {
-          "peso": 182.496,
-          "valor": 3514.65,
-          "positivacao": 16
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "vegetais": {
           "peso": 0,
@@ -3283,156 +3305,149 @@
           "positivacao": 0
         }
       },
-      "industrializado_potencial": 253.581725,
-      "thermo_potencial": 60.859614,
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.1794871794871795,
-      "meta_posit_departamento": {
-        "bacon": 15.0,
-        "calabresa": 15.0,
-        "frescais": 20.0,
-        "paes": 15.0,
-        "lactios": 15.0,
-        "batata": 15.0,
-        "bovino": 15.0,
-        "suino": 15.0,
-        "thermo_cat": 40.0
-      }
-    },
-    {
-      "codigo": 381,
-      "nome": "RODRIGO T",
-      "rota": "GYN RT 105 - ROTAS ESPECIAIS",
-      "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 78588.75,
-      "total_pedidos": 81,
-      "categorias": {
-        "bacon": {
-          "peso": 113.538,
-          "valor": 3299.43,
-          "positivacao": 2
-        },
-        "calabresa": {
-          "peso": 58.8,
-          "valor": 1540.96,
-          "positivacao": 5
-        },
-        "frescais": {
-          "peso": 76,
-          "valor": 1195.92,
-          "positivacao": 3
-        },
-        "paes": {
-          "peso": 43.2,
-          "valor": 1220.67,
-          "positivacao": 3
-        },
-        "lactios": {
-          "peso": 31.6,
-          "valor": 1393.85,
-          "positivacao": 5
-        },
-        "batata": {
-          "peso": 34.5,
-          "valor": 475.05,
-          "positivacao": 2
-        },
-        "bovino": {
-          "peso": 93.86,
-          "valor": 4172.06,
-          "positivacao": 1
-        },
-        "suino": {
-          "peso": 150.59,
-          "valor": 3593.24,
-          "positivacao": 2
-        },
-        "thermo_cat": {
-          "peso": 46,
-          "valor": 929.87,
-          "positivacao": 2
-        },
-        "vegetais": {
-          "peso": 9,
-          "valor": 182.52,
-          "positivacao": 1
-        }
-      },
-      "industrializado_potencial": 196.471875,
-      "thermo_potencial": 47.15325,
-      "premio_fixo": 150,
-      "industrializado_participacao_pct": 0,
-      "industrializado_margem_pct": 0,
-      "recompra_pct": 0.41379310344827586,
+      "recompra_pct": 0,
+      "taxa_comissao_pct": null,
       "meta_posit_departamento": {}
     },
     {
-      "codigo": 791,
-      "nome": "LEANDRO GOMES",
-      "rota": "GYN RT 05 - NOVO MUNDO",
-      "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 65164.6,
-      "total_pedidos": 137,
+      "codigo": 796,
+      "nome": "HAMAURY SENA",
+      "rota": "GYN RT 72 - PQ ATHENEU",
+      "supervisor": "FLAVIANE",
+      "valor_vendido": 121230.32,
+      "total_pedidos": 143.0,
       "categorias": {
         "bacon": {
-          "peso": 3,
-          "valor": 207.03,
-          "positivacao": 1
+          "peso": 90.233,
+          "valor": 2057.64,
+          "positivacao": 3.0
         },
         "calabresa": {
-          "peso": 43.6,
-          "valor": 994.9,
-          "positivacao": 6
+          "peso": 50.0,
+          "valor": 924.19,
+          "positivacao": 2.0
         },
         "frescais": {
-          "peso": 208,
-          "valor": 3024.61,
-          "positivacao": 7
+          "peso": 294.0,
+          "valor": 4510.29,
+          "positivacao": 7.0
         },
         "paes": {
-          "peso": 21.6,
-          "valor": 625.99,
-          "positivacao": 3
+          "peso": 14.4,
+          "valor": 403.22,
+          "positivacao": 3.0
         },
         "lactios": {
-          "peso": 17.55,
-          "valor": 734.14,
-          "positivacao": 2
+          "peso": 48.825,
+          "valor": 2043.45,
+          "positivacao": 6.0
         },
         "batata": {
-          "peso": 41,
-          "valor": 437.48,
-          "positivacao": 3
+          "peso": 132.5,
+          "valor": 1837.22,
+          "positivacao": 4.0
         },
         "bovino": {
-          "peso": 28.37,
-          "valor": 1088.47,
-          "positivacao": 1
+          "peso": 20.0,
+          "valor": 353.59,
+          "positivacao": 1.0
         },
         "suino": {
-          "peso": 33.826,
-          "valor": 761.76,
-          "positivacao": 2
+          "peso": 88.052,
+          "valor": 1820.99,
+          "positivacao": 2.0
         },
         "thermo_cat": {
-          "peso": 53.424,
-          "valor": 905.98,
-          "positivacao": 9
+          "peso": 176.064,
+          "valor": 3680.57,
+          "positivacao": 16.0
         },
         "vegetais": {
-          "peso": 0,
-          "valor": 0,
-          "positivacao": 0
+          "peso": 11.0,
+          "valor": 166.1,
+          "positivacao": 1.0
         }
       },
-      "industrializado_potencial": 162.9115,
-      "thermo_potencial": 39.09876,
+      "industrializado_potencial": 303.0758,
+      "thermo_potencial": 72.738192,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0,
-      "industrializado_margem_pct": 0,
-      "recompra_pct": 0.3829787234042553,
+      "industrializado_participacao_pct": 0.060616271572986026,
+      "industrializado_margem_pct": 0.21339188609422557,
+      "recompra_pct": 0.3137254901960784,
+      "taxa_comissao_pct": 1.8617,
+      "meta_posit_departamento": {}
+    },
+    {
+      "codigo": 802,
+      "nome": "SUBSTITUTO",
+      "rota": "GYN RT 105 - FERISTA",
+      "supervisor": "RICHARD",
+      "valor_vendido": 106620.135,
+      "total_pedidos": 80.0,
+      "categorias": {
+        "bacon": {
+          "peso": 154.823,
+          "valor": 4144.96,
+          "positivacao": 3.0
+        },
+        "calabresa": {
+          "peso": 66.3,
+          "valor": 1658.41,
+          "positivacao": 4.0
+        },
+        "frescais": {
+          "peso": 114.0,
+          "valor": 1745.7,
+          "positivacao": 3.0
+        },
+        "paes": {
+          "peso": 61.2,
+          "valor": 1721.94,
+          "positivacao": 3.0
+        },
+        "lactios": {
+          "peso": 28.95,
+          "valor": 1341.76,
+          "positivacao": 3.0
+        },
+        "batata": {
+          "peso": 60.0,
+          "valor": 858.73,
+          "positivacao": 2.0
+        },
+        "bovino": {
+          "peso": 56.66,
+          "valor": 2571.15,
+          "positivacao": 1.0
+        },
+        "suino": {
+          "peso": 244.162,
+          "valor": 5070.0,
+          "positivacao": 4.0
+        },
+        "thermo_cat": {
+          "peso": 24.0,
+          "valor": 552.0,
+          "positivacao": 1.0
+        },
+        "vegetais": {
+          "peso": 9.0,
+          "valor": 190.08,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 266.5503375,
+      "thermo_potencial": 63.972081,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.05129190654279325,
+      "industrializado_margem_pct": 0.2976609685394286,
+      "recompra_pct": 0.2,
+      "taxa_comissao_pct": 2.6167,
       "meta_posit_departamento": {
         "bacon": 15.0,
         "calabresa": 15.0,
@@ -3450,8 +3465,144 @@
       "nome": "IRON OLIVEIRA",
       "rota": "GYN RT 112 - FERISTA",
       "supervisor": "RICHARD",
-      "valor_vendido": 21292.97,
-      "total_pedidos": 36,
+      "valor_vendido": 94730.2,
+      "total_pedidos": 170.0,
+      "categorias": {
+        "bacon": {
+          "peso": 60.621,
+          "valor": 1413.64,
+          "positivacao": 2.0
+        },
+        "calabresa": {
+          "peso": 56.2,
+          "valor": 1327.54,
+          "positivacao": 5.0
+        },
+        "frescais": {
+          "peso": 405.0,
+          "valor": 5431.6,
+          "positivacao": 14.0
+        },
+        "paes": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "lactios": {
+          "peso": 50.98,
+          "valor": 1839.1,
+          "positivacao": 2.0
+        },
+        "batata": {
+          "peso": 65.1,
+          "valor": 786.45,
+          "positivacao": 3.0
+        },
+        "bovino": {
+          "peso": 25.44,
+          "valor": 801.36,
+          "positivacao": 1.0
+        },
+        "suino": {
+          "peso": 308.834,
+          "valor": 5850.52,
+          "positivacao": 7.0
+        },
+        "thermo_cat": {
+          "peso": 178.024,
+          "valor": 3517.83,
+          "positivacao": 13.0
+        },
+        "vegetais": {
+          "peso": 11.0,
+          "valor": 172.98,
+          "positivacao": 2.0
+        }
+      },
+      "industrializado_potencial": 236.8255,
+      "thermo_potencial": 56.83812,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0.10325661721394024,
+      "industrializado_margem_pct": 0.24883842245840185,
+      "recompra_pct": 0.3064516129032258,
+      "taxa_comissao_pct": 2.7333,
+      "meta_posit_departamento": {}
+    },
+    {
+      "codigo": 23,
+      "nome": "FABIO L.",
+      "rota": "GYN RT 21 - SEG 01",
+      "supervisor": "SEM SUPERVISOR",
+      "valor_vendido": 0,
+      "total_pedidos": 23.0,
+      "categorias": {
+        "bacon": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "calabresa": {
+          "peso": 230.0,
+          "valor": 4000.0,
+          "positivacao": 3.0
+        },
+        "frescais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "paes": {
+          "peso": 8.4,
+          "valor": 219.12,
+          "positivacao": 1.0
+        },
+        "lactios": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "batata": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "bovino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "suino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "thermo_cat": {
+          "peso": 6.0,
+          "valor": 113.94,
+          "positivacao": 1.0
+        },
+        "vegetais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        }
+      },
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0,
+      "taxa_comissao_pct": null,
+      "meta_posit_departamento": {}
+    },
+    {
+      "codigo": 806,
+      "nome": "SUBSTITUTO",
+      "rota": "GYN RT 112 - FERISTA",
+      "supervisor": "SEM SUPERVISOR",
+      "valor_vendido": 0,
+      "total_pedidos": 41.0,
       "categorias": {
         "bacon": {
           "peso": 0,
@@ -3464,24 +3615,24 @@
           "positivacao": 0
         },
         "frescais": {
-          "peso": 78,
-          "valor": 1096.22,
-          "positivacao": 5
+          "peso": 182.0,
+          "valor": 2288.02,
+          "positivacao": 9.0
         },
         "paes": {
           "peso": 3.6,
-          "valor": 97.16,
-          "positivacao": 1
+          "valor": 97.06,
+          "positivacao": 1.0
         },
         "lactios": {
-          "peso": 6,
-          "valor": 255.19,
-          "positivacao": 1
+          "peso": 11.36,
+          "valor": 455.2,
+          "positivacao": 2.0
         },
         "batata": {
-          "peso": 22.5,
-          "valor": 319.4,
-          "positivacao": 2
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "bovino": {
           "peso": 0,
@@ -3489,14 +3640,14 @@
           "positivacao": 0
         },
         "suino": {
-          "peso": 26,
-          "valor": 685.74,
-          "positivacao": 1
+          "peso": 114.0,
+          "valor": 2582.34,
+          "positivacao": 3.0
         },
         "thermo_cat": {
-          "peso": 9,
-          "valor": 172.38,
-          "positivacao": 2
+          "peso": 27.432,
+          "valor": 543.75,
+          "positivacao": 3.0
         },
         "vegetais": {
           "peso": 0,
@@ -3504,12 +3655,81 @@
           "positivacao": 0
         }
       },
-      "industrializado_potencial": 53.232425000000006,
-      "thermo_potencial": 12.775782,
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
       "premio_fixo": 150,
-      "industrializado_participacao_pct": 0.09465104014197372,
-      "industrializado_margem_pct": 0.24258927629890065,
-      "recompra_pct": 0.8695652173913043,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0,
+      "taxa_comissao_pct": 2.7122,
+      "meta_posit_departamento": {}
+    },
+    {
+      "codigo": 800,
+      "nome": "YASMIN VIANA",
+      "rota": "GYN RT 09 - TLMK",
+      "supervisor": "SEM SUPERVISOR",
+      "valor_vendido": 0,
+      "total_pedidos": 9.0,
+      "categorias": {
+        "bacon": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "calabresa": {
+          "peso": 4.8,
+          "valor": 104.84,
+          "positivacao": 1.0
+        },
+        "frescais": {
+          "peso": 25.0,
+          "valor": 296.5,
+          "positivacao": 2.0
+        },
+        "paes": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "lactios": {
+          "peso": 26.025,
+          "valor": 1123.38,
+          "positivacao": 3.0
+        },
+        "batata": {
+          "peso": 10.0,
+          "valor": 135.0,
+          "positivacao": 1.0
+        },
+        "bovino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "suino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "thermo_cat": {
+          "peso": 7.8,
+          "valor": 143.15,
+          "positivacao": 2.0
+        },
+        "vegetais": {
+          "peso": 9.0,
+          "valor": 140.81,
+          "positivacao": 1.0
+        }
+      },
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0,
+      "taxa_comissao_pct": 1.988,
       "meta_posit_departamento": {}
     },
     {
@@ -3517,8 +3737,76 @@
       "nome": "CLIENTES INATIVOS",
       "rota": "FILIAL 1",
       "supervisor": "SEM SUPERVISOR",
-      "valor_vendido": 509.26,
-      "total_pedidos": 2,
+      "valor_vendido": 0,
+      "total_pedidos": 1.0,
+      "categorias": {
+        "bacon": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "calabresa": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "frescais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "paes": {
+          "peso": 3.6,
+          "valor": 86.4,
+          "positivacao": 1.0
+        },
+        "lactios": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "batata": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "bovino": {
+          "peso": 15.08,
+          "valor": 618.28,
+          "positivacao": 1.0
+        },
+        "suino": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "thermo_cat": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        },
+        "vegetais": {
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
+        }
+      },
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
+      "premio_fixo": 150,
+      "industrializado_participacao_pct": 0,
+      "industrializado_margem_pct": 0,
+      "recompra_pct": 0,
+      "taxa_comissao_pct": null,
+      "meta_posit_departamento": {}
+    },
+    {
+      "codigo": 3,
+      "nome": "GYN GERENTE",
+      "rota": "EDMAR DE JESUS",
+      "supervisor": "SEM SUPERVISOR",
+      "valor_vendido": 0,
+      "total_pedidos": 4.0,
       "categorias": {
         "bacon": {
           "peso": 0,
@@ -3561,9 +3849,9 @@
           "positivacao": 0
         },
         "thermo_cat": {
-          "peso": 33,
-          "valor": 509.26,
-          "positivacao": 1
+          "peso": 0,
+          "valor": 0,
+          "positivacao": 0
         },
         "vegetais": {
           "peso": 0,
@@ -3571,17 +3859,18 @@
           "positivacao": 0
         }
       },
-      "industrializado_potencial": 1.27315,
-      "thermo_potencial": 0.305556,
+      "industrializado_potencial": 0.0,
+      "thermo_potencial": 0.0,
       "premio_fixo": 150,
       "industrializado_participacao_pct": 0,
       "industrializado_margem_pct": 0,
-      "recompra_pct": 0.0,
+      "recompra_pct": 0,
+      "taxa_comissao_pct": null,
       "meta_posit_departamento": {}
     }
   ],
   "constantes": {
-    "dias_uteis": 23,
+    "dias_uteis": 25,
     "meta_pedidos_dia": 15,
     "taxa_padrao": 0.0178,
     "metas_categoria_padrao": {

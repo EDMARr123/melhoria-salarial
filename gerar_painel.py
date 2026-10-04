@@ -196,7 +196,7 @@ table.breakdown input.meta-posit-input {
 
   <div id="conteudo"></div>
 
-  <p class="foot">Dados extraídos de RESULTADO.xlsm (MELHORIA SALARIO) · gerado automaticamente</p>
+  <p class="foot">Dados de setembro/2026: relatórios 1464 (ACOMPANHA RESULTADO), 4 Pilares, rotina 315 e % comissão do relatório 1249 · gerado automaticamente</p>
 </div>
 
 <script>
@@ -332,7 +332,7 @@ function estadoPadrao(codigo) {
     // estado por RCA, não numa config global (senão editar um vendedor
     // mudava o cálculo de todo mundo).
     metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
-    taxaPct: DADOS.constantes.taxa_padrao * 100,
+    taxaPct: (rca && rca.taxa_comissao_pct != null) ? rca.taxa_comissao_pct : DADOS.constantes.taxa_padrao * 100,
     metasCategoria,
   };
 }
@@ -351,7 +351,8 @@ function lerEstado(codigo) {
       campanha: parsed.campanha ?? padrao.campanha,
       recompra: parsed.recompra ?? padrao.recompra,
       metaPedidosDia: parsed.metaPedidosDia ?? padrao.metaPedidosDia,
-      taxaPct: parsed.taxaPct ?? padrao.taxaPct,
+      // Taxa do relatório 1249 do mês (quando existe) vale mais que a digitada antes.
+      taxaPct: (RCAS_POR_CODIGO[codigo] || {}).taxa_comissao_pct ?? parsed.taxaPct ?? padrao.taxaPct,
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasCategoria || {}),
     };
   } catch (e) { return padrao; }
