@@ -786,7 +786,10 @@ function copiar(btn, url){{navigator.clipboard.writeText(url).then(()=>{{btn.tex
 def gerar_acompanhamento(dados):
     """acompanhamento.html: painel do gerente — quem já clicou em "Feito"
     (lido da planilha Google), separado por supervisor."""
-    rcas = [{"codigo": r["codigo"], "nome": r["nome"], "supervisor": r["supervisor"]}
+    # Média de pedidos/dia = mesma conta da "MÉDIA DE PEDIDOS" do painel.
+    dias_uteis = dados["constantes"]["dias_uteis"]
+    rcas = [{"codigo": r["codigo"], "nome": r["nome"], "supervisor": r["supervisor"],
+             "media": round(r["total_pedidos"] / dias_uteis) if dias_uteis else 0}
             for r in dados["rcas"] if r.get("supervisor") in ORDEM_SUPERVISORES]
     pagina = """<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Acompanhamento Melhoria Salarial</title>
@@ -820,10 +823,10 @@ function montar(respostas) {
     const ok = doSup.filter(r => porRca[r.codigo]).length;
     const linhas = doSup.map(r => { const x = porRca[r.codigo];
       return x ? `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="ok">✓ Feito</td><td>${new Date(x.data).toLocaleString("pt-BR")}</td>
-        <td class="num">${x.metaPedidosDia}</td><td class="num">${brl(x.salarioAtual)}</td><td class="num">${brl(x.salarioPotencial)}</td>
+        <td class="num">${r.media}</td><td class="num">${x.metaPedidosDia}</td><td class="num">${brl(x.salarioAtual)}</td><td class="num">${brl(x.salarioPotencial)}</td>
         <td><a href="${URL_PAINEL}?rca=${r.codigo}&ver=1" target="_blank">Ver</a></td></tr>`
-      : `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="pend">Pendente</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td></td></tr>`; }).join("");
-    return `<section><h2>Supervisor ${sup} <span>${ok} de ${doSup.length} feitos</span></h2><table><thead><tr><th>RCA</th><th>Vendedor</th><th>Status</th><th>Quando</th><th class="num">Meta ped./dia</th><th class="num">Salário atual</th><th class="num">Potencial</th><th></th></tr></thead><tbody>${linhas}</tbody></table></section>`;
+      : `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="pend">Pendente</td><td>—</td><td class="num">${r.media}</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td></td></tr>`; }).join("");
+    return `<section><h2>Supervisor ${sup} <span>${ok} de ${doSup.length} feitos</span></h2><table><thead><tr><th>RCA</th><th>Vendedor</th><th>Status</th><th>Quando</th><th class="num">Média ped./dia</th><th class="num">Meta ped./dia</th><th class="num">Salário atual</th><th class="num">Potencial</th><th></th></tr></thead><tbody>${linhas}</tbody></table></section>`;
   }).join("");
 }
 if (!URL_PLANILHA) { document.getElementById("status").textContent = "Planilha ainda não configurada."; montar([]); }
