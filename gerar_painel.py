@@ -109,6 +109,16 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: ui-sans
 .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 64px; }
 header.top h1 { font-size: 22px; margin: 0 0 4px; }
 header.top p { margin: 0 0 18px; color: var(--ink-soft); font-size: 13.5px; }
+header.top { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+header.top .titulo { flex: 0 1 auto; }
+.estrategia { flex: 1 1 420px; display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+.estrategia label { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .03em; color: var(--good); }
+.estrategia textarea {
+  font: inherit; font-size: 14px; line-height: 1.4; padding: 10px 12px; border-radius: 12px; min-height: 76px; resize: vertical;
+  border: 2px solid var(--good); background: var(--surface); color: var(--ink); box-shadow: var(--shadow);
+}
+.estrategia textarea::placeholder { color: var(--ink-faint); }
+.estrategia textarea[readonly] { background: var(--surface-2); }
 
 .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 16px; }
 .panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-faint); margin: 0 0 14px; font-weight: 800; }
@@ -177,8 +187,14 @@ table.breakdown input.meta-posit-input {
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>Performance</h1>
-    <p>Digite o código do RCA pra ver o salário atual x potencial dele — igual à planilha, 1 vendedor por vez.</p>
+    <div class="titulo">
+      <h1>Performance</h1>
+      <p>Digite o código do RCA pra ver o salário atual x potencial dele — igual à planilha, 1 vendedor por vez.</p>
+    </div>
+    <div class="estrategia" id="estrategiaBox" style="display:none">
+      <label for="estrategiaInput">Minha estratégia para o mês</label>
+      <textarea id="estrategiaInput" maxlength="1500" placeholder="Escreva aqui: monte sua estratégia para o mês (quais clientes, categorias e metas vai atacar)."></textarea>
+    </div>
   </header>
 
   <div class="panel">
@@ -343,6 +359,7 @@ function estadoPadrao(codigo) {
     metaPedidosDia: rca ? Math.round(rca.total_pedidos / DADOS.constantes.dias_uteis) : 0,
     taxaPct: (rca && rca.taxa_comissao_pct != null) ? rca.taxa_comissao_pct : DADOS.constantes.taxa_padrao * 100,
     metasCategoria,
+    estrategia: "",
   };
 }
 
@@ -365,6 +382,7 @@ function lerEstado(codigo) {
       taxaPct: padrao.taxaPct,  // fixa: sempre a do relatório 1249 (ou a padrão)
       // Metas salvas antes de 04/10 (sem metasV=2) são descartadas: começam zeradas.
       metasCategoria: Object.assign({}, padrao.metasCategoria, parsed.metasV === 3 ? (parsed.metasCategoria || {}) : {}),
+      estrategia: typeof parsed.estrategia === "string" ? parsed.estrategia : "",
     };
   } catch (e) { return padrao; }
 }
@@ -380,6 +398,7 @@ function limparEstado(codigo) {
     metaPedidosDia: DADOS.constantes.meta_pedidos_dia,
     taxaPct: DADOS.constantes.taxa_padrao * 100,
     metasCategoria: Object.fromEntries(DADOS.constantes.ordem_categorias.map(c => [c, 0])),
+    estrategia: "",
   };
   salvarEstado(codigo, zerado);
 }
@@ -550,6 +569,12 @@ function renderizarRca() {
     : null;
 
   const rca = RCAS_POR_CODIGO[codigo];
+  // Estratégia do mês fica fora do #conteudo (no cabeçalho), então não é
+  // recriada a cada render — só atualiza o texto se não estiver digitando.
+  const estrategiaBox = document.getElementById("estrategiaBox");
+  const estrategiaInput = document.getElementById("estrategiaInput");
+  estrategiaBox.style.display = rca ? "" : "none";
+  if (rca && document.activeElement !== estrategiaInput) estrategiaInput.value = lerEstado(codigo).estrategia;
   if (!rca) {
     avatarAtual.innerHTML = "";
     nomeAtual.textContent = "";
@@ -646,6 +671,14 @@ function montarDatalist() {
 
 document.getElementById("codigoInput").addEventListener("input", renderizarRca);
 
+document.getElementById("estrategiaInput").addEventListener("input", (e) => {
+  const codigo = parseInt(document.getElementById("codigoInput").value);
+  if (!RCAS_POR_CODIGO[codigo]) return;
+  const estado = lerEstado(codigo);
+  estado.estrategia = e.target.value;
+  salvarEstado(codigo, estado);
+});
+
 // ---- Link individual por vendedor: painel.html?rca=15 ----
 // Abre direto no vendedor, com o código travado. Se o link trouxer
 // &s=... (gerado pelo botão "Copiar link do meu preenchimento"), carrega o
@@ -691,7 +724,8 @@ if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
             metaPedidosDia: est.metaPedidosDia, salarioAtual: Math.round(r.salarioAtual * 100) / 100,
             salarioPotencial: Math.round(r.salarioTotal * 100) / 100,
             estado: { metaPedidosDia: est.metaPedidosDia, metasCategoria: est.metasCategoria,
-              industrializado: est.industrializado, thermo: est.thermo, dia15: est.dia15, dia30: est.dia30, recompra: est.recompra } }) });
+              industrializado: est.industrializado, thermo: est.thermo, dia15: est.dia15, dia30: est.dia30, recompra: est.recompra,
+              estrategia: est.estrategia } }) });
         msg.textContent = "Enviado! Seu gerente já pode ver.";
         btn.textContent = "✓ Enviado";
       } catch (e) { msg.textContent = "Não foi possível enviar. Tente de novo."; btn.disabled = false; }
@@ -701,6 +735,7 @@ if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
   // ---- Gerente abrindo o preenchimento de um vendedor (?rca=X&ver=1) ----
   if (URL_PLANILHA && PARAMS.get("ver")) {
     document.querySelector("header p").textContent = "Preenchimento enviado pelo vendedor (somente leitura).";
+    document.getElementById("estrategiaInput").readOnly = true;
     fetch(URL_PLANILHA).then(r => r.json()).then(lista => {
       const item = lista.find(x => Number(x.rca) === RCA_FIXO);
       if (item) { salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), item.estado, { metasV: 3 })); renderizarRca(); }
