@@ -327,18 +327,14 @@ function estadoPadrao(codigo) {
     // Desde 04/10 todas as metas de positivação começam zeradas (o Edmar preenche).
     metasCategoria[chave] = (rca && rca.categorias[chave]) ? rca.categorias[chave].positivacao : 0;  // referência = positivação realizada
   });
-  // Recompra vem com o checkbox pré-marcado de acordo com o cálculo real
-  // (clientes que só compraram 1 vez, aba 8110) — mas dá pra sobrepor na
-  // mão como as outras, se o Edmar quiser revisar um caso específico.
-  const recompraPadrao = rca ? rca.recompra_pct < DADOS.constantes.recompra_limite : false;
   return {
-    // Checkboxes já vêm marcados com o resultado real do mês (4 Pilares).
-    industrializado: (rca?.bonus_real?.industrializado || 0) > 0,
-    thermo: (rca?.bonus_real?.thermo || 0) > 0,
-    dia15: (rca?.bonus_real?.dia15 || 0) > 0,
-    dia30: (rca?.bonus_real?.dia30 || 0) > 0,
+    // Desde 04/10 todos os checkboxes de bônus começam desmarcados (o vendedor marca).
+    industrializado: false,
+    thermo: false,
+    dia15: false,
+    dia30: false,
     campanha: false,
-    recompra: rca?.bonus_real ? (rca.bonus_real.recompra || 0) > 0 : recompraPadrao,
+    recompra: false,
     // Meta de Pedidos/Dia e Taxa de Comissão são o "desafio"/acordo de CADA
     // vendedor — não um valor único pra equipe toda — por isso moram no
     // estado por RCA, não numa config global (senão editar um vendedor
@@ -358,13 +354,13 @@ function lerEstado(codigo) {
     if (!salvo) return padrao;
     const parsed = JSON.parse(salvo);
     return {
-      // Marcações salvas antes de 04/10 (sem metasV=2) dão lugar ao resultado real do mês.
-      industrializado: parsed.metasV === 3 ? (parsed.industrializado ?? padrao.industrializado) : padrao.industrializado,
-      thermo: parsed.metasV === 3 ? (parsed.thermo ?? padrao.thermo) : padrao.thermo,
-      dia15: parsed.metasV === 3 ? (parsed.dia15 ?? padrao.dia15) : padrao.dia15,
-      dia30: parsed.metasV === 3 ? (parsed.dia30 ?? padrao.dia30) : padrao.dia30,
+      // Marcações de bônus salvas antes de bonusV=2 (que vinham pré-marcadas) são descartadas: começam desmarcadas.
+      industrializado: parsed.bonusV === 2 ? (parsed.industrializado ?? padrao.industrializado) : padrao.industrializado,
+      thermo: parsed.bonusV === 2 ? (parsed.thermo ?? padrao.thermo) : padrao.thermo,
+      dia15: parsed.bonusV === 2 ? (parsed.dia15 ?? padrao.dia15) : padrao.dia15,
+      dia30: parsed.bonusV === 2 ? (parsed.dia30 ?? padrao.dia30) : padrao.dia30,
       campanha: false,
-      recompra: parsed.metasV === 3 ? (parsed.recompra ?? padrao.recompra) : padrao.recompra,
+      recompra: parsed.bonusV === 2 ? (parsed.recompra ?? padrao.recompra) : padrao.recompra,
       metaPedidosDia: parsed.metasV === 3 ? (parsed.metaPedidosDia ?? padrao.metaPedidosDia) : padrao.metaPedidosDia,
       // Taxa do relatório 1249 do mês (quando existe) vale mais que a digitada antes.
       taxaPct: padrao.taxaPct,  // fixa: sempre a do relatório 1249 (ou a padrão)
@@ -375,7 +371,7 @@ function lerEstado(codigo) {
 }
 
 function salvarEstado(codigo, estado) {
-  try { localStorage.setItem(chaveEstado(codigo), JSON.stringify(Object.assign({}, estado, { metasV: 3 }))); } catch (e) {}
+  try { localStorage.setItem(chaveEstado(codigo), JSON.stringify(Object.assign({}, estado, { metasV: 3, bonusV: 2 }))); } catch (e) {}
 }
 
 function limparEstado(codigo) {
