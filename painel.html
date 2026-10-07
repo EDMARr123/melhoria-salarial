@@ -638,11 +638,30 @@ if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
 
   // ---- Gerente abrindo o preenchimento de um vendedor (?rca=X&ver=1) ----
   if (URL_PLANILHA && PARAMS.get("ver")) {
-    document.querySelector("header p").textContent = "Preenchimento enviado pelo vendedor (somente leitura).";
+    // AJUSTE (07/10): a planilha demora alguns segundos pra responder e, até
+    // lá, a tela mostrava os valores padrão como se o vendedor não tivesse
+    // alterado nada. Esconde o conteúdo até o preenchimento chegar.
+    const aviso = document.querySelector("header p");
+    const conteudoVer = document.getElementById("conteudo");
+    aviso.textContent = "Carregando o preenchimento enviado pelo vendedor...";
+    aviso.style.cssText = "color:var(--warn);font-weight:800";
+    conteudoVer.style.visibility = "hidden";
     fetch(URL_PLANILHA).then(r => r.json()).then(lista => {
       const item = lista.find(x => Number(x.rca) === RCA_FIXO);
-      if (item) { salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), item.estado, { metasV: 3 })); renderizarRca(); }
-    }).catch(() => {});
+      if (item) {
+        salvarEstado(RCA_FIXO, Object.assign({}, lerEstado(RCA_FIXO), item.estado, { metasV: 3 }));
+        renderizarRca();
+        aviso.textContent = "Preenchimento enviado pelo vendedor em " + new Date(item.data).toLocaleString("pt-BR") + " (somente leitura).";
+        aviso.style.cssText = "color:var(--good);font-weight:800";
+      } else {
+        aviso.textContent = "Este vendedor ainda não enviou o preenchimento.";
+        aviso.style.cssText = "color:var(--bad);font-weight:800";
+      }
+      conteudoVer.style.visibility = "";
+    }).catch(() => {
+      aviso.textContent = "Não foi possível carregar o preenchimento do vendedor. Recarregue a página.";
+      aviso.style.cssText = "color:var(--bad);font-weight:800";
+    });
   }
 }
 
