@@ -146,7 +146,7 @@ table.breakdown td.dif-pos { color: var(--good); }
 table.breakdown td.dif-zero { color: var(--ink-faint); font-weight: 500; }
 table.breakdown input.meta-posit-input {
   width: 56px; font: inherit; font-size: 12.5px; font-weight: 800; text-align: center;
-  padding: 4px 4px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); color: var(--accent);
+  padding: 4px 4px; border-radius: 6px; border: 2px solid var(--good); background: var(--surface); color: var(--accent);
 }
 
 .checks { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
@@ -437,12 +437,14 @@ function montarConteudo(rca) {
   const linhasCatHtml = r.linhasCategorias.map(l => {
     const dif = l.potencial - l.atual;
     const classeDif = dif > 0.005 ? "dif-pos" : "dif-zero";
+    // AJUSTE (07/10): Meta Posit logo depois da categoria — no celular a
+    // tabela rola pro lado e vários vendedores não achavam a coluna.
     return `<tr>
       <td>${l.label}</td>
+      <td style="text-align:center"><input type="text" inputmode="numeric" class="meta-posit-input" data-chave="${l.chave}" value="${fmtInput(l.metaPosit)}"></td>
+      <td>${l.positivacao}</td>
       <td>${l.peso.toLocaleString("pt-BR", {maximumFractionDigits:2})}</td>
       <td>${fmtMoeda(l.valor)}</td>
-      <td>${l.positivacao}</td>
-      <td><input type="text" inputmode="numeric" class="meta-posit-input" data-chave="${l.chave}" value="${fmtInput(l.metaPosit)}"></td>
       <td>${fmtMoeda(l.atual)}</td>
       <td>${fmtMoeda(l.potencial)}</td>
       <td class="${classeDif}">${fmtMoeda(dif)}</td>
@@ -508,7 +510,7 @@ function montarConteudo(rca) {
       <h2>Por categoria</h2>
       <div style="overflow-x:auto">
       <table class="breakdown">
-        <thead><tr><th>Categoria</th><th>Peso</th><th>Valor</th><th>Positivação</th><th style="color:var(--good);font-weight:900;font-size:13px">Meta Posit</th><th>Comissão Atual</th><th>Comissão Potencial</th><th>Diferença</th></tr></thead>
+        <thead><tr><th>Categoria</th><th style="color:var(--good);font-weight:900;font-size:13px;text-align:center">Meta Posit ✏️</th><th>Positivação</th><th>Peso</th><th>Valor</th><th>Comissão Atual</th><th>Comissão Potencial</th><th>Diferença</th></tr></thead>
         <tbody>${linhasCatHtml}</tbody>
       </table>
       </div>
@@ -807,8 +809,11 @@ def gerar_acompanhamento(dados):
     (lido da planilha Google), separado por supervisor."""
     # Média de pedidos/dia = mesma conta da "MÉDIA DE PEDIDOS" do painel.
     dias_uteis = dados["constantes"]["dias_uteis"]
+    # "posit" = positivação de cada categoria, que é o valor padrão da Meta
+    # Posit — se o envio veio igual a isso, o vendedor não preencheu.
     rcas = [{"codigo": r["codigo"], "nome": r["nome"], "supervisor": r["supervisor"],
-             "media": round(r["total_pedidos"] / dias_uteis) if dias_uteis else 0}
+             "media": round(r["total_pedidos"] / dias_uteis) if dias_uteis else 0,
+             "posit": {k: v["positivacao"] for k, v in r["categorias"].items()}}
             for r in dados["rcas"] if r.get("supervisor") in ORDEM_SUPERVISORES]
     pagina = """<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Acompanhamento Melhoria Salarial</title>
@@ -824,6 +829,7 @@ h2{margin:0 0 10px;font-size:18px;color:#1D9A5D} h2 span{font-size:13px;color:#8
 table{width:100%;border-collapse:collapse;font-size:14px} th{text-align:left;font-size:11px;color:#8A8F8A;text-transform:uppercase;padding:6px 8px}
 td{padding:8px;border-top:1px solid #EEE} .ok{color:#1D9A5D;font-weight:800} .pend{color:#C0392B;font-weight:800}
 a{color:#1D6FB8;font-weight:700} .num{text-align:right}
+.aviso{display:inline-block;margin-top:3px;font-size:11.5px;font-weight:800;color:#B4740A;background:#FBF0DC;border-radius:6px;padding:2px 7px}
 </style></head><body><main>
 <h1>Acompanhamento — Melhoria Salarial</h1>
 <p class="sub" id="status">Carregando respostas...</p>
@@ -832,6 +838,10 @@ a{color:#1D6FB8;font-weight:700} .num{text-align:right}
 const URL_PLANILHA = "__URL__", URL_PAINEL = "__PAINEL__";
 const RCAS = __RCAS__, ORDEM = __ORDEM__;
 const brl = v => (v === "" || v == null) ? "—" : Number(v).toLocaleString("pt-BR", {style:"currency", currency:"BRL"});
+function metaPositPadrao(r, x) {
+  const m = (x.estado && x.estado.metasCategoria) || {};
+  return Object.keys(r.posit).every(k => Number(m[k]) === r.posit[k]);
+}
 function montar(respostas) {
   const porRca = {}; respostas.forEach(r => porRca[Number(r.rca)] = r);
   const feitos = RCAS.filter(r => porRca[r.codigo]).length;
@@ -841,7 +851,7 @@ function montar(respostas) {
     const doSup = RCAS.filter(r => r.supervisor === sup).sort((a,b) => a.nome.localeCompare(b.nome));
     const ok = doSup.filter(r => porRca[r.codigo]).length;
     const linhas = doSup.map(r => { const x = porRca[r.codigo];
-      return x ? `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="ok">✓ Feito</td><td>${new Date(x.data).toLocaleString("pt-BR")}</td>
+      return x ? `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="ok">✓ Feito${metaPositPadrao(r, x) ? '<br><span class="aviso">⚠ Meta Posit não preenchida</span>' : ''}</td><td>${new Date(x.data).toLocaleString("pt-BR")}</td>
         <td class="num">${r.media}</td><td class="num">${x.metaPedidosDia}</td><td class="num">${brl(x.salarioAtual)}</td><td class="num">${brl(x.salarioPotencial)}</td>
         <td><a href="${URL_PAINEL}?rca=${r.codigo}&ver=1" target="_blank">Ver</a></td></tr>`
       : `<tr><td>${r.codigo}</td><td>${r.nome}</td><td class="pend">Pendente</td><td>—</td><td class="num">${r.media}</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td></td></tr>`; }).join("");
