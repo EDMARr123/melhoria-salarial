@@ -662,6 +662,14 @@ function decodificarEstado(txt) {
   return JSON.parse(decodeURIComponent(escape(atob(b64))));
 }
 const PARAMS = new URLSearchParams(location.search);
+// AJUSTE (08/10): links individuais dos vendedores DESATIVADOS a pedido do
+// Edmar — quem abrir painel.html?rca=X vê só o aviso, sem dados.
+if (PARAMS.has("rca")) {
+  document.body.innerHTML = '<div style="font-family:sans-serif;max-width:520px;margin:80px auto;text-align:center;padding:24px">' +
+    '<h1 style="font-size:24px">Link desativado</h1>' +
+    '<p style="color:#555;font-size:16px">Este link não está mais disponível. Fale com o seu supervisor.</p></div>';
+  throw new Error("link de vendedor desativado");
+}
 const RCA_FIXO = parseInt(PARAMS.get("rca"));
 if (RCA_FIXO && RCAS_POR_CODIGO[RCA_FIXO]) {
   const inp = document.getElementById("codigoInput");
@@ -750,7 +758,7 @@ def main():
     html = html.replace("__FOTOS_RCAS_JSON__", _FOTOS_RCAS_JSON)
     with open(CAMINHO_SAIDA, "w", encoding="utf-8") as f:
         f.write(html)
-    gerar_links(dados)
+    # gerar_links(dados)  # desativado em 08/10: vendedor não acessa mais pelo link individual
     gerar_acompanhamento(dados)
 
 
